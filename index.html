@@ -2910,75 +2910,3133 @@ const PROMOS = {
     { t:{en:"Safety First",ar:"الأمان أولاً"}, s:{en:"Location sharing for loved ones",ar:"مشاركة الموقع مع الأحبة"}, g:"linear-gradient(180deg,#F6EB69,#E27FAF)", z:'sun', ink:'#4a1030' },
     { t:{en:"Her Rewards",ar:"مكافآت لها"}, s:{en:"Double points this month",ar:"نقاط مضاعفة هذا الشهر"}, g:"linear-gradient(180deg,#E27FAF,#AB1368)", z:'gift' }],
 };
-const BUNDLES = {
-  consumer: [
-    { id:'c1', n:{en:"Data Max 20",ar:"داتا ماكس ٢٠"}, d:{en:"20 GB data",ar:"٢٠ غيغا بيانات"}, m:0, s:0, p:"45,000", cat:'data', z:'rocket', tag:{en:"Bestseller",ar:"الأكثر مبيعاً"} },
-    { id:'c2', n:{en:"Talk More 500",ar:"احكي أكثر ٥٠٠"}, d:{en:"500 minutes",ar:"٥٠٠ دقيقة"}, m:500, s:0, p:"25,000", cat:'voice', z:'phone' },
-    { id:'c3', n:{en:"All-in-One 12",ar:"الكل في واحد ١٢"}, d:{en:"12 GB + 300 min + 100 SMS",ar:"١٢ غيغا + ٣٠٠ دقيقة + ١٠٠ رسالة"}, m:300, s:100, p:"38,000", cat:'mixed', z:'gift', tag:{en:"New",ar:"جديد"} },
-    { id:'c4', n:{en:"Night Owl",ar:"بومة الليل"}, d:{en:"Unlimited 1AM–7AM data",ar:"بيانات غير محدودة ١–٧ صباحاً"}, m:0, s:0, p:"9,000", cat:'data', z:'shooting_star' },
-    { id:'c5', n:{en:"Social Plus",ar:"سوشيال بلس"}, d:{en:"10 GB social apps",ar:"١٠ غيغا لتطبيقات التواصل"}, m:0, s:50, p:"15,000", cat:'mixed', z:'party' },
-    { id:'c6', n:{en:"Voice 1000",ar:"صوت ١٠٠٠"}, d:{en:"1000 on-net minutes",ar:"١٠٠٠ دقيقة داخلية"}, m:1000, s:0, p:"30,000", cat:'voice', z:'phone' },
-    { id:'c7', n:{en:"Quick 3H",ar:"سريع ٣ ساعات"}, d:{en:"5 GB for 3 hours",ar:"٥ غيغا لمدة ٣ ساعات"}, m:0, s:0, p:"3,500", cat:'data', z:'rocket' },
-    { id:'c8', n:{en:"Weekend 14",ar:"عطلة ١٤ يوم"}, d:{en:"25 GB + 200 min for 14 days",ar:"٢٥ غيغا + ٢٠٠ دقيقة لمدة ١٤ يوم"}, m:200, s:0, p:"32,000", cat:'mixed', z:'gift' },
-    { id:'c9', n:{en:"Daily Data 2",ar:"بيانات يومية ٢"}, d:{en:"2 GB for 24 hours",ar:"٢ غيغا لمدة ٢٤ ساعة"}, m:0, s:0, p:"4,500", cat:'data', z:'rocket' },
-    { id:'p1021', n:{en:"Prepaid Monthly Plan 7",ar:"باقة مسبق الدفع الشهرية 7"}, d:{en:"3 GB internet · 300 Local Min · 300 Local SMS",ar:"3 غيغا إنترنت · 300 دقيقة محلية · 300 رسالة محلية"}, m:300, s:300, p:"360", cat:'mixed', z:'star' },
-    { id:'p1041', n:{en:"Prepaid Monthly Plan 9 (New)",ar:"باقة مسبق الدفع 9 (جديدة)"}, d:{en:"15 GB internet · 600 Local Min · 600 Local SMS",ar:"15 غيغا إنترنت · 600 دقيقة محلية · 600 رسالة محلية"}, m:600, s:600, p:"900", cat:'mixed', z:'star' },
-    { id:'p1042', n:{en:"Prepaid Monthly Plan 14 (New)",ar:"باقة مسبق الدفع 14 (جديدة)"}, d:{en:"500 GB internet · 5000 Local Min · 5000 Local SMS",ar:"500 غيغا إنترنت · 5000 دقيقة محلية · 5000 رسالة محلية"}, m:5000, s:5000, p:"5000", cat:'mixed', z:'star' },
-    { id:'p1061', n:{en:"Prepaid Plan 12 (New)",ar:"باقة مسبق الدفع 12 (جديدة)"}, d:{en:"100 GB internet · 1000 Local Min · 1000 Local SMS",ar:"100 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"2000", cat:'mixed', z:'star' },
-    { id:'p781', n:{en:"Prepaid Plan 1",ar:"باقة مسبق الدفع 1"}, d:{en:"1536 MB internet · 300 Local Min · 300 Local SMS",ar:"1536 ميغا إنترنت · 300 دقيقة محلية · 300 رسالة محلية"}, m:300, s:300, p:"240", cat:'mixed', z:'star' },
-    { id:'p782', n:{en:"Prepaid Plan 2",ar:"باقة مسبق الدفع 2"}, d:{en:"6 GB internet · 400 Local Min · 400 Local SMS",ar:"6 غيغا إنترنت · 400 دقيقة محلية · 400 رسالة محلية"}, m:400, s:400, p:"480", cat:'mixed', z:'star' },
-    { id:'p783', n:{en:"Prepaid Plan 3",ar:"باقة مسبق الدفع 3"}, d:{en:"10 GB internet · 500 Local Min · 500 Local SMS",ar:"10 غيغا إنترنت · 500 دقيقة محلية · 500 رسالة محلية"}, m:500, s:500, p:"700", cat:'mixed', z:'star' },
-    { id:'p784', n:{en:"Prepaid Plan 10 (New)",ar:"باقة مسبق الدفع 10 (جديدة)"}, d:{en:"25 GB internet · 700 Local Min · 700 Local SMS",ar:"25 غيغا إنترنت · 700 دقيقة محلية · 700 رسالة محلية"}, m:700, s:700, p:"1250", cat:'mixed', z:'star' },
-    { id:'p785', n:{en:"Prepaid Plan 5",ar:"باقة مسبق الدفع 5"}, d:{en:"35 GB internet · 700 Local Min · 700 Local SMS",ar:"35 غيغا إنترنت · 700 دقيقة محلية · 700 رسالة محلية"}, m:700, s:700, p:"1900", cat:'mixed', z:'star' },
-    { id:'p786', n:{en:"Prepaid Plan 13 (New)",ar:"باقة مسبق الدفع 13 (جديدة)"}, d:{en:"200 GB internet · 1000 Local Min · 1000 Local SMS",ar:"200 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"3000", cat:'mixed', z:'star' },
-    { id:'p787', n:{en:"Prepaid Plan 7",ar:"باقة مسبق الدفع 7"}, d:{en:"30 GB internet · 1000 Local Min · 1000 Local SMS",ar:"30 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"1800", cat:'mixed', z:'star' },
-    { id:'p788', n:{en:"Prepaid Plan 8",ar:"باقة مسبق الدفع 8"}, d:{en:"60 GB internet · 2500 Local Min · 2500 Local SMS",ar:"60 غيغا إنترنت · 2500 دقيقة محلية · 2500 رسالة محلية"}, m:2500, s:2500, p:"3000", cat:'mixed', z:'star' },
-    { id:'p789', n:{en:"Weekly plan 1",ar:"باقة مسبق الدفع الأسبوعية 1"}, d:{en:"1 GB internet · 100 Local Min · 100 Local SMS",ar:"1 غيغا إنترنت · 100 دقيقة محلية · 100 رسالة محلية"}, m:100, s:100, p:"120", cat:'mixed', z:'star' },
-    { id:'p790', n:{en:"Weekly plan 2",ar:"باقة مسبق الدفع الأسبوعية 2"}, d:{en:"3 GB internet · 200 Local Min · 200 Local SMS",ar:"3 غيغا إنترنت · 200 دقيقة محلية · 200 رسالة محلية"}, m:200, s:200, p:"240", cat:'mixed', z:'star' },
-    { id:'p791', n:{en:"Daily plan 1",ar:"باقة مسبق الدفع اليومية 1"}, d:{en:"2 GB internet · 100 Local Min · 100 Local SMS",ar:"2 غيغا إنترنت · 100 دقيقة محلية · 100 رسالة محلية"}, m:100, s:100, p:"60", cat:'mixed', z:'star' },
-    { id:'p1121', n:{en:"Postpaid monthly bundle 3 / 950 SYP",ar:"باقة لاحق الدفع الشهرية 950 ل.س جديدة"}, d:{en:"15 GB internet · 500 Local Min · 500 Local SMS",ar:"15 غيغا إنترنت · 500 دقيقة محلية · 500 رسالة محلية"}, m:500, s:500, p:"950", cat:'mixed', z:'star' },
-    { id:'p792', n:{en:"Postpaid Plan 1",ar:"باقة لاحق الدفع 1"}, d:{en:"25 GB internet · 1000 Local Min · 1000 Local SMS",ar:"25 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"1800", cat:'mixed', z:'star' },
-    { id:'p793', n:{en:"Postpaid Plan 2",ar:"باقة لاحق الدفع 2"}, d:{en:"150 GB internet · 1500 Local Min · 1500 Local SMS",ar:"150 غيغا إنترنت · 1500 دقيقة محلية · 1500 رسالة محلية"}, m:1500, s:1500, p:"6000", cat:'mixed', z:'star' },
-    { id:'p826', n:{en:"Postpaid Plan Students 1",ar:"باقة الطلاب 1"}, d:{en:"25 GB internet · 1000 Local Min · 1000 Local SMS",ar:"25 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"1350", cat:'mixed', z:'star' },
-    { id:'p827', n:{en:"Postpaid Plan Students 2",ar:"باقة الطلاب 2"}, d:{en:"150 GB internet · 1500 Local Min · 1500 Local SMS",ar:"150 غيغا إنترنت · 1500 دقيقة محلية · 1500 رسالة محلية"}, m:1500, s:1500, p:"4500", cat:'mixed', z:'star' },
-    { id:'p828', n:{en:"Postpaid Plan Journalist 1",ar:"باقة الصحفيين 1"}, d:{en:"25 GB internet · 1000 Local Min · 1000 Local SMS",ar:"25 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"1350", cat:'mixed', z:'star' },
-    { id:'p829', n:{en:"Postpaid Plan Journalist 2",ar:"باقة الصحفيين 2"}, d:{en:"150 GB internet · 1500 Local Min · 1500 Local SMS",ar:"150 غيغا إنترنت · 1500 دقيقة محلية · 1500 رسالة محلية"}, m:1500, s:1500, p:"4500", cat:'mixed', z:'star' },
-    { id:'p830', n:{en:"Postpaid plan public 1",ar:"باقة موظفي القطاع العام 1"}, d:{en:"25 GB internet · 1000 Local Min · 1000 Local SMS",ar:"25 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"1350", cat:'mixed', z:'star' },
-    { id:'p831', n:{en:"Postpaid plan public 2",ar:"باقة موظفي القطاع العام 2"}, d:{en:"150 GB internet · 1500 Local Min · 1500 Local SMS",ar:"150 غيغا إنترنت · 1500 دقيقة محلية · 1500 رسالة محلية"}, m:1500, s:1500, p:"4500", cat:'mixed', z:'star' },
-    { id:'p832', n:{en:"Postpaid Plan special needs 1",ar:"باقة ذوي الهمم 1"}, d:{en:"25 GB internet · 1000 Local Min · 1000 Local SMS",ar:"25 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"}, m:1000, s:1000, p:"1170", cat:'mixed', z:'star' },
-    { id:'p833', n:{en:"Postpaid Plan special needs 2",ar:"باقة ذوي الهمم 2"}, d:{en:"150 GB internet · 1500 Local Min · 1500 Local SMS",ar:"150 غيغا إنترنت · 1500 دقيقة محلية · 1500 رسالة محلية"}, m:1500, s:1500, p:"3900", cat:'mixed', z:'star' },
-    { id:'b1022', n:{en:"Daily WhatsApp & Min Bundle",ar:"باقة ميكس واتساب اليومية"}, d:{en:"1 GB Whatsapp data · 50 Local Min",ar:"1 غيغا واتساب · 50 دقيقة محلية"}, m:50, s:0, p:"19", cat:'mixed', z:'party' },
-    { id:'b825', n:{en:"Daily Social Media bundle",ar:"باقة تواصل اجتماعي يومية"}, d:{en:"4 GB social Media apps data",ar:"4 غيغا تطبيقات التواصل"}, m:0, s:0, p:"40", cat:'mixed', z:'party' },
-    { id:'b901', n:{en:"Monthly Voice Bundle Prepaid 1",ar:"باقة الدقائق الأولى"}, d:{en:"300 Local Min",ar:"300 دقيقة محلية"}, m:300, s:0, p:"105", cat:'voice', z:'phone' },
-    { id:'b902', n:{en:"Monthly Voice Bundle Prepaid 2",ar:"باقة الدقائق الثانية"}, d:{en:"750 Local Min",ar:"750 دقيقة محلية"}, m:750, s:0, p:"225", cat:'voice', z:'phone' },
-    { id:'b903', n:{en:"Hourly bundle 5 GB",ar:"باقة ساعية 5 غيغابايت"}, d:{en:"5 GB internet",ar:"5 غيغا إنترنت"}, m:0, s:0, p:"45", cat:'data', z:'rocket' },
-    { id:'b908', n:{en:"Hourly bundle 3 GB",ar:"باقة ساعية 3 غيغابايت"}, d:{en:"3 GB internet",ar:"3 غيغا إنترنت"}, m:0, s:0, p:"30", cat:'data', z:'rocket' },
-    { id:'b794', n:{en:"Add-on Data 1",ar:"باقة انترنت اضافية 1"}, d:{en:"5 GB internet",ar:"5 غيغا إنترنت"}, m:0, s:0, p:"480", cat:'data', z:'rocket' },
-    { id:'b795', n:{en:"Add-on Data 2",ar:"باقة انترنت اضافية 2"}, d:{en:"10 GB internet",ar:"10 غيغا إنترنت"}, m:0, s:0, p:"840", cat:'data', z:'rocket' },
-    { id:'b941', n:{en:"Combo Weekly Bundle",ar:"باقة اسبوعية شاملة"}, d:{en:"6 GB internet · 300 Local Min · 300 Local SMS",ar:"6 غيغا إنترنت · 300 دقيقة محلية · 300 رسالة محلية"}, m:300, s:300, p:"360", cat:'mixed', z:'star' },
-    { id:'b862', n:{en:"Deaf and dumb for Postpaid lines",ar:"باقة الصم والبكم (خطوط لاحقة الدفع)"}, d:{en:"200 GB internet",ar:"200 غيغا إنترنت"}, m:0, s:0, p:"300", cat:'data', z:'rocket' },
-    { id:'b981', n:{en:"Data Roaming Bundles Prepaid 1000 MB",ar:"باقة تجوال انترنت 1000 ميغا بايت"}, d:{en:"1 GB internet",ar:"1 غيغا إنترنت"}, m:0, s:0, p:"719", cat:'data', z:'pin' },
-    { id:'b982', n:{en:"Data Roaming Bundles Prepaid 500 MB",ar:"باقة تجوال انترنت 500 ميغا بايت"}, d:{en:"512 MB internet",ar:"512 ميغا إنترنت"}, m:0, s:0, p:"387", cat:'data', z:'pin' },
-    { id:'b983', n:{en:"Data Roaming Bundles Prepaid 2000 MB",ar:"باقة تجوال انترنت 2000 ميغا بايت"}, d:{en:"2 GB internet",ar:"2 غيغا إنترنت"}, m:0, s:0, p:"1329", cat:'data', z:'pin' },
-    { id:'b984', n:{en:"Data Roaming Bundles Prepaid 3000 MB",ar:"باقة تجوال انترنت 3000 ميغا بايت"}, d:{en:"3 GB internet",ar:"3 غيغا إنترنت"}, m:0, s:0, p:"1882", cat:'data', z:'pin' },],
-  business: [
-    { id:'b1', n:{en:"Fleet 50",ar:"أسطول ٥٠"}, d:{en:"50 GB pooled + 2000 min",ar:"٥٠ غيغا مشتركة + ٢٠٠٠ دقيقة"}, m:2000, s:0, p:"180,000", cat:'mixed', z:'star', tag:{en:"Popular",ar:"شائع"} },
-    { id:'b2', n:{en:"Exec Roam",ar:"تجوال التنفيذيين"}, d:{en:"10 GB regional roaming",ar:"١٠ غيغا تجوال إقليمي"}, m:500, s:0, p:"95,000", cat:'data', z:'pin' },
-    { id:'b3', n:{en:"Team Talk",ar:"مكالمات الفريق"}, d:{en:"Unlimited on-net calls",ar:"مكالمات داخلية غير محدودة"}, m:9999, s:0, p:"60,000", cat:'voice', z:'phone' },
-    { id:'b4', n:{en:"Data Pool 200",ar:"باقة بيانات مشتركة ٢٠٠"}, d:{en:"200 GB shared across lines",ar:"٢٠٠ غيغا مشتركة بين الخطوط"}, m:0, s:0, p:"450,000", cat:'data', z:'rocket' },
-    { id:'b5', n:{en:"Business Week 14",ar:"أسبوع أعمال ١٤"}, d:{en:"100 GB pooled for 14 days",ar:"١٠٠ غيغا مشتركة لمدة ١٤ يوم"}, m:0, s:0, p:"220,000", cat:'data', z:'rocket' }],
-  vip: [
-    { id:'v1', n:{en:"VIP Infinite",ar:"VIP لا محدود"}, d:{en:"Unlimited everything, priority network",ar:"كل شيء غير محدود، شبكة أولوية"}, m:9999, s:9999, p:"250,000", cat:'mixed', z:'star', tag:{en:"Signature",ar:"التوقيع"} },
-    { id:'v2', n:{en:"Global Roam",ar:"تجوال عالمي"}, d:{en:"25 GB in 80+ countries",ar:"٢٥ غيغا في +٨٠ دولة"}, m:1000, s:200, p:"180,000", cat:'mixed', z:'pin' },
-    { id:'v3', n:{en:"VIP Data 100",ar:"VIP بيانات ١٠٠"}, d:{en:"100 GB priority data",ar:"١٠٠ غيغا بيانات أولوية"}, m:0, s:0, p:"120,000", cat:'data', z:'rocket' },
-    { id:'v4', n:{en:"VIP Day Pass",ar:"يوم VIP"}, d:{en:"20 GB + 500 min for 24 hours",ar:"٢٠ غيغا + ٥٠٠ دقيقة لمدة ٢٤ ساعة"}, m:500, s:0, p:"55,000", cat:'mixed', z:'star' }],
-  her: [
-    { id:'h1', n:{en:"Family Share 30",ar:"مشاركة العائلة ٣٠"}, d:{en:"30 GB shared, 3 lines",ar:"٣٠ غيغا مشتركة، ٣ خطوط"}, m:600, s:150, p:"55,000", cat:'mixed', z:'star', tag:{en:"Loved",ar:"محبوب"} },
-    { id:'h2', n:{en:"Her Data 15",ar:"بيانات لها ١٥"}, d:{en:"15 GB + safety alerts",ar:"١٥ غيغا + تنبيهات أمان"}, m:200, s:100, p:"28,000", cat:'mixed', z:'star' },
-    { id:'h3', n:{en:"Chat All Day",ar:"دردشة طوال اليوم"}, d:{en:"Unlimited messaging apps",ar:"تطبيقات مراسلة غير محدودة"}, m:0, s:0, p:"12,000", cat:'data', z:'party' },
-    { id:'h4', n:{en:"Her Voice 400",ar:"مكالمات لها ٤٠٠"}, d:{en:"400 minutes, any network",ar:"٤٠٠ دقيقة، أي شبكة"}, m:400, s:0, p:"18,000", cat:'voice', z:'phone' },
-    { id:'h5', n:{en:"Her Hour",ar:"ساعة لها"}, d:{en:"3 GB for 6 hours",ar:"٣ غيغا لمدة ٦ ساعات"}, m:0, s:0, p:"4,000", cat:'data', z:'rocket' }],
-};
+/* ================= v137: v4 comprehensive catalogue (B4 data) ================= */
+/* v137: v4 comprehensive catalogue data — generated from
+   Bundles_Catalogue_Comprehensive.xlsx (47 cases: 34 base + 10 gap
+   proposals + 3 popup-only services). One row per DISTINCT DISPLAY
+   CASE, shared across all worlds. Eligibility is per line.
+   CTA law (Yaman 2026-11-09): Activate, or Reactivate when the user
+   already has the bundle — never Buy Now, never Done.
+   Generated by gen-b4-data.py — do not hand-edit; re-run the generator. */
+const B4 = [
+ {
+  "id": "c1",
+  "caseId": "CAT-001",
+  "n": {
+   "en": "Data Max 20",
+   "ar": "داتا ماكس ٢٠"
+  },
+  "d": {
+   "en": "20 GB data",
+   "ar": "٢٠ غيغا بيانات"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "45,000",
+  "z": "rocket",
+  "tag": {
+   "en": "Bestseller",
+   "ar": "الأكثر مبيعاً"
+  },
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 20,
+    "uom": "GB"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": true,
+  "autoRenew": true,
+  "dataGB": 20,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c1",
+  "proposal": false
+ },
+ {
+  "id": "c2",
+  "caseId": "CAT-002",
+  "n": {
+   "en": "Talk More 500",
+   "ar": "احكي أكثر ٥٠٠"
+  },
+  "d": {
+   "en": "500 minutes",
+   "ar": "٥٠٠ دقيقة"
+  },
+  "cat": "voice",
+  "m": 500,
+  "s": 0,
+  "p": "25,000",
+  "z": "phone",
+  "tag": null,
+  "hero": "minutes",
+  "kinds": [
+   {
+    "kind": "minutes",
+    "cap": 500,
+    "uom": "min"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c2",
+  "proposal": false
+ },
+ {
+  "id": "c3",
+  "caseId": "CAT-003",
+  "n": {
+   "en": "All-in-One 12",
+   "ar": "الكل في واحد ١٢"
+  },
+  "d": {
+   "en": "12 GB + 300 min + 100 SMS",
+   "ar": "١٢ غيغا + ٣٠٠ دقيقة + ١٠٠ رسالة"
+  },
+  "cat": "mixed",
+  "m": 300,
+  "s": 100,
+  "p": "38,000",
+  "z": "gift",
+  "tag": {
+   "en": "New",
+   "ar": "جديد"
+  },
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 12,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 300,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 100,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "foryou",
+  "section": "Recommended",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": {
+   "old": "45,000",
+   "ends": "31 Oct"
+  },
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 12,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c3, x8",
+  "proposal": false
+ },
+ {
+  "id": "c4",
+  "caseId": "CAT-004",
+  "n": {
+   "en": "Night Owl",
+   "ar": "بومة الليل"
+  },
+  "d": {
+   "en": "Unlimited 1AM–7AM data",
+   "ar": "بيانات غير محدودة ١–٧ صباحاً"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "9,000",
+  "z": "shooting_star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": null,
+    "uom": "GB"
+   }
+  ],
+  "segment": "btl",
+  "section": "Just for you",
+  "validity": "1 day",
+  "hours": 24,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": true,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": "data",
+  "note": {
+   "en": "Night window 1AM–7AM",
+   "ar": "نافذة الليل ١–٧ صباحاً"
+  },
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": "Threshold 50 GB, then 512 Kbps (demo values — pending decision D8)",
+  "covers": "c4",
+  "proposal": false
+ },
+ {
+  "id": "c5",
+  "caseId": "CAT-005",
+  "n": {
+   "en": "Social Plus",
+   "ar": "سوشيال بلس"
+  },
+  "d": {
+   "en": "10 GB social apps",
+   "ar": "١٠ غيغا لتطبيقات التواصل"
+  },
+  "cat": "mixed",
+  "m": 0,
+  "s": 50,
+  "p": "15,000",
+  "z": "party",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "sms",
+    "cap": 50,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "foryou",
+  "section": "Recommended",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": true,
+  "autoRenew": true,
+  "dataGB": 10,
+  "unlim": null,
+  "note": {
+   "en": "Social apps only",
+   "ar": "لتطبيقات التواصل فقط"
+  },
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c5",
+  "proposal": false
+ },
+ {
+  "id": "c6",
+  "caseId": "CAT-006",
+  "n": {
+   "en": "Voice 1000",
+   "ar": "صوت ١٠٠٠"
+  },
+  "d": {
+   "en": "1000 on-net minutes",
+   "ar": "١٠٠٠ دقيقة داخلية"
+  },
+  "cat": "voice",
+  "m": 1000,
+  "s": 0,
+  "p": "30,000",
+  "z": "phone",
+  "tag": null,
+  "hero": "minutes",
+  "kinds": [
+   {
+    "kind": "minutes",
+    "cap": 1000,
+    "uom": "min"
+   }
+  ],
+  "segment": "btl",
+  "section": "Just for you",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": {
+   "en": "On-net minutes",
+   "ar": "دقائق داخلية"
+  },
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c6, b901, b902",
+  "proposal": false
+ },
+ {
+  "id": "c7",
+  "caseId": "CAT-007",
+  "n": {
+   "en": "Quick 3H",
+   "ar": "سريع ٣ ساعات"
+  },
+  "d": {
+   "en": "5 GB for 3 hours",
+   "ar": "٥ غيغا لمدة ٣ ساعات"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "3,500",
+  "z": "rocket",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 5,
+    "uom": "GB"
+   }
+  ],
+  "segment": "foryou",
+  "section": "Recommended",
+  "validity": "3 hours",
+  "hours": 3,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": 5,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c7, h5",
+  "proposal": false
+ },
+ {
+  "id": "c8",
+  "caseId": "CAT-008",
+  "n": {
+   "en": "Weekend 14",
+   "ar": "عطلة ١٤ يوم"
+  },
+  "d": {
+   "en": "25 GB + 200 min for 14 days",
+   "ar": "٢٥ غيغا + ٢٠٠ دقيقة لمدة ١٤ يوم"
+  },
+  "cat": "mixed",
+  "m": 200,
+  "s": 0,
+  "p": "32,000",
+  "z": "gift",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 25,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 200,
+    "uom": "min"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "14 days",
+  "hours": 336,
+  "cyc": false,
+  "ussd": "—",
+  "offer": {
+   "old": "38,000",
+   "ends": "31 Oct"
+  },
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 25,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c8",
+  "proposal": false
+ },
+ {
+  "id": "c9",
+  "caseId": "CAT-009",
+  "n": {
+   "en": "Daily Data 2",
+   "ar": "بيانات يومية ٢"
+  },
+  "d": {
+   "en": "2 GB for 24 hours",
+   "ar": "٢ غيغا لمدة ٢٤ ساعة"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "4,500",
+  "z": "rocket",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 2,
+    "uom": "GB"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "1 day",
+  "hours": 24,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": 2,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "c9",
+  "proposal": false
+ },
+ {
+  "id": "p1021",
+  "caseId": "CAT-010",
+  "n": {
+   "en": "Prepaid Monthly Plan 7",
+   "ar": "باقة مسبق الدفع الشهرية 7"
+  },
+  "d": {
+   "en": "3 GB internet · 300 Local Min · 300 Local SMS",
+   "ar": "3 غيغا إنترنت · 300 دقيقة محلية · 300 رسالة محلية"
+  },
+  "cat": "mixed",
+  "m": 300,
+  "s": 300,
+  "p": "360",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 3,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 300,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 300,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "plan",
+  "section": "Plans",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 3,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "p1021, p1041, p1042, p1061, p781, p782, p784, p785, p786, p787, p788, p789, p790, p791, h2",
+  "proposal": false
+ },
+ {
+  "id": "p783",
+  "caseId": "CAT-011",
+  "n": {
+   "en": "Prepaid Plan 3",
+   "ar": "باقة مسبق الدفع 3"
+  },
+  "d": {
+   "en": "10 GB internet · 500 Local Min · 500 Local SMS",
+   "ar": "10 غيغا إنترنت · 500 دقيقة محلية · 500 رسالة محلية"
+  },
+  "cat": "mixed",
+  "m": 500,
+  "s": 500,
+  "p": "700",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 500,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 500,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "plan",
+  "section": "Plans",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": true,
+  "autoRenew": true,
+  "dataGB": 10,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "p783, b941, h1",
+  "proposal": false
+ },
+ {
+  "id": "p1121",
+  "caseId": "CAT-012",
+  "n": {
+   "en": "Postpaid monthly bundle 3 / 950 SYP",
+   "ar": "باقة لاحق الدفع الشهرية 950 ل.س جديدة"
+  },
+  "d": {
+   "en": "15 GB internet · 500 Local Min · 500 Local SMS",
+   "ar": "15 غيغا إنترنت · 500 دقيقة محلية · 500 رسالة محلية"
+  },
+  "cat": "mixed",
+  "m": 500,
+  "s": 500,
+  "p": "950",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 15,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 500,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 500,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "plan",
+  "section": "Plans",
+  "validity": "per billing cycle",
+  "hours": 720,
+  "cyc": true,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 15,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "p1121, p792, p793",
+  "proposal": false
+ },
+ {
+  "id": "p826",
+  "caseId": "CAT-013",
+  "n": {
+   "en": "Postpaid Plan Students 1",
+   "ar": "باقة الطلاب 1"
+  },
+  "d": {
+   "en": "25 GB internet · 1000 Local Min · 1000 Local SMS",
+   "ar": "25 غيغا إنترنت · 1000 دقيقة محلية · 1000 رسالة محلية"
+  },
+  "cat": "mixed",
+  "m": 1000,
+  "s": 1000,
+  "p": "1350",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 25,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 1000,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 1000,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "plan",
+  "section": "Plans",
+  "validity": "per billing cycle",
+  "hours": 720,
+  "cyc": true,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 25,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "GATED",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": "Students only (proof required)",
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "p826, p827, p828, p829, p830, p831, p832, p833",
+  "proposal": false
+ },
+ {
+  "id": "b1022",
+  "caseId": "CAT-014",
+  "n": {
+   "en": "Daily WhatsApp & Min Bundle",
+   "ar": "باقة ميكس واتساب اليومية"
+  },
+  "d": {
+   "en": "1 GB Whatsapp data · 50 Local Min",
+   "ar": "1 غيغا واتساب · 50 دقيقة محلية"
+  },
+  "cat": "mixed",
+  "m": 50,
+  "s": 0,
+  "p": "19",
+  "z": "party",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 1,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 50,
+    "uom": "min"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "1 day",
+  "hours": 24,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 1,
+  "unlim": null,
+  "note": {
+   "en": "WhatsApp only",
+   "ar": "واتساب فقط"
+  },
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "b1022, b1",
+  "proposal": false
+ },
+ {
+  "id": "b825",
+  "caseId": "CAT-015",
+  "n": {
+   "en": "Daily Social Media bundle",
+   "ar": "باقة تواصل اجتماعي يومية"
+  },
+  "d": {
+   "en": "4 GB social Media apps data",
+   "ar": "4 غيغا تطبيقات التواصل"
+  },
+  "cat": "mixed",
+  "m": 0,
+  "s": 0,
+  "p": "40",
+  "z": "party",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 4,
+    "uom": "GB"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "1 day",
+  "hours": 24,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 4,
+  "unlim": null,
+  "note": {
+   "en": "Social apps only",
+   "ar": "لتطبيقات التواصل فقط"
+  },
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "b825, b794, b795, b5, v3",
+  "proposal": false
+ },
+ {
+  "id": "b903",
+  "caseId": "CAT-016",
+  "n": {
+   "en": "Hourly bundle 5 GB",
+   "ar": "باقة ساعية 5 غيغابايت"
+  },
+  "d": {
+   "en": "5 GB internet",
+   "ar": "5 غيغا إنترنت"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "45",
+  "z": "rocket",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 5,
+    "uom": "GB"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "5 hours",
+  "hours": 5,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 5,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "b903, b908",
+  "proposal": false
+ },
+ {
+  "id": "b862",
+  "caseId": "CAT-017",
+  "n": {
+   "en": "Deaf and dumb for Postpaid lines",
+   "ar": "باقة الصم والبكم (خطوط لاحقة الدفع)"
+  },
+  "d": {
+   "en": "200 GB internet",
+   "ar": "200 غيغا إنترنت"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "300",
+  "z": "rocket",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 200,
+    "uom": "GB"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "per billing cycle",
+  "hours": 720,
+  "cyc": true,
+  "ussd": "*1111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 200,
+  "unlim": null,
+  "note": {
+   "en": "Auto-renews every billing cycle.",
+   "ar": "تتجدد تلقائياً كل دورة فوترة."
+  },
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "GATED",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": "Deaf/dumb postpaid only (access)",
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "b862",
+  "proposal": false
+ },
+ {
+  "id": "b981",
+  "caseId": "CAT-018",
+  "n": {
+   "en": "Data Roaming Bundles Prepaid 1000 MB",
+   "ar": "باقة تجوال انترنت 1000 ميغا بايت"
+  },
+  "d": {
+   "en": "1 GB internet",
+   "ar": "1 غيغا إنترنت"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "719",
+  "z": "pin",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "roaming",
+    "cap": 1,
+    "uom": "GB"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": 1,
+  "unlim": null,
+  "note": {
+   "en": "Roaming data",
+   "ar": "بيانات تجوال"
+  },
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": true,
+  "countries": [
+   {
+    "code": "TR",
+    "name": "Turkey",
+    "nameAr": "تركيا",
+    "flag": "🇹🇷"
+   },
+   {
+    "code": "LB",
+    "name": "Lebanon",
+    "nameAr": "لبنان",
+    "flag": "🇱🇧"
+   },
+   {
+    "code": "JO",
+    "name": "Jordan",
+    "nameAr": "الأردن",
+    "flag": "🇯🇴"
+   },
+   {
+    "code": "IQ",
+    "name": "Iraq",
+    "nameAr": "العراق",
+    "flag": "🇮🇶"
+   },
+   {
+    "code": "EG",
+    "name": "Egypt",
+    "nameAr": "مصر",
+    "flag": "🇪🇬"
+   },
+   {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "nameAr": "السعودية",
+    "flag": "🇸🇦"
+   },
+   {
+    "code": "AE",
+    "name": "UAE",
+    "nameAr": "الإمارات",
+    "flag": "🇦🇪"
+   },
+   {
+    "code": "QA",
+    "name": "Qatar",
+    "nameAr": "قطر",
+    "flag": "🇶🇦"
+   },
+   {
+    "code": "BH",
+    "name": "Bahrain",
+    "nameAr": "البحرين",
+    "flag": "🇧🇭"
+   },
+   {
+    "code": "KW",
+    "name": "Kuwait",
+    "nameAr": "الكويت",
+    "flag": "🇰🇼"
+   }
+  ],
+  "services": null,
+  "fairuse": null,
+  "covers": "b981, b982, b983, b984",
+  "proposal": false
+ },
+ {
+  "id": "b2",
+  "caseId": "CAT-019",
+  "n": {
+   "en": "Exec Roam",
+   "ar": "تجوال التنفيذيين"
+  },
+  "d": {
+   "en": "10 GB regional roaming",
+   "ar": "١٠ غيغا تجوال إقليمي"
+  },
+  "cat": "data",
+  "m": 500,
+  "s": 0,
+  "p": "95,000",
+  "z": "pin",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "roaming",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "roaming",
+    "cap": 500,
+    "uom": "min"
+   }
+  ],
+  "segment": "foryou",
+  "section": "Recommended",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "—",
+  "offer": {
+   "old": "110,000",
+   "ends": "31 Oct"
+  },
+  "renew": "auto",
+  "activated": true,
+  "autoRenew": true,
+  "dataGB": 10,
+  "unlim": null,
+  "note": {
+   "en": "Regional roaming",
+   "ar": "تجوال إقليمي"
+  },
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes*",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": true,
+  "countries": [
+   {
+    "code": "TR",
+    "name": "Turkey",
+    "nameAr": "تركيا",
+    "flag": "🇹🇷"
+   },
+   {
+    "code": "LB",
+    "name": "Lebanon",
+    "nameAr": "لبنان",
+    "flag": "🇱🇧"
+   },
+   {
+    "code": "JO",
+    "name": "Jordan",
+    "nameAr": "الأردن",
+    "flag": "🇯🇴"
+   },
+   {
+    "code": "IQ",
+    "name": "Iraq",
+    "nameAr": "العراق",
+    "flag": "🇮🇶"
+   },
+   {
+    "code": "EG",
+    "name": "Egypt",
+    "nameAr": "مصر",
+    "flag": "🇪🇬"
+   },
+   {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "nameAr": "السعودية",
+    "flag": "🇸🇦"
+   },
+   {
+    "code": "AE",
+    "name": "UAE",
+    "nameAr": "الإمارات",
+    "flag": "🇦🇪"
+   },
+   {
+    "code": "QA",
+    "name": "Qatar",
+    "nameAr": "قطر",
+    "flag": "🇶🇦"
+   },
+   {
+    "code": "BH",
+    "name": "Bahrain",
+    "nameAr": "البحرين",
+    "flag": "🇧🇭"
+   },
+   {
+    "code": "KW",
+    "name": "Kuwait",
+    "nameAr": "الكويت",
+    "flag": "🇰🇼"
+   }
+  ],
+  "services": null,
+  "fairuse": null,
+  "covers": "b2",
+  "proposal": false
+ },
+ {
+  "id": "b3",
+  "caseId": "CAT-020",
+  "n": {
+   "en": "Team Talk",
+   "ar": "مكالمات الفريق"
+  },
+  "d": {
+   "en": "Unlimited on-net calls",
+   "ar": "مكالمات داخلية غير محدودة"
+  },
+  "cat": "voice",
+  "m": 9999,
+  "s": 0,
+  "p": "60,000",
+  "z": "phone",
+  "tag": null,
+  "hero": "minutes",
+  "kinds": [
+   {
+    "kind": "minutes",
+    "cap": null,
+    "uom": "min"
+   }
+  ],
+  "segment": "btl",
+  "section": "Just for you",
+  "validity": "1 day",
+  "hours": 24,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": null,
+  "unlim": "minutes",
+  "note": null,
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes*",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": "Threshold 50 GB, then 512 Kbps (demo values — pending decision D8)",
+  "covers": "b3",
+  "proposal": false
+ },
+ {
+  "id": "b4",
+  "caseId": "CAT-021",
+  "n": {
+   "en": "Data Pool 200",
+   "ar": "باقة بيانات مشتركة ٢٠٠"
+  },
+  "d": {
+   "en": "200 GB shared across lines",
+   "ar": "٢٠٠ غيغا مشتركة بين الخطوط"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "450,000",
+  "z": "rocket",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 200,
+    "uom": "GB"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": {
+   "old": "500,000",
+   "ends": "31 Oct"
+  },
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 200,
+  "unlim": null,
+  "note": {
+   "en": "Shared across lines",
+   "ar": "مشتركة بين الخطوط"
+  },
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes*",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "b4",
+  "proposal": false
+ },
+ {
+  "id": "v1",
+  "caseId": "CAT-022",
+  "n": {
+   "en": "VIP Infinite",
+   "ar": "VIP لا محدود"
+  },
+  "d": {
+   "en": "Unlimited everything, priority network",
+   "ar": "كل شيء غير محدود، شبكة أولوية"
+  },
+  "cat": "mixed",
+  "m": 9999,
+  "s": 9999,
+  "p": "250,000",
+  "z": "star",
+  "tag": {
+   "en": "Signature",
+   "ar": "التوقيع"
+  },
+  "hero": "all",
+  "kinds": [
+   {
+    "kind": "all",
+    "cap": null,
+    "uom": ""
+   }
+  ],
+  "segment": "btl",
+  "section": "Just for you",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "auto",
+  "activated": true,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": "all",
+  "note": {
+   "en": "Priority network",
+   "ar": "شبكة أولوية"
+  },
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes*",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": "Threshold 50 GB, then 512 Kbps (demo values — pending decision D8)",
+  "covers": "v1",
+  "proposal": false
+ },
+ {
+  "id": "v2",
+  "caseId": "CAT-023",
+  "n": {
+   "en": "Global Roam",
+   "ar": "تجوال عالمي"
+  },
+  "d": {
+   "en": "25 GB in 80+ countries",
+   "ar": "٢٥ غيغا في +٨٠ دولة"
+  },
+  "cat": "mixed",
+  "m": 1000,
+  "s": 200,
+  "p": "180,000",
+  "z": "pin",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "roaming",
+    "cap": 25,
+    "uom": "GB"
+   },
+   {
+    "kind": "roaming",
+    "cap": 1000,
+    "uom": "min"
+   },
+   {
+    "kind": "roaming",
+    "cap": 200,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "foryou",
+  "section": "Recommended",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "—",
+  "offer": {
+   "old": "200,000",
+   "ends": "31 Oct"
+  },
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 25,
+  "unlim": null,
+  "note": {
+   "en": "80+ countries",
+   "ar": "+٨٠ دولة"
+  },
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes*",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": true,
+  "countries": [
+   {
+    "code": "TR",
+    "name": "Turkey",
+    "nameAr": "تركيا",
+    "flag": "🇹🇷"
+   },
+   {
+    "code": "LB",
+    "name": "Lebanon",
+    "nameAr": "لبنان",
+    "flag": "🇱🇧"
+   },
+   {
+    "code": "JO",
+    "name": "Jordan",
+    "nameAr": "الأردن",
+    "flag": "🇯🇴"
+   },
+   {
+    "code": "IQ",
+    "name": "Iraq",
+    "nameAr": "العراق",
+    "flag": "🇮🇶"
+   },
+   {
+    "code": "EG",
+    "name": "Egypt",
+    "nameAr": "مصر",
+    "flag": "🇪🇬"
+   },
+   {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "nameAr": "السعودية",
+    "flag": "🇸🇦"
+   },
+   {
+    "code": "AE",
+    "name": "UAE",
+    "nameAr": "الإمارات",
+    "flag": "🇦🇪"
+   },
+   {
+    "code": "QA",
+    "name": "Qatar",
+    "nameAr": "قطر",
+    "flag": "🇶🇦"
+   },
+   {
+    "code": "BH",
+    "name": "Bahrain",
+    "nameAr": "البحرين",
+    "flag": "🇧🇭"
+   },
+   {
+    "code": "KW",
+    "name": "Kuwait",
+    "nameAr": "الكويت",
+    "flag": "🇰🇼"
+   }
+  ],
+  "services": null,
+  "fairuse": null,
+  "covers": "v2",
+  "proposal": false
+ },
+ {
+  "id": "v4",
+  "caseId": "CAT-024",
+  "n": {
+   "en": "VIP Day Pass",
+   "ar": "يوم VIP"
+  },
+  "d": {
+   "en": "20 GB + 500 min for 24 hours",
+   "ar": "٢٠ غيغا + ٥٠٠ دقيقة لمدة ٢٤ ساعة"
+  },
+  "cat": "mixed",
+  "m": 500,
+  "s": 0,
+  "p": "55,000",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 20,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 500,
+    "uom": "min"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "1 day",
+  "hours": 24,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": 20,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes*",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "v4",
+  "proposal": false
+ },
+ {
+  "id": "h3",
+  "caseId": "CAT-025",
+  "n": {
+   "en": "Chat All Day",
+   "ar": "دردشة طوال اليوم"
+  },
+  "d": {
+   "en": "Unlimited messaging apps",
+   "ar": "تطبيقات مراسلة غير محدودة"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "12,000",
+  "z": "party",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": null,
+    "uom": "GB"
+   }
+  ],
+  "segment": "btl",
+  "section": "Just for you",
+  "validity": "1 day",
+  "hours": 24,
+  "cyc": false,
+  "ussd": "—",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": null,
+  "unlim": "data",
+  "note": {
+   "en": "Messaging apps only",
+   "ar": "لتطبيقات المراسلة فقط"
+  },
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "Yes*",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": "Threshold 50 GB, then 512 Kbps (demo values — pending decision D8)",
+  "covers": "h3",
+  "proposal": false
+ },
+ {
+  "id": "h4",
+  "caseId": "CAT-026",
+  "n": {
+   "en": "Her Voice 400",
+   "ar": "مكالمات لها ٤٠٠"
+  },
+  "d": {
+   "en": "400 minutes, any network",
+   "ar": "٤٠٠ دقيقة، أي شبكة"
+  },
+  "cat": "voice",
+  "m": 400,
+  "s": 0,
+  "p": "18,000",
+  "z": "phone",
+  "tag": null,
+  "hero": "minutes",
+  "kinds": [
+   {
+    "kind": "minutes",
+    "cap": 400,
+    "uom": "min"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "—",
+  "offer": {
+   "old": "22,000",
+   "ends": "31 Oct"
+  },
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": {
+   "en": "Any network",
+   "ar": "أي شبكة"
+  },
+  "elig": {
+   "Prepaid": "Yes*",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "h4",
+  "proposal": false
+ },
+ {
+  "id": "x1",
+  "caseId": "CAT-027",
+  "n": {
+   "en": "Platinum Everything",
+   "ar": "بلاتينيوم الشامل"
+  },
+  "d": {
+   "en": "50 GB internet · 1000 Local Min · 1000 Local SMS · 20 GB social apps · 20 GB night (1AM–7AM) · 10 GB bonus",
+   "ar": "50 غيغا إنترنت · 1000 دقيقة محلية · 1000 Local رسالة · 20 غيغا تطبيقات التواصل · 20 غيغا ليلية (1AM–7AM) · 10 غيغا إضافية"
+  },
+  "cat": "mixed",
+  "m": 1000,
+  "s": 1000,
+  "p": "3,500",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "bonus",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "data",
+    "cap": 50,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 1000,
+    "uom": "min"
+   },
+   {
+    "kind": "night",
+    "cap": 20,
+    "uom": "GB",
+    "window": {
+     "start": "01:00",
+     "end": "07:00"
+    }
+   },
+   {
+    "kind": "sms",
+    "cap": 1000,
+    "uom": "SMS"
+   },
+   {
+    "kind": "social",
+    "cap": 20,
+    "uom": "GB",
+    "apps": [
+     "WhatsApp",
+     "Facebook",
+     "Instagram",
+     "TikTok"
+    ]
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 50,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "Yes",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x1",
+  "proposal": true
+ },
+ {
+  "id": "x2",
+  "caseId": "CAT-028",
+  "n": {
+   "en": "Data + Zain TV",
+   "ar": "بيانات + زين تيفي"
+  },
+  "d": {
+   "en": "20 GB internet · Zain TV included",
+   "ar": "20 غيغا إنترنت · Zain TV included"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "1,200",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 20,
+    "uom": "GB"
+   },
+   {
+    "kind": "tv",
+    "cap": null,
+    "uom": ""
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 20,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "Yes",
+   "Speed": "Yes*",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x2",
+  "proposal": true
+ },
+ {
+  "id": "x3",
+  "caseId": "CAT-029",
+  "n": {
+   "en": "Data + International Minutes",
+   "ar": "بيانات + دقائق دولية"
+  },
+  "d": {
+   "en": "10 GB internet · 100 International Min",
+   "ar": "10 غيغا إنترنت · 100 International Min"
+  },
+  "cat": "mixed",
+  "m": 0,
+  "s": 0,
+  "p": "1,500",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "intl",
+    "cap": 100,
+    "uom": "min"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 10,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "Yes",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x3",
+  "proposal": true
+ },
+ {
+  "id": "x4",
+  "caseId": "CAT-030",
+  "n": {
+   "en": "Postpaid Social Add-on",
+   "ar": "إضافة تواصل لاحق الدفع"
+  },
+  "d": {
+   "en": "15 GB social apps data",
+   "ar": "15 غيغا تطبيقات التواصل بيانات"
+  },
+  "cat": "social",
+  "m": 0,
+  "s": 0,
+  "p": "800",
+  "z": "star",
+  "tag": null,
+  "hero": "social",
+  "kinds": [
+   {
+    "kind": "social",
+    "cap": 15,
+    "uom": "GB",
+    "apps": [
+     "WhatsApp",
+     "Facebook",
+     "Instagram",
+     "TikTok"
+    ]
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x4",
+  "proposal": true
+ },
+ {
+  "id": "x5",
+  "caseId": "CAT-031",
+  "n": {
+   "en": "Postpaid Night Add-on",
+   "ar": "إضافة ليلية لاحق الدفع"
+  },
+  "d": {
+   "en": "Unlimited 1AM–7AM data",
+   "ar": "غير محدود 1AM–7AM بيانات"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "500",
+  "z": "star",
+  "tag": null,
+  "hero": "night",
+  "kinds": [
+   {
+    "kind": "night",
+    "cap": null,
+    "uom": "",
+    "window": {
+     "start": "01:00",
+     "end": "07:00"
+    }
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": "data",
+  "note": null,
+  "elig": {
+   "Prepaid": "No",
+   "Postpaid": "Yes",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": "Threshold 50 GB, then 512 Kbps (demo values — pending decision D8)",
+  "covers": "x5",
+  "proposal": true
+ },
+ {
+  "id": "x6",
+  "caseId": "CAT-032",
+  "n": {
+   "en": "Prepaid Roaming Combo",
+   "ar": "كومبو تجوال مسبق الدفع"
+  },
+  "d": {
+   "en": "10 GB roaming data · 100 Roaming Min · 100 Roaming SMS · 80+ countries",
+   "ar": "10 غيغا roaدقيقةg بيانات · 100 Roaدقيقةg Min · 100 Roaدقيقةg رسالة · 80+ countries"
+  },
+  "cat": "mixed",
+  "m": 0,
+  "s": 0,
+  "p": "1,500",
+  "z": "star",
+  "tag": null,
+  "hero": "roaming",
+  "kinds": [
+   {
+    "kind": "roaming",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "roaming",
+    "cap": 100,
+    "uom": "min"
+   },
+   {
+    "kind": "roaming",
+    "cap": 100,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "App-only (no USSD)",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": true,
+  "countries": [
+   {
+    "code": "TR",
+    "name": "Turkey",
+    "nameAr": "تركيا",
+    "flag": "🇹🇷"
+   },
+   {
+    "code": "LB",
+    "name": "Lebanon",
+    "nameAr": "لبنان",
+    "flag": "🇱🇧"
+   },
+   {
+    "code": "JO",
+    "name": "Jordan",
+    "nameAr": "الأردن",
+    "flag": "🇯🇴"
+   },
+   {
+    "code": "IQ",
+    "name": "Iraq",
+    "nameAr": "العراق",
+    "flag": "🇮🇶"
+   },
+   {
+    "code": "EG",
+    "name": "Egypt",
+    "nameAr": "مصر",
+    "flag": "🇪🇬"
+   },
+   {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "nameAr": "السعودية",
+    "flag": "🇸🇦"
+   },
+   {
+    "code": "AE",
+    "name": "UAE",
+    "nameAr": "الإمارات",
+    "flag": "🇦🇪"
+   },
+   {
+    "code": "QA",
+    "name": "Qatar",
+    "nameAr": "قطر",
+    "flag": "🇶🇦"
+   },
+   {
+    "code": "BH",
+    "name": "Bahrain",
+    "nameAr": "البحرين",
+    "flag": "🇧🇭"
+   },
+   {
+    "code": "KW",
+    "name": "Kuwait",
+    "nameAr": "الكويت",
+    "flag": "🇰🇼"
+   }
+  ],
+  "services": null,
+  "fairuse": null,
+  "covers": "x6",
+  "proposal": true
+ },
+ {
+  "id": "x7",
+  "caseId": "CAT-033",
+  "n": {
+   "en": "Welcome Trial (Free)",
+   "ar": "تجربة ترحيبية (مجانية)"
+  },
+  "d": {
+   "en": "1 GB internet",
+   "ar": "1 غيغا إنترنت"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "0",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 1,
+    "uom": "GB"
+   }
+  ],
+  "segment": "btl",
+  "section": "Just for you",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "App-only (trial)",
+  "offer": null,
+  "renew": "once",
+  "activated": false,
+  "autoRenew": false,
+  "dataGB": 1,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x7",
+  "proposal": true
+ },
+ {
+  "id": "x9",
+  "caseId": "CAT-034",
+  "n": {
+   "en": "Complete Pack + Services",
+   "ar": "الباقة الكاملة + خدمات"
+  },
+  "d": {
+   "en": "10 GB internet · 300 Local Min · 300 Local SMS · Caller ID · Call Waiting",
+   "ar": "10 غيغا إنترنت · 300 دقيقة محلية · 300 Local رسالة · Caller ID · Call Waiting"
+  },
+  "cat": "mixed",
+  "m": 300,
+  "s": 300,
+  "p": "900",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 300,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 300,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 10,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "Yes",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": [
+   {
+    "k": "Caller ID",
+    "ka": "إظهار الرقم"
+   },
+   {
+    "k": "Call Waiting",
+    "ka": "انتظار المكالمات"
+   }
+  ],
+  "fairuse": null,
+  "covers": "x9",
+  "proposal": true
+ },
+ {
+  "id": "n1",
+  "caseId": "CAT-035",
+  "n": {
+   "en": "Quad Combo",
+   "ar": "باقة رباعية"
+  },
+  "d": {
+   "en": "20 GB internet · 500 Local Min · 500 SMS · 10 GB social apps",
+   "ar": "20 غيغا إنترنت · 500 دقيقة محلية · 500 رسالة · 10 غيغا تطبيقات التواصل"
+  },
+  "cat": "combo",
+  "m": 500,
+  "s": 500,
+  "p": "2,500",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 20,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 500,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 500,
+    "uom": "SMS"
+   },
+   {
+    "kind": "social",
+    "cap": 10,
+    "uom": "GB",
+    "apps": [
+     "WhatsApp",
+     "Facebook",
+     "Instagram",
+     "TikTok"
+    ]
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 20,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n2",
+  "caseId": "CAT-036",
+  "n": {
+   "en": "Five-Way Combo",
+   "ar": "باقة خماسية"
+  },
+  "d": {
+   "en": "30 GB internet · 800 Local Min · 800 SMS · 15 GB social apps · 10 GB night (1AM–7AM)",
+   "ar": "30 غيغا إنترنت · 800 دقيقة محلية · 800 رسالة · 15 غيغا تطبيقات التواصل · 10 غيغا ليلية (1AM–7AM)"
+  },
+  "cat": "combo",
+  "m": 800,
+  "s": 800,
+  "p": "3,200",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 30,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 800,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 800,
+    "uom": "SMS"
+   },
+   {
+    "kind": "social",
+    "cap": 15,
+    "uom": "GB",
+    "apps": [
+     "WhatsApp",
+     "Facebook",
+     "Instagram",
+     "TikTok"
+    ]
+   },
+   {
+    "kind": "night",
+    "cap": 10,
+    "uom": "GB",
+    "window": {
+     "start": "01:00",
+     "end": "07:00"
+    }
+   }
+  ],
+  "segment": "foryou",
+  "section": "Recommended",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 30,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n3",
+  "caseId": "CAT-037",
+  "n": {
+   "en": "Everything Max",
+   "ar": "باقة كل شيء"
+  },
+  "d": {
+   "en": "50 GB internet · 1,000 Local Min · 1,000 SMS · 20 GB social apps · 20 GB night (1AM–7AM) · TV · 10 GB bonus",
+   "ar": "50 غيغا إنترنت · 1,000 دقيقة محلية · 1,000 رسالة · 20 غيغا تطبيقات التواصل · 20 غيغا ليلية (1AM–7AM) · TV · 10 غيغا إضافية"
+  },
+  "cat": "combo",
+  "m": 1000,
+  "s": 1000,
+  "p": "5,000",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 50,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 1000,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 1000,
+    "uom": "SMS"
+   },
+   {
+    "kind": "social",
+    "cap": 20,
+    "uom": "GB",
+    "apps": [
+     "WhatsApp",
+     "Facebook",
+     "Instagram",
+     "TikTok"
+    ]
+   },
+   {
+    "kind": "night",
+    "cap": 20,
+    "uom": "GB",
+    "window": {
+     "start": "01:00",
+     "end": "07:00"
+    }
+   },
+   {
+    "kind": "tv",
+    "cap": null,
+    "uom": ""
+   },
+   {
+    "kind": "bonus",
+    "cap": 10,
+    "uom": "GB"
+   }
+  ],
+  "segment": "btl",
+  "section": "Just for you",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 50,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n4",
+  "caseId": "CAT-038",
+  "n": {
+   "en": "SMS 5000",
+   "ar": "باقة رسائل ٥٠٠٠"
+  },
+  "d": {
+   "en": "5,000 SMS",
+   "ar": "5,000 رسالة"
+  },
+  "cat": "sms",
+  "m": 0,
+  "s": 5000,
+  "p": "800",
+  "z": "star",
+  "tag": null,
+  "hero": "sms",
+  "kinds": [
+   {
+    "kind": "sms",
+    "cap": 5000,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n5",
+  "caseId": "CAT-039",
+  "n": {
+   "en": "TV Unlimited",
+   "ar": "باقة تلفاز"
+  },
+  "d": {
+   "en": "TV (MTN TV) · 5 GB internet",
+   "ar": "TV (MTN TV) · 5 غيغا إنترنت"
+  },
+  "cat": "tv",
+  "m": 0,
+  "s": 0,
+  "p": "1,200",
+  "z": "star",
+  "tag": null,
+  "hero": "tv",
+  "kinds": [
+   {
+    "kind": "tv",
+    "cap": null,
+    "uom": ""
+   },
+   {
+    "kind": "data",
+    "cap": 5,
+    "uom": "GB"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 5,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": [
+   {
+    "k": "MTN TV",
+    "ka": "إم تي إن تيفي"
+   }
+  ],
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n6",
+  "caseId": "CAT-040",
+  "n": {
+   "en": "Bonus 10 GB",
+   "ar": "باقة إضافية ١٠ غيغا"
+  },
+  "d": {
+   "en": "10 GB bonus data",
+   "ar": "10 غيغا إضافية بيانات"
+  },
+  "cat": "bonus",
+  "m": 0,
+  "s": 0,
+  "p": "500",
+  "z": "star",
+  "tag": null,
+  "hero": "bonus",
+  "kinds": [
+   {
+    "kind": "bonus",
+    "cap": 10,
+    "uom": "GB"
+   }
+  ],
+  "segment": "addon",
+  "section": "Add-ons",
+  "validity": "7 days",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n7",
+  "caseId": "CAT-041",
+  "n": {
+   "en": "Home + Roam 15",
+   "ar": "باقة محلية وتجوال"
+  },
+  "d": {
+   "en": "10 GB local internet · 5 GB roaming data",
+   "ar": "10 غيغا local إنترنت · 5 غيغا roaدقيقةg بيانات"
+  },
+  "cat": "roaming",
+  "m": 0,
+  "s": 0,
+  "p": "2,000",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 10,
+    "uom": "GB"
+   },
+   {
+    "kind": "roaming",
+    "cap": 5,
+    "uom": "GB"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 10,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": true,
+  "countries": [
+   {
+    "code": "TR",
+    "name": "Turkey",
+    "nameAr": "تركيا",
+    "flag": "🇹🇷"
+   },
+   {
+    "code": "LB",
+    "name": "Lebanon",
+    "nameAr": "لبنان",
+    "flag": "🇱🇧"
+   },
+   {
+    "code": "JO",
+    "name": "Jordan",
+    "nameAr": "الأردن",
+    "flag": "🇯🇴"
+   },
+   {
+    "code": "IQ",
+    "name": "Iraq",
+    "nameAr": "العراق",
+    "flag": "🇮🇶"
+   },
+   {
+    "code": "EG",
+    "name": "Egypt",
+    "nameAr": "مصر",
+    "flag": "🇪🇬"
+   },
+   {
+    "code": "SA",
+    "name": "Saudi Arabia",
+    "nameAr": "السعودية",
+    "flag": "🇸🇦"
+   },
+   {
+    "code": "AE",
+    "name": "UAE",
+    "nameAr": "الإمارات",
+    "flag": "🇦🇪"
+   },
+   {
+    "code": "QA",
+    "name": "Qatar",
+    "nameAr": "قطر",
+    "flag": "🇶🇦"
+   },
+   {
+    "code": "BH",
+    "name": "Bahrain",
+    "nameAr": "البحرين",
+    "flag": "🇧🇭"
+   },
+   {
+    "code": "KW",
+    "name": "Kuwait",
+    "nameAr": "الكويت",
+    "flag": "🇰🇼"
+   }
+  ],
+  "services": null,
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n8",
+  "caseId": "CAT-042",
+  "n": {
+   "en": "Data + Caller ID",
+   "ar": "بيانات + إظهار الرقم"
+  },
+  "d": {
+   "en": "15 GB internet",
+   "ar": "15 غيغا إنترنت"
+  },
+  "cat": "data",
+  "m": 0,
+  "s": 0,
+  "p": "1,500",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 15,
+    "uom": "GB"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 15,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": [
+   {
+    "k": "Caller ID",
+    "ka": "إظهار الرقم"
+   }
+  ],
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n9",
+  "caseId": "CAT-043",
+  "n": {
+   "en": "Complete + Services",
+   "ar": "باقة كاملة + خدمات"
+  },
+  "d": {
+   "en": "20 GB internet · 500 Local Min · 500 SMS",
+   "ar": "20 غيغا إنترنت · 500 دقيقة محلية · 500 رسالة"
+  },
+  "cat": "combo",
+  "m": 500,
+  "s": 500,
+  "p": "2,800",
+  "z": "star",
+  "tag": null,
+  "hero": "data",
+  "kinds": [
+   {
+    "kind": "data",
+    "cap": 20,
+    "uom": "GB"
+   },
+   {
+    "kind": "minutes",
+    "cap": 500,
+    "uom": "min"
+   },
+   {
+    "kind": "sms",
+    "cap": 500,
+    "uom": "SMS"
+   }
+  ],
+  "segment": "foryou",
+  "section": "Recommended",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 20,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": [
+   {
+    "k": "Caller ID",
+    "ka": "إظهار الرقم"
+   },
+   {
+    "k": "Call Waiting",
+    "ka": "انتظار المكالمات"
+   },
+   {
+    "k": "MTN TV",
+    "ka": "إم تي إن تيفي"
+   }
+  ],
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ },
+ {
+  "id": "n10",
+  "caseId": "CAT-044",
+  "n": {
+   "en": "Talk + Data",
+   "ar": "باقة مكالمات + بيانات"
+  },
+  "d": {
+   "en": "1,000 Local Min · 2 GB internet",
+   "ar": "1,000 دقيقة محلية · 2 غيغا إنترنت"
+  },
+  "cat": "voice",
+  "m": 1000,
+  "s": 0,
+  "p": "1,800",
+  "z": "star",
+  "tag": null,
+  "hero": "minutes",
+  "kinds": [
+   {
+    "kind": "minutes",
+    "cap": 1000,
+    "uom": "min"
+   },
+   {
+    "kind": "data",
+    "cap": 2,
+    "uom": "GB"
+   }
+  ],
+  "segment": "atl",
+  "section": "All bundles",
+  "validity": "30 days",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*111#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": 2,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "No",
+   "Speed": "No",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "—",
+  "proposal": true
+ }
+];
+const B4_SERVICES = [
+ {
+  "id": "x10",
+  "caseId": "CAT-045",
+  "n": {
+   "en": "MTN TV",
+   "ar": "إم تي إن تيفي"
+  },
+  "d": {
+   "en": "MTN TV Basic bundle free for 7 days (link-out to tv.mtnsyr.com)",
+   "ar": "MTN TV Basic bundle free for 7 days (link-out to tv.mtnsyr.com)"
+  },
+  "cat": "service",
+  "m": 0,
+  "s": 0,
+  "p": "0",
+  "z": "star",
+  "tag": null,
+  "hero": "service",
+  "kinds": [],
+  "segment": null,
+  "section": "— (popup only, not in the menu)",
+  "validity": "7 days (free trial)",
+  "hours": 168,
+  "cyc": false,
+  "ussd": "— (link-out)",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "Yes",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x10",
+  "proposal": true,
+  "link": "https://tv.mtnsyr.com/"
+ },
+ {
+  "id": "x11",
+  "caseId": "CAT-046",
+  "n": {
+   "en": "Superclip (Caller ID)",
+   "ar": "الكاشف الدائم"
+  },
+  "d": {
+   "en": "Identify all numbers that call you, with date and time",
+   "ar": "Identify all numbers that call you, with date and time"
+  },
+  "cat": "service",
+  "m": 0,
+  "s": 0,
+  "p": "6",
+  "z": "star",
+  "tag": null,
+  "hero": "service",
+  "kinds": [],
+  "segment": null,
+  "section": "— (popup only, not in the menu)",
+  "validity": "30 days (subscription)",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "— (app/subscription)",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "Yes",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x11",
+  "proposal": true,
+  "link": null
+ },
+ {
+  "id": "x12",
+  "caseId": "CAT-047",
+  "n": {
+   "en": "Call Screening",
+   "ar": "بدون إزعاج"
+  },
+  "d": {
+   "en": "Block incoming calls from up to 5 local mobile numbers & fixed lines (SMS cannot be blocked)",
+   "ar": "Block incoدقيقةg calls from up to 5 local mobile numbers & fixed lines (رسالة cannot be blocked)"
+  },
+  "cat": "service",
+  "m": 0,
+  "s": 0,
+  "p": "350",
+  "z": "star",
+  "tag": null,
+  "hero": "service",
+  "kinds": [],
+  "segment": null,
+  "section": "— (popup only, not in the menu)",
+  "validity": "30 days (subscription)",
+  "hours": 720,
+  "cyc": false,
+  "ussd": "*363#",
+  "offer": null,
+  "renew": "auto",
+  "activated": false,
+  "autoRenew": true,
+  "dataGB": null,
+  "unlim": null,
+  "note": null,
+  "elig": {
+   "Prepaid": "Yes",
+   "Postpaid": "Yes",
+   "Speed": "Yes",
+   "ADSL": "No"
+  },
+  "segRestrict": null,
+  "roaming": false,
+  "countries": null,
+  "services": null,
+  "fairuse": null,
+  "covers": "x12",
+  "proposal": true,
+  "link": null
+ }
+];
+const B4_SECTIONS = ["Just for you", "Recommended", "All bundles", "Plans", "Add-ons"];
+
+/* The v4 catalogue is SHARED across all worlds (no per-world catalogue).
+   Every world key points at the same B4 array, so BUNDLES[S.world] is
+   the v4 catalogue in every world. Eligibility is per line. */
+const BUNDLES = { consumer: B4, business: B4, vip: B4, her: B4 };
+/* ================= end v137 catalogue data ================= */
 
 Object.assign(I18N.en, {
 b_daily:"Daily",b_weekly:"Weekly",b_monthly:"Monthly",
@@ -3037,71 +6095,7 @@ f_try_band:"جرّب {band} ({n})",f_from_usage:"ابدأ من استخدامي 
    segment: exactly one of btl|foryou|atl. offer: struck old price + end, or null.
    renew: 'auto' = can auto-renew, 'once' = one-time only.
    activated/autoRenew: demo state so the pill is testable in every world. */
-const B_META = {
-c1:{hours:720,dataGB:20,unlim:null,note:null,segment:'atl',offer:null,renew:'auto',activated:true,autoRenew:true},
-c2:{hours:168,dataGB:null,unlim:null,note:null,segment:'atl',offer:null,renew:'once',activated:false,autoRenew:false},
-c3:{hours:720,dataGB:12,unlim:null,note:null,segment:'foryou',offer:{old:"45,000",ends:{en:"31 Oct",ar:"٣١ أكتوبر"}},renew:'auto',activated:false,autoRenew:false},
-c4:{hours:24,dataGB:null,unlim:'data',note:{en:"Night window 1AM–7AM",ar:"نافذة الليل ١–٧ صباحاً"},segment:'btl',offer:null,renew:'auto',activated:true,autoRenew:true},
-c5:{hours:168,dataGB:10,unlim:null,note:{en:"Social apps only",ar:"لتطبيقات التواصل فقط"},segment:'foryou',offer:null,renew:'auto',activated:true,autoRenew:false},
-c6:{hours:720,dataGB:null,unlim:null,note:{en:"On-net minutes",ar:"دقائق داخلية"},segment:'btl',offer:null,renew:'auto',activated:false,autoRenew:false},
-b1:{hours:720,dataGB:50,unlim:null,note:{en:"Shared across lines",ar:"مشتركة بين الخطوط"},segment:'atl',offer:null,renew:'auto',activated:false,autoRenew:false},
-b2:{hours:168,dataGB:10,unlim:null,note:{en:"Regional roaming",ar:"تجوال إقليمي"},segment:'foryou',offer:{old:"110,000",ends:{en:"31 Oct",ar:"٣١ أكتوبر"}},renew:'auto',activated:true,autoRenew:true},
-b3:{hours:24,dataGB:null,unlim:'minutes',note:null,segment:'btl',offer:null,renew:'once',activated:false,autoRenew:false},
-b4:{hours:720,dataGB:200,unlim:null,note:{en:"Shared across lines",ar:"مشتركة بين الخطوط"},segment:'atl',offer:{old:"500,000",ends:{en:"31 Oct",ar:"٣١ أكتوبر"}},renew:'auto',activated:false,autoRenew:false},
-v1:{hours:720,dataGB:null,unlim:'all',note:{en:"Priority network",ar:"شبكة أولوية"},segment:'btl',offer:null,renew:'auto',activated:true,autoRenew:true},
-v2:{hours:168,dataGB:25,unlim:null,note:{en:"80+ countries",ar:"+٨٠ دولة"},segment:'foryou',offer:{old:"200,000",ends:{en:"31 Oct",ar:"٣١ أكتوبر"}},renew:'auto',activated:false,autoRenew:false},
-v3:{hours:720,dataGB:100,unlim:null,note:{en:"Priority data",ar:"بيانات أولوية"},segment:'atl',offer:null,renew:'auto',activated:false,autoRenew:false},
-h1:{hours:720,dataGB:30,unlim:null,note:{en:"Shared, 3 lines",ar:"مشتركة، ٣ خطوط"},segment:'foryou',offer:null,renew:'auto',activated:true,autoRenew:false},
-h2:{hours:168,dataGB:15,unlim:null,note:{en:"Includes safety alerts",ar:"تشمل تنبيهات أمان"},segment:'atl',offer:null,renew:'auto',activated:false,autoRenew:false},
-h3:{hours:24,dataGB:null,unlim:'data',note:{en:"Messaging apps only",ar:"لتطبيقات المراسلة فقط"},segment:'btl',offer:null,renew:'once',activated:false,autoRenew:false},
-h4:{hours:720,dataGB:null,unlim:null,note:{en:"Any network",ar:"أي شبكة"},segment:'atl',offer:{old:"22,000",ends:{en:"31 Oct",ar:"٣١ أكتوبر"}},renew:'auto',activated:false,autoRenew:false},
-c7:{hours:3,dataGB:5,unlim:null,note:null,segment:'foryou',offer:null,renew:'once',activated:false,autoRenew:false},
-c8:{hours:336,dataGB:25,unlim:null,note:null,segment:'atl',offer:{old:"38,000",ends:{en:"31 Oct",ar:"٣١ أكتوبر"}},renew:'auto',activated:false,autoRenew:false},
-c9:{hours:24,dataGB:2,unlim:null,note:null,segment:'atl',offer:null,renew:'once',activated:false,autoRenew:false},
-b5:{hours:336,dataGB:100,unlim:null,note:{en:"Shared across lines",ar:"مشتركة بين الخطوط"},segment:'foryou',offer:null,renew:'auto',activated:false,autoRenew:false},
-v4:{hours:24,dataGB:20,unlim:null,note:null,segment:'atl',offer:null,renew:'once',activated:false,autoRenew:false},
-h5:{hours:6,dataGB:3,unlim:null,note:null,segment:'btl',offer:null,renew:'once',activated:false,autoRenew:false},
-p1021:{hours:720,dataGB:3,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p1041:{hours:720,dataGB:15,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p1042:{hours:720,dataGB:500,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p1061:{hours:24,dataGB:100,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p781:{hours:720,dataGB:1.5,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p782:{hours:720,dataGB:6,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p783:{hours:720,dataGB:10,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:true,autoRenew:true},
-p784:{hours:720,dataGB:25,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p785:{hours:720,dataGB:35,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p786:{hours:720,dataGB:200,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p787:{hours:2160,dataGB:30,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p788:{hours:2160,dataGB:60,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p789:{hours:168,dataGB:1,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p790:{hours:168,dataGB:3,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p791:{hours:24,dataGB:2,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',activated:false,autoRenew:false},
-p1121:{hours:720,dataGB:15,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p792:{hours:720,dataGB:25,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p793:{hours:720,dataGB:150,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p826:{hours:720,dataGB:25,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p827:{hours:720,dataGB:150,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p828:{hours:720,dataGB:25,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p829:{hours:720,dataGB:150,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p830:{hours:720,dataGB:25,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p831:{hours:720,dataGB:150,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p832:{hours:720,dataGB:25,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-p833:{hours:720,dataGB:150,unlim:null,note:null,segment:'plan',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-b1022:{hours:24,dataGB:1,unlim:null,note:{en:"WhatsApp only",ar:"واتساب فقط"},segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b825:{hours:24,dataGB:4,unlim:null,note:{en:"Social apps only",ar:"لتطبيقات التواصل فقط"},segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b901:{hours:720,dataGB:null,unlim:null,note:null,segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b902:{hours:720,dataGB:null,unlim:null,note:null,segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b903:{hours:5,dataGB:5,unlim:null,note:null,segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b908:{hours:3,dataGB:3,unlim:null,note:null,segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b794:{hours:720,dataGB:5,unlim:null,note:{en:"Postpaid lines only",ar:"لخطوط لاحقة الدفع فقط"},segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b795:{hours:720,dataGB:10,unlim:null,note:{en:"Postpaid lines only",ar:"لخطوط لاحقة الدفع فقط"},segment:'addon',offer:null,renew:'auto',activated:false,autoRenew:false},
-b941:{hours:168,dataGB:6,unlim:null,note:null,segment:'addon',offer:null,renew:'auto',activated:true,autoRenew:true},
-b862:{hours:720,dataGB:200,unlim:null,note:{en:"Auto-renews every billing cycle.",ar:"تتجدد تلقائياً كل دورة فوترة."},segment:'addon',offer:null,renew:'auto',cyc:1,activated:false,autoRenew:false},
-b981:{hours:168,dataGB:1,unlim:null,note:{en:"Roaming data",ar:"بيانات تجوال"},segment:'addon',offer:null,renew:'once',activated:false,autoRenew:false},
-b982:{hours:168,dataGB:0.5,unlim:null,note:{en:"Roaming data",ar:"بيانات تجوال"},segment:'addon',offer:null,renew:'once',activated:false,autoRenew:false},
-b983:{hours:168,dataGB:2,unlim:null,note:{en:"Roaming data",ar:"بيانات تجوال"},segment:'addon',offer:null,renew:'once',activated:false,autoRenew:false},
-b984:{hours:168,dataGB:3,unlim:null,note:{en:"Roaming data",ar:"بيانات تجوال"},segment:'addon',offer:null,renew:'once',activated:false,autoRenew:false},
-};
+const B_META = {};
 for (const w in BUNDLES) BUNDLES[w].forEach(bd => { const m = B_META[bd.id]; if (m) Object.assign(bd, m); });
 
 const REWARDS = [
@@ -3715,7 +6709,112 @@ function bValidLabel(bd) {
   const d = Math.round(h / 24);
   return fmtN(d) + ' ' + (LANG === 'ar' ? (d === 1 ? 'يوم' : 'أيام') : (d === 1 ? 'day' : 'days'));
 }
+/* ================= v137: v4 card hero (bHeroKind/bHero/bSubline) ================= */
+/* ============================================================================
+   v137 — v4 comprehensive catalogue (catalogue data + popups), built from
+   Bundles_Catalogue_Comprehensive.xlsx (47 cases: 34 base + 10 gap
+   proposals + 3 popup-only services). One row per DISTINCT DISPLAY CASE,
+   shared across all worlds. Replaces ONLY the catalogue data (BUNDLES +
+   B_META), the bundle popup (openBundle), the service popup (openService)
+   and the card hero helpers (bHeroKind/bHero/bSubline) so the v4 hero
+   kinds (social, night, TV, bonus, roaming) display correctly.
+   Everything else (renderBundles + chips/finder/pin/collapse, usage card,
+   home, history, pay, etc.) is UNTOUCHED.
+   CTA law (Yaman 2026-11-09): Activate, or Reactivate when the user
+   already has the bundle — never Buy Now, never Done.
+   Roaming law (Yaman 2026-11-09): a roaming bundle shows the available
+   countries in a 'Roaming available in' section, like the My Usage card.
+   Popup language: the existing usage-popup language (.bpop-head pinned +
+   .bpop-mid scrollable + .bpop-foot pinned CTA, .micro + .card, .bpop-row,
+   .bu-usage-scroll frames with the v88 4+peek+fade rule, .bswitch, .btn).
+   Data: B4 (44 menu cases) + B4_SERVICES (x10-x12) in b4-data.js.
+   ============================================================================ */
+
+/* --- current line --- */
+function b4LineType() {
+  var d = String((S.lines || [])[S.curLine] || '').replace(/\D/g, '').replace(/^0+/, '');
+  if (d === '96500000') return 'Postpaid';
+  if (d === '964000000') return 'Speed';
+  if (d === '114444444') return 'ADSL';
+  return 'Prepaid';
+}
+function b4Find(id) {
+  for (var i = 0; i < B4.length; i++) if (B4[i].id === id) return B4[i];
+  return null;
+}
+function b4ServiceFind(id) {
+  for (var i = 0; i < B4_SERVICES.length; i++) if (B4_SERVICES[i].id === id) return B4_SERVICES[i];
+  return null;
+}
+function b4PriceNum(bd) { return parseInt(String(bd.p).replace(/\D/g, ''), 10) || 0; }
+
+/* --- validity in the current language (v4 validity string) --- */
+function b4ValidityLabel(bd) {
+  var ar = LANG === 'ar';
+  var v = (bd.validity || '').trim();
+  if (!v) return bValidLabel(bd);
+  var m = v.match(/^(\d+)\s+(hour|hours|day|days)$/i);
+  if (m) {
+    var n = parseInt(m[1], 10);
+    var unit = m[2].toLowerCase();
+    if (unit === 'hour' || unit === 'hours') return fmtN(n) + ' ' + (ar ? (n === 1 ? 'ساعة' : 'ساعات') : (n === 1 ? 'hour' : 'hours'));
+    return fmtN(n) + ' ' + (ar ? (n === 1 ? 'يوم' : 'أيام') : (n === 1 ? 'day' : 'days'));
+  }
+  if (/billing cycle/i.test(v)) return ar ? 'لكل دورة فوترة' : 'per billing cycle';
+  if (/free trial/i.test(v)) return ar ? '٧ أيام (تجربة مجانية)' : '7 days (free trial)';
+  if (/subscription/i.test(v)) return ar ? '٣٠ يوماً (اشتراك)' : '30 days (subscription)';
+  return v;
+}
+
+/* --- eligibility for the current line --- */
+function b4Elig(bd) {
+  var lt = b4LineType();
+  var e = (bd.elig || {})[lt];
+  return e || 'No';
+}
+
+/* --- CTA for the current line (CTA law: Activate / Reactivate) --- */
+function b4Cta(bd) {
+  var ar = LANG === 'ar';
+  var lt = b4LineType();
+  var elig = b4Elig(bd);
+  var price = b4PriceNum(bd);
+  // Eligibility comes FIRST — an activated bundle on a line where it is
+  // not served must show Disabled (Matrix: "Viewable only; CTA disabled
+  // with reason"), not Reactivate.
+  if (elig === 'GATED') {
+    return { label: ar ? 'فعّل' : 'Activate',
+             enabled: false, mode: 'gated',
+             reason: (ar ? 'متاح لـ' : 'Available for ') + (bd.segRestrict || '') + (ar ? ' — إثبات الفئة مطلوب' : ' — segment proof required'),
+             pay: lt === 'Postpaid' ? 'bill' : null };
+  }
+  if (elig !== 'Yes' && elig !== 'Yes*') {
+    if (lt === 'ADSL') return { label: ar ? 'فعّل' : 'Activate', enabled: false, mode: 'adsl',
+      reason: ar ? 'لا توجد باقات في الكتالوج لخط ADSL' : 'ADSL has no bundles in the catalogue', pay: null };
+    return { label: ar ? 'فعّل' : 'Activate', enabled: false, mode: 'line',
+      reason: ar ? 'نوع الخط هذا غير مشمول بهذا العرض' : 'Line type not served by this offer', pay: null };
+  }
+  if (bd.activated) return { label: ar ? 'أعد التفعيل' : 'Reactivate', enabled: true, mode: 'reactivate', pay: null };
+  if (price === 0) return { label: ar ? 'فعّل' : 'Activate', enabled: true, mode: 'free', pay: 'none' };
+  if (lt === 'Postpaid') return { label: ar ? 'فعّل' : 'Activate', enabled: true, mode: 'postpaid', pay: 'bill' };
+  return { label: ar ? 'فعّل' : 'Activate', enabled: true, mode: 'prepaid', pay: 'balance' };
+}
+
+/* --- card hero (v4): the hero kind drives the corner icon + the big number.
+   Replaces the v133 bHeroKind/bHero/bSubline (data/minutes/sms/all only)
+   so the v4 heroes (social, night, TV, bonus, roaming) display correctly. --- */
+function b4KindCap(bd, kind) {
+  var kinds = bd.kinds || [];
+  for (var i = 0; i < kinds.length; i++) if (kinds[i].kind === kind) return kinds[i];
+  return null;
+}
 function bHeroKind(bd) {
+  if (bd.hero) {
+    var h = bd.hero;
+    if (h === 'all') return 'all';
+    if (h === 'data' || h === 'minutes' || h === 'sms' || h === 'social' || h === 'night' || h === 'tv' || h === 'bonus' || h === 'roaming') return h;
+    if (h === 'service') return 'service';
+  }
   if (bd.unlim === 'all') return 'all';
   if (bd.unlim === 'data' || bd.dataGB) return 'data';
   if (bd.unlim === 'minutes' || bd.m) return 'minutes';
@@ -3723,8 +6822,36 @@ function bHeroKind(bd) {
   return null;
 }
 function bHero(bd) {
-  const ar = LANG === 'ar';
-  if (bd.unlim === 'all') return { big: T('f_unlimited'), cap: ar ? 'كل شيء' : 'everything' };
+  var ar = LANG === 'ar';
+  var hk = bHeroKind(bd);
+  var k;
+  if (hk === 'all') return { big: T('f_unlimited'), cap: ar ? 'كل شيء' : 'everything' };
+  if (hk === 'social') {
+    k = b4KindCap(bd, 'social');
+    return k && k.cap != null
+      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'اجتماعي' : 'social' }
+      : { big: T('f_unlimited'), cap: ar ? 'اجتماعي' : 'social' };
+  }
+  if (hk === 'night') {
+    k = b4KindCap(bd, 'night');
+    return k && k.cap != null
+      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات الليل' : 'night data' }
+      : { big: T('f_unlimited'), cap: ar ? 'بيانات الليل' : 'night data' };
+  }
+  if (hk === 'tv') return { big: 'TV', cap: ar ? 'زين تيفي' : 'Zain TV' };
+  if (hk === 'bonus') {
+    k = b4KindCap(bd, 'bonus');
+    return k && k.cap != null
+      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات إضافية' : 'bonus data' }
+      : { big: T('f_unlimited'), cap: ar ? 'بيانات إضافية' : 'bonus data' };
+  }
+  if (hk === 'roaming') {
+    k = b4KindCap(bd, 'roaming');
+    return k && k.cap != null
+      ? { big: fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom), cap: ar ? 'بيانات تجوال' : 'roaming data' }
+      : { big: T('f_unlimited'), cap: ar ? 'بيانات تجوال' : 'roaming data' };
+  }
+  if (hk === 'service') return { big: B(bd.n), cap: '' };
   if (bd.unlim === 'data') return { big: T('f_unlimited'), cap: ar ? 'بيانات' : 'data' };
   if (bd.unlim === 'minutes') return { big: T('f_unlimited'), cap: ar ? 'دقائق' : 'minutes' };
   if (bd.unlim === 'sms') return { big: T('f_unlimited'), cap: ar ? 'رسائل' : 'SMS' };
@@ -3734,27 +6861,50 @@ function bHero(bd) {
   return { big: B(bd.d), cap: '' };
 }
 function bSubline(bd) {
-  const ar = LANG === 'ar';
-  const kind = bHeroKind(bd);
-  const parts = [`<span class="bprice">${fmtN(bd.p)} ${T('syp')}</span>`]; /* v52-branch: price first in the description, always */
+  var ar = LANG === 'ar';
+  var hk = bHeroKind(bd);
+  var parts = ['<span class="bprice">' + fmtN(bd.p) + ' ' + T('syp') + '</span>'];
   if (bd.note) parts.push(B(bd.note));
-  if (kind !== 'all') {
-    if (kind !== 'data') {
-      if (bd.unlim === 'data') parts.push(ar ? 'بيانات غير محدودة' : 'Unlimited data');
-      else if (bd.dataGB) parts.push(fmtN(bd.dataGB) + ' ' + (ar ? 'غيغا' : 'GB'));
+  var kinds = bd.kinds || [];
+  var seen = {};
+  kinds.forEach(function (k) {
+    if (k.kind === hk) return;
+    if (k.kind === 'all') return;
+    if (seen[k.kind]) return;
+    seen[k.kind] = true;
+    var label = '';
+    if (k.kind === 'data') label = ar ? 'بيانات' : 'data';
+    else if (k.kind === 'minutes') label = ar ? 'دقيقة' : 'min';
+    else if (k.kind === 'sms') label = ar ? 'رسالة' : 'SMS';
+    else if (k.kind === 'social') label = ar ? 'اجتماعي' : 'social';
+    else if (k.kind === 'night') label = ar ? 'بيانات الليل' : 'night data';
+    else if (k.kind === 'tv') label = ar ? 'زين تيفي' : 'Zain TV';
+    else if (k.kind === 'bonus') label = ar ? 'بيانات إضافية' : 'bonus data';
+    else if (k.kind === 'roaming') label = k.uom === 'min' ? (ar ? 'دقائق تجوال' : 'roaming min') : k.uom === 'SMS' ? (ar ? 'رسائل تجوال' : 'roaming SMS') : (ar ? 'بيانات تجوال' : 'roaming data');
+    else if (k.kind === 'intl') label = ar ? 'دولية' : 'intl';
+    if (!label) return;
+    if (k.cap == null) {
+      if (k.kind === 'tv') parts.push(label);
+      else parts.push(ar ? 'غير محدود' : 'Unlimited' + ' ' + label);
+    } else {
+      parts.push(fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom === 'min' ? (ar ? 'دقيقة' : 'min') : k.uom) + (k.kind === 'data' || k.kind === 'roaming' ? '' : ' ' + label));
+      if (k.kind === 'data' || k.kind === 'roaming' || k.kind === 'social' || k.kind === 'night' || k.kind === 'bonus') {
+        // The unit already implies the kind; keep the label for clarity on non-data kinds.
+        if (k.kind !== 'data' && k.kind !== 'roaming') parts[parts.length - 1] = fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom) + ' ' + label;
+      }
     }
-    if (kind !== 'minutes') {
-      if (bd.unlim === 'minutes') parts.push(ar ? 'دقائق غير محدودة' : 'Unlimited minutes');
-      else if (bd.m) parts.push(fmtN(bd.m) + ' ' + (ar ? 'دقيقة' : 'min'));
-    }
-    if (kind !== 'sms') {
-      if (bd.unlim === 'sms') parts.push(ar ? 'رسائل غير محدودة' : 'Unlimited SMS');
-      else if (bd.s) parts.push(fmtN(bd.s) + ' ' + (ar ? 'رسالة' : 'SMS'));
-    }
+  });
+  // Fallback to the old fields when no structured kinds exist.
+  if (!kinds.length) {
+    if (hk !== 'data' && bd.dataGB) parts.push(fmtN(bd.dataGB) + ' ' + (ar ? 'غيغا' : 'GB'));
+    if (hk !== 'minutes' && bd.m) parts.push(fmtN(bd.m) + ' ' + (ar ? 'دقيقة' : 'min'));
+    if (hk !== 'sms' && bd.s) parts.push(fmtN(bd.s) + ' ' + (ar ? 'رسالة' : 'SMS'));
   }
   parts.push(bValidLabel(bd));
   return parts.join(' · ');
 }
+
+/* ================= end v137 card hero ================= */
 function bCardElement(bd, best) {
   const b = document.createElement('button');
   b.className = 'bundle card' + (best ? ' best' : '');
@@ -4159,160 +7309,396 @@ function openUsage() {
   requestAnimationFrame(() => requestAnimationFrame(() => document.querySelectorAll('#sh-usage .fl').forEach(f => { f.style.transform = 'scaleX(' + f.dataset.f + ')'; })));
 }
 
-function openBundle(bd) {
-  const ar = LANG === 'ar';
-  const popAutoOn = bd.autoRenew && bd.renew !== 'once'; /* v47: same single-tag rule as list cards */
-  const popTag = bd.activated
-    ? `<span class="bpill-sm ${popAutoOn ? 'bpill-auto' : 'bpill-grey'}" style="flex:none;min-height:24px;padding:0 11px;box-shadow:0 6px 14px rgba(10,25,30,.28)">${T('b_activated')}${popAutoOn ? ' <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' : ''}</span>`
-    : (bd.offer ? `<span class="bpill-sm bpill-offer" style="flex:none;min-height:24px;padding:0 11px">${T('b_offer')}</span>` : '');
-  S.payMethod = 'balance';
-  const price = bPrice(bd);
-  const hero = bHero(bd);
-  let pendingAuto = bd.activated ? !!bd.autoRenew : (bd._pendingAuto !== undefined ? bd._pendingAuto : true);
-  if (bd.renew === 'once') pendingAuto = false;
-  const rows = [];
-  if (bd.unlim === 'all') rows.push(ar ? 'كل شيء غير محدود' : 'Unlimited everything');
-  else {
-    if (bd.unlim === 'data') rows.push(ar ? 'بيانات غير محدودة' : 'Unlimited data');
-    else if (bd.dataGB) rows.push(fmtN(bd.dataGB) + ' ' + (ar ? 'غيغا بيانات' : 'GB data'));
-    if (bd.unlim === 'minutes') rows.push(ar ? 'دقائق غير محدودة' : 'Unlimited minutes');
-    else if (bd.m) rows.push(fmtN(bd.m) + ' ' + (ar ? 'دقيقة' : 'minutes'));
-    if (bd.unlim === 'sms') rows.push(ar ? 'رسائل غير محدودة' : 'Unlimited SMS');
-    else if (bd.s) rows.push(fmtN(bd.s) + ' ' + (ar ? 'رسالة' : 'SMS'));
-    if (bd.note) rows.push(B(bd.note));
+/* ================= v137: v4 bundle popup (openBundle + openService) ================= */
+/* --- WHAT YOU GET rows (hide absent kinds — usage-detail law) --- */
+function b4KindLabel(kind) {
+  var ar = LANG === 'ar';
+  switch (kind) {
+    case 'data': return ar ? 'بيانات' : 'Data';
+    case 'minutes': return ar ? 'دقائق محلية' : 'Local minutes';
+    case 'intl': return ar ? 'دقائق دولية' : 'International minutes';
+    case 'sms': return ar ? 'رسائل' : 'SMS';
+    case 'social': return ar ? 'اجتماعي' : 'Social';
+    case 'night': return ar ? 'بيانات الليل' : 'Night data';
+    case 'tv': return ar ? 'زين تيفي' : 'Zain TV';
+    case 'bonus': return ar ? 'بيانات إضافية' : 'Bonus data';
+    case 'roaming': return ar ? 'تجوال' : 'Roaming';
+    default: return kind;
   }
-  const segNote = bd.segment === 'btl' ? T('b_just') : bd.segment === 'foryou' ? T('b_recommended') : bd.segment === 'plan' ? T('b_sec_plan') : bd.segment === 'addon' ? T('b_sec_addon') : T('b_general');
-  const shareable = bd.segment !== 'btl' || !!bd.offer;
-  const isPinned = !!(S.bPinned && S.bPinned.includes(bd.id));
-  const shareLink = 'https://zain.sy/bundles/' + bd.id;
-  const actPur = bd.activated ? PURCHASES.find(x => x.bid === bd.id && x.status === 'active' && x.vt) : null;
-  const validRow = actPur
-    ? `<div class="bpop-row"><span class="k">${ar ? 'صالح حتى' : 'Valid until'}</span><span class="v">${hDate(actPur.vt)}</span></div>`
-    : `<div class="bpop-row"><span class="k">${T('valid_l')}</span><span class="v">${bValidLabel(bd)}</span></div>`; /* v45: active -> only when it ends; purchasing -> valid-for duration */
-  const offerRow = bd.offer
-    ? `<div class="bpop-row"><span class="k">${T('b_offer')}</span><span class="v">${ar ? 'ينتهي' : 'ends'} ${B(bd.offer.ends)}</span></div>`
-    : ''; /* v45: offer row used to repeat price (old + new) and the 'Price & validity' label — both now live in their own rows below, so the offer row carries only its own new info: the end date */
-  $('bundle-body').innerHTML = `
-    <div class="bpop-head">
-    <div style="display:flex;gap:14px;align-items:center">
-      <span class="bi" style="width:60px;height:60px;border-radius:18px;background:var(--glass-deep);border:1px solid var(--glass-brd);display:flex;align-items:center;justify-content:center"><img decoding="async" src="${ZI(bd.z)}" alt="" width="32" height="32"></span>
-      <div style="flex:1;min-width:0"><p class="st" id="sh-bundle-t">${B(bd.n)}</p><p class="sd" style="color:var(--ink-soft)">${segNote}${rows.length ? '' : ' · ' + hero.big + ' ' + hero.cap}</p></div>
-      <button class="icobtn pinbtn${isPinned ? ' pinned' : ''}" id="b-pin" type="button" aria-label="${isPinned ? T('b_pinned') : T('b_pin')}" aria-pressed="${isPinned ? 'true' : 'false'}" style="flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10l-1.5 6h-7L7 4z"/><path d="M12 10v11"/></svg></button>
-      <button class="icobtn sharebtn" id="b-share" type="button" aria-label="${T('b_share')}"${shareable ? '' : ' disabled'} style="flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.49" x2="8.59" y2="10.49"/></svg></button>
-    </div>
-    ${popTag ? `<div style="padding-inline-start:74px">${popTag}</div>` : ''}
-    </div>
-    <div class="bpop-mid">
-    <p class="micro">${T('b_what')}</p>
-    <div class="card" style="padding:6px 16px;background:var(--glass-deep)">
-      ${rows.map(r => `<div class="bpop-row"><span>${r}</span></div>`).join('')}
-    </div>
-    <p class="micro">${T('b_price_valid')}</p>
-    <div class="card" style="padding:6px 16px;background:var(--glass-deep)">
-      <div class="bpop-row"><span class="k">${ar ? 'السعر' : 'Price'}</span><span class="v num">${bd.offer ? `<s class="bpop-old">${fmtN(bd.offer.old)} ${T('syp')}</s> ` : ''}${fmtN(bd.p)} ${T('syp')}</span></div>
-
-      ${validRow}
-
-      ${offerRow}
-    </div>
-    ${bd.activated ? '' : `<div style="position:relative"><p class="micro">${T('b_pay_method')}</p><button class="payfield" id="pay-field" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="${T('b_pay_method')}"><span class="pay-ic-w"><img decoding="async" src="${ZI('wallet')}" alt="" width="22" height="22"></span><span class="pay-ic-c" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span><span class="dt">${T('h_bal')} · ${fmtN(S.balance)} ${T('syp')}</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd paydd" id="pay-dd" role="menu" aria-label="${T('b_pay_method')}"><button type="button" role="menuitemradio" aria-checked="true" data-method="balance" class="cur"><img decoding="async" src="${ZI('wallet')}" alt="" width="26" height="26"><span class="dt">${T('h_bal')}<span class="ds2" style="display:block">${fmtN(S.balance)} ${T('syp')}</span></span></button><button type="button" role="menuitemradio" aria-checked="false" data-method="card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span class="dt">${T('h_card')}</span></button></div></div>`}
-    <div style="display:flex;align-items:center;justify-content:space-between;gap:14px">
-      <div><p style="font-weight:800">${T('b_renew')}</p><p class="cap" style="color:var(--ink-soft)">${bd.renew === 'once' ? T('b_renew_once') : T('b_renew_on_s')}</p></div>
-      <button class="bswitch" id="btn-renew" type="button" role="switch" aria-checked="${pendingAuto && bd.renew === 'auto' ? 'true' : 'false'}" ${bd.renew === 'once' ? 'disabled' : ''} aria-label="${T('b_renew')}"><span class="knob"></span></button>
-    </div>
-    </div>
-    <div class="bpop-foot">
-    <div class="srow">
-      <button class="btn" id="btn-sub">${bd.activated ? T('done') : T('b_activate')}</button>
-    </div>
-    <p class="cap" style="text-align:center;color:var(--ink-faint)">${T('b_terms')}</p>
-    </div>`;
-  openSheet($('sh-bundle'));
-  const shb = $('b-share');
-  if (shb) shb.onclick = () => { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(shareLink).then(() => toast(T('b_link_copied')), () => toast(T('b_link_copied'))); else toast(T('b_link_copied')); };
-  const pnb = $('b-pin');
-  if (pnb) pnb.onclick = () => { const pinned = !(S.bPinned && S.bPinned.includes(bd.id)); S.bPinned = S.bPinned || []; if (pinned) S.bPinned.unshift(bd.id); else S.bPinned = S.bPinned.filter(x => x !== bd.id); pnb.classList.toggle('pinned', pinned); pnb.setAttribute('aria-pressed', pinned ? 'true' : 'false'); pnb.setAttribute('aria-label', pinned ? T('b_pinned') : T('b_pin')); toast(pinned ? T('b_pinned') : T('b_unpinned')); renderBundles(); };
-  const sw = $('btn-renew');
-  const syncSw = () => { const on = bd.activated ? !!bd.autoRenew : pendingAuto; sw.setAttribute('aria-checked', (on && bd.renew === 'auto') ? 'true' : 'false'); };
-  if (sw) sw.onclick = () => {
-    if (bd.renew === 'once') return;
-    if (bd.activated) {
-      bd.autoRenew = !bd.autoRenew;
-      syncSw(); renderBundles();
-      toast(bd.autoRenew ? T('b_renew_on') : T('b_renew_off'));
-    } else {
-      pendingAuto = !pendingAuto; bd._pendingAuto = pendingAuto; syncSw();
+}
+function b4FmtTime(t) {
+  var parts = String(t).split(':');
+  var h = parseInt(parts[0], 10), m = parts[1] || '00';
+  var ap = h >= 12 ? 'PM' : 'AM';
+  var h12 = h % 12; if (h12 === 0) h12 = 12;
+  if (LANG === 'ar') return fmtN(h12) + ':' + fmtN(parseInt(m, 10)) + ' ' + (ap === 'PM' ? 'م' : 'ص');
+  return h12 + ':' + m + ' ' + ap;
+}
+function b4WhatYouGetRows(bd) {
+  var ar = LANG === 'ar';
+  var rows = [];
+  var kinds = bd.kinds;
+  if (!kinds) {
+    kinds = [];
+    if (bd.unlim === 'all') kinds.push({ kind: 'all', cap: null, uom: '' });
+    else {
+      if (bd.unlim === 'data') kinds.push({ kind: 'data', cap: null, uom: '' });
+      else if (bd.dataGB) kinds.push({ kind: 'data', cap: bd.dataGB, uom: 'GB' });
+      if (bd.unlim === 'minutes') kinds.push({ kind: 'minutes', cap: null, uom: '' });
+      else if (bd.m) kinds.push({ kind: 'minutes', cap: bd.m, uom: 'min' });
+      if (bd.unlim === 'sms') kinds.push({ kind: 'sms', cap: null, uom: '' });
+      else if (bd.s) kinds.push({ kind: 'sms', cap: bd.s, uom: 'SMS' });
     }
+  }
+  kinds.forEach(function (k) {
+    var label = b4KindLabel(k.kind);
+    var apps = '';
+    var win = '';
+    if (k.kind === 'social' && k.apps) apps = ' <span style="font-weight:400">– ' + k.apps.join(', ') + '</span>';
+    if (k.kind === 'night' && k.window) win = ' · ' + b4FmtTime(k.window.start) + '–' + b4FmtTime(k.window.end);
+    if (k.kind === 'all') {
+      rows.push('<div class="bpop-row"><span class="k">' + (ar ? 'كل شيء غير محدود' : 'Unlimited everything') + '</span></div>');
+      return;
+    }
+    if (k.kind === 'tv') {
+      rows.push('<div class="bpop-row"><span class="k">' + label + '</span><span class="v">' + (ar ? 'مشمولة' : 'Included') + '</span></div>');
+      return;
+    }
+    if (k.kind === 'roaming') {
+      var rk = (k.uom === 'min') ? (ar ? 'دقائق تجوال' : 'Roaming minutes')
+        : (k.uom === 'SMS') ? (ar ? 'رسائل تجوال' : 'Roaming SMS')
+        : (ar ? 'بيانات تجوال' : 'Roaming data');
+      rows.push('<div class="bpop-row"><span class="k">' + rk + '</span><span class="v"><strong>' + fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom) + '</strong></span></div>');
+      return;
+    }
+    var val = (k.cap == null)
+      ? (ar ? 'غير محدود' : 'Unlimited')
+      : '<strong>' + fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom) + '</strong>';
+    rows.push('<div class="bpop-row"><span class="k">' + label + apps + win + '</span><span class="v">' + val + '</span></div>');
+  });
+  if (bd.note) rows.push('<div class="bpop-row"><span class="k">' + B(bd.note) + '</span></div>');
+  return rows.join('');
+}
+
+/* --- USAGE CONDITIONS rows (time window, included apps, voice traffic) --- */
+function b4UsageCondRows(bd) {
+  var ar = LANG === 'ar';
+  var rows = [];
+  var kinds = bd.kinds || [];
+  kinds.forEach(function (k) {
+    if (k.kind === 'night' && k.window) {
+      rows.push('<div class="bpop-row"><span class="k">' + (ar ? 'النافذة الزمنية' : 'Time window') + '</span><span class="v">' + b4FmtTime(k.window.start) + '–' + b4FmtTime(k.window.end) + '</span></div>');
+    }
+    if (k.kind === 'social' && k.apps) {
+      rows.push('<div class="bpop-row"><span class="k">' + (ar ? 'التطبيقات المشمولة' : 'Included apps') + '</span><span class="v">' + k.apps.join(', ') + '</span></div>');
+    }
+    if (k.kind === 'intl') {
+      rows.push('<div class="bpop-row"><span class="k">' + (ar ? 'نوع المكالمات' : 'Voice traffic') + '</span><span class="v">' + (ar ? 'دولية' : 'International') + '</span></div>');
+    }
+    if (k.kind === 'tv') {
+      rows.push('<div class="bpop-row"><span class="k">' + (ar ? 'البث' : 'Streaming') + '</span><span class="v">' + (ar ? 'عبر البيانات' : 'Streams over data') + '</span></div>');
+    }
+  });
+  // Night Owl (c4) carries its window in the note, not in a night kind.
+  if (bd.id === 'c4' && bd.note) {
+    rows.push('<div class="bpop-row"><span class="k">' + (ar ? 'النافذة الزمنية' : 'Time window') + '</span><span class="v">' + b4FmtTime('01:00') + '–' + b4FmtTime('07:00') + '</span></div>');
+  }
+  return rows.join('');
+}
+
+/* --- FAIR USAGE POLICY rows (only when a threshold exists) --- */
+/* D8: no thresholds exist in the data yet. Unlimited bundles show the
+   UC-085 demo values (50 GB / 512 Kbps) as a clearly-flagged placeholder
+   so the section can be showcased; replace with real values when D8 lands. */
+function b4FairUseRows(bd) {
+  var ar = LANG === 'ar';
+  var isUnlim = (bd.unlim === 'data' || bd.unlim === 'all' || bd.unlim === 'minutes' || bd.unlim === 'sms');
+  if (!isUnlim) return '';
+  var demo = ar ? ' (قيم تجريبية — بانتظار القرار D8)' : ' (demo values — pending decision D8)';
+  return '<div class="bpop-row"><span class="k">' + (ar ? 'حد الاستخدام العادل' : 'Fair use threshold') + '</span><span class="v"><strong>50 GB</strong></span></div>'
+    + '<div class="bpop-row"><span class="k">' + (ar ? 'السرعة بعد الحد' : 'Speed after threshold') + '</span><span class="v"><strong>512 Kbps</strong></span></div>'
+    + '<div class="bpop-row"><span class="k" style="font-weight:400;color:var(--ink-soft)">' + (ar ? 'تنخفض السرعة بعد تجاوز الحد.' : 'Speed reduces after the threshold.') + demo + '</span></div>';
+}
+
+/* --- ROAMING AVAILABLE IN rows (countries + Learn more) ---
+   Roaming law: the same section as the My Usage card — one row per country
+   with its flag, in UC-086 order, in a scrollable frame. */
+function b4RoamingRows(bd) {
+  var ar = LANG === 'ar';
+  if (!bd.roaming || !bd.countries) return '';
+  var rows = bd.countries.map(function (c) {
+    return '<div class="bpop-row"><span style="display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink)"><span style="font-size:22px;line-height:1">' + c.flag + '</span>' + (ar ? c.nameAr : c.name) + '</span></div>';
+  }).join('');
+  rows += '<div class="bpop-row" style="justify-content:center;border-bottom:0;padding:2px 0"><a class="linklike" style="min-height:30px" href="#" data-learn="roaming">' + (ar ? 'اعرف المزيد ←' : 'Learn more →') + '</a></div>';
+  return rows;
+}
+
+/* --- v88 rule: >4 rows -> scrollable frame showing 4 rows + half of the 5th --- */
+function b4ScrollFrames(root) {
+  (root || document).querySelectorAll('#bundle-body .bu-usage-wrap').forEach(function (wrap) {
+    var frame = wrap.querySelector('.bu-usage-scroll'); if (!frame) return;
+    var rows = frame.querySelectorAll('.bpop-row');
+    if (rows.length > 4) {
+      var r5 = rows[4];
+      frame.style.maxHeight = (r5.offsetTop + Math.round(r5.offsetHeight * 0.5)) + 'px';
+      frame.classList.add('bu-scrollable');
+      var syncFade = function () { wrap.classList.toggle('bu-fading', frame.scrollHeight - frame.scrollTop - frame.clientHeight > 4); };
+      frame.addEventListener('scroll', syncFade, { passive: true });
+      syncFade();
+    }
+  });
+}
+
+/* --- v4 bundle popup: the workbook sections in the usage-popup language --- */
+function openBundle(bd) {
+  var ar = LANG === 'ar';
+  var lt = b4LineType();
+  var elig = b4Elig(bd);
+  var cta = b4Cta(bd);
+  var price = b4PriceNum(bd);
+  var popAutoOn = bd.autoRenew && bd.renew !== 'once';
+  var popTag = bd.activated
+    ? '<span class="bpill-sm ' + (popAutoOn ? 'bpill-auto' : 'bpill-grey') + '" style="flex:none;min-height:24px;padding:0 11px;box-shadow:0 6px 14px rgba(10,25,30,.28)">' + T('b_activated') + (popAutoOn ? ' <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' : '') + '</span>'
+    : (bd.offer ? '<span class="bpill-sm bpill-offer" style="flex:none;min-height:24px;padding:0 11px">' + T('b_offer') + '</span>' : '');
+  var segNote = bd.section || (bd.segment === 'btl' ? T('b_just') : bd.segment === 'foryou' ? T('b_recommended') : bd.segment === 'plan' ? T('b_sec_plan') : bd.segment === 'addon' ? T('b_sec_addon') : T('b_general'));
+  var shareable = bd.segment !== 'btl' || !!bd.offer;
+  var shareLink = 'https://zain.sy/bundles/' + bd.id;
+  var actPur = bd.activated ? PURCHASES.find(function (x) { return x.bid === bd.id && x.status === 'active' && x.vt; }) : null;
+  var validRow = actPur
+    ? '<div class="bpop-row"><span class="k">' + (ar ? 'صالح حتى' : 'Valid until') + '</span><span class="v">' + hDate(actPur.vt) + '</span></div>'
+    : '<div class="bpop-row"><span class="k">' + T('valid_l') + '</span><span class="v">' + b4ValidityLabel(bd) + '</span></div>';
+  var offerRow = bd.offer
+    ? '<div class="bpop-row"><span class="k">' + T('b_offer') + '</span><span class="v">' + (ar ? 'ينتهي' : 'ends') + ' ' + B(bd.offer.ends) + '</span></div>'
+    : '';
+  var ussdRow = '';
+  if (bd.ussd) {
+    var ussdTxt = bd.ussd;
+    if (/app-only/i.test(ussdTxt)) {
+      ussdRow = '<div class="bpop-row"><span class="k">USSD</span><span class="v">' + (ar ? 'عبر التطبيق فقط' : 'App-only (no USSD)') + '</span></div>';
+    } else if (/link-out/i.test(ussdTxt)) {
+      ussdRow = '<div class="bpop-row"><span class="k">USSD</span><span class="v">' + (ar ? 'رابط خارجي' : 'Link-out') + '</span></div>';
+    } else {
+      ussdRow = '<div class="bpop-row"><span class="k">USSD</span><span class="v"><span class="num" dir="ltr">' + ussdTxt + '</span> <button type="button" class="linklike" id="b-ussd-copy" style="min-height:30px">' + (ar ? 'نسخ' : 'Copy') + '</button></span></div>';
+    }
+  }
+  var whatRows = b4WhatYouGetRows(bd);
+  var condRows = b4UsageCondRows(bd);
+  var fairRows = b4FairUseRows(bd);
+  var roamRows = b4RoamingRows(bd);
+  var svcRows = '';
+  if (bd.services && bd.services.length) {
+    svcRows = bd.services.map(function (svc) {
+      var sid = svc.k === 'Caller ID' ? 'x11' : (svc.k === 'Call Waiting' ? 'x12' : (svc.k === 'MTN TV' ? 'x10' : null));
+      var open = sid ? ' data-b4-service="' + sid + '"' : '';
+      return '<div class="bpop-row"><span class="k"><button type="button" class="linklike" style="min-height:30px;text-align:start"' + open + '>' + (ar ? svc.ka : svc.k) + '</button></span></div>';
+    }).join('');
+  }
+  var showPay = !bd.activated && cta.enabled && cta.pay === 'balance' && price > 0;
+  var showBill = !bd.activated && cta.enabled && cta.pay === 'bill';
+  var showRenew = (elig === 'Yes' || elig === 'Yes*' || elig === 'GATED');
+  var pendingAuto = bd.activated ? !!bd.autoRenew : true;
+  if (bd.renew === 'once') pendingAuto = false;
+  var renewNote = '';
+  if (elig === 'GATED') renewNote = ar ? 'متاح بعد إثبات الفئة' : 'Available after segment proof';
+  else if (bd.renew === 'once') renewNote = T('b_renew_once');
+  else renewNote = T('b_renew_on_s');
+  S.payMethod = 'balance';
+  $('bundle-body').innerHTML = ''
+    + '<div class="bpop-head">'
+    + '<div style="display:flex;gap:14px;align-items:center">'
+    + '<span class="bi" style="width:60px;height:60px;border-radius:18px;background:var(--glass-deep);border:1px solid var(--glass-brd);display:flex;align-items:center;justify-content:center"><img decoding="async" src="' + ZI(bd.z) + '" alt="" width="32" height="32"></span>'
+    + '<div style="flex:1;min-width:0"><p class="st" id="sh-bundle-t">' + B(bd.n) + '</p><p class="sd" style="color:var(--ink-soft)">' + segNote + '</p></div>'
+    + '<button class="icobtn sharebtn" id="b-share" type="button" aria-label="' + T('b_share') + '"' + (shareable ? '' : ' disabled') + ' style="flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.49" x2="8.59" y2="10.49"/></svg></button>'
+    + '</div>'
+    + (popTag ? '<div style="padding-inline-start:74px">' + popTag + '</div>' : '')
+    + '</div>'
+    + '<div class="bpop-mid">'
+    + (B(bd.d) ? '<p class="sd" style="color:var(--ink-soft);margin-bottom:4px">' + B(bd.d) + '</p>' : '')
+    + '<p class="micro">' + T('b_what') + '</p>'
+    + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + whatRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>'
+    + (condRows ? '<p class="micro">' + (ar ? 'شروط الاستخدام' : 'Usage conditions') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + condRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
+    + (fairRows ? '<p class="micro">' + (ar ? 'سياسة الاستخدام العادل' : 'Fair usage policy') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + fairRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
+    + (roamRows ? '<p class="micro">' + (ar ? 'التجوال متاح في' : 'Roaming available in') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + roamRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
+    + '<p class="micro">' + T('b_price_valid') + '</p>'
+    + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)">'
+    + '<div class="bpop-row"><span class="k">' + (ar ? 'السعر' : 'Price') + '</span><span class="v num">' + (bd.offer ? '<s class="bpop-old">' + fmtN(bd.offer.old) + ' ' + T('syp') + '</s> ' : '') + fmtN(price) + ' ' + T('syp') + '</span></div>'
+    + validRow
+    + offerRow
+    + ussdRow
+    + '</div>'
+    + (showBill ? '<p class="cap" style="color:var(--ink-soft)">' + (ar ? 'يُضاف إلى فاتورة دورة الفوترة' : 'Added to your postpaid bill') + '</p>' : '')
+    + (showPay ? '<div style="position:relative"><p class="micro">' + T('b_pay_method') + '</p><button class="payfield" id="pay-field" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="' + T('b_pay_method') + '"><span class="pay-ic-w"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="22" height="22"></span><span class="pay-ic-c" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span><span class="dt">' + T('h_bal') + ' · ' + fmtN(S.balance) + ' ' + T('syp') + '</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd paydd" id="pay-dd" role="menu" aria-label="' + T('b_pay_method') + '"><button type="button" role="menuitemradio" aria-checked="true" data-method="balance" class="cur"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="26" height="26"><span class="dt">' + T('h_bal') + '<span class="ds2" style="display:block">' + fmtN(S.balance) + ' ' + T('syp') + '</span></span></button><button type="button" role="menuitemradio" aria-checked="false" data-method="card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span class="dt">' + T('h_card') + '</span></button></div></div>' : '')
+    + (svcRows ? '<p class="micro">' + (ar ? 'الخدمات المشمولة' : 'Included services') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + svcRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
+    + (showRenew ? '<div style="display:flex;align-items:center;justify-content:space-between;gap:14px"><div><p style="font-weight:800">' + T('b_renew') + '</p><p class="cap" style="color:var(--ink-soft)">' + renewNote + '</p></div><button class="bswitch" id="btn-renew" type="button" role="switch" aria-checked="' + ((pendingAuto && bd.renew === 'auto') ? 'true' : 'false') + '" ' + (bd.renew === 'once' || elig === 'GATED' ? 'disabled' : '') + ' aria-label="' + T('b_renew') + '"><span class="knob"></span></button></div>' : '')
+    + (cta.enabled && !bd.activated ? '<p class="cap" style="color:var(--ink-soft)">' + (ar ? 'يمكنك شراء هذه الباقة مجدداً بينما هي مفعّلة.' : 'You can buy this bundle again while it is active.') + '</p>' : '')
+    + '</div>'
+    + '<div class="bpop-foot">'
+    + '<div class="srow"><button class="btn" id="btn-sub"' + (cta.enabled ? '' : ' disabled') + '>' + cta.label + '</button></div>'
+    + '<p class="cap" style="text-align:center;color:var(--ink-faint)">' + (cta.enabled ? T('b_terms') : cta.reason) + '</p>'
+    + '</div>';
+  openSheet($('sh-bundle'));
+  b4ScrollFrames();
+  var shb = $('b-share');
+  if (shb) shb.onclick = function () { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(shareLink).then(function () { toast(T('b_link_copied')); }, function () { toast(T('b_link_copied')); }); else toast(T('b_link_copied')); };
+  var uc = $('b-ussd-copy');
+  if (uc) uc.onclick = function () { var code = bd.ussd; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(function () { toast(T('b_link_copied')); }, function () { toast(T('b_link_copied')); }); else toast(T('b_link_copied')); };
+  document.querySelectorAll('#bundle-body [data-b4-service]').forEach(function (el) {
+    el.onclick = function () { var svc = b4ServiceFind(el.getAttribute('data-b4-service')); if (svc) openService(svc); };
+  });
+  document.querySelectorAll('#bundle-body [data-learn="roaming"]').forEach(function (el) {
+    el.onclick = function (e) { e.preventDefault(); };
+  });
+  var sw = $('btn-renew');
+  var syncSw = function () { var on = bd.activated ? !!bd.autoRenew : pendingAuto; sw.setAttribute('aria-checked', (on && bd.renew === 'auto') ? 'true' : 'false'); };
+  if (sw) sw.onclick = function () {
+    if (bd.renew === 'once' || elig === 'GATED') return;
+    if (bd.activated) { bd.autoRenew = !bd.autoRenew; syncSw(); renderBundles(); toast(bd.autoRenew ? T('b_renew_on') : T('b_renew_off')); }
+    else { pendingAuto = !pendingAuto; syncSw(); }
   };
-  const payField = $('pay-field');
-  const payDd = $('pay-dd');
-  const syncPayField = () => {
+  var payField = $('pay-field');
+  var payDd = $('pay-dd');
+  var syncPayField = function () {
     if (!payField) return;
-    const card = S.payMethod === 'card';
+    var card = S.payMethod === 'card';
     payField.querySelector('.pay-ic-w').style.display = card ? 'none' : '';
     payField.querySelector('.pay-ic-c').style.display = card ? '' : 'none';
     payField.querySelector('.dt').textContent = card ? T('h_card') : T('h_bal') + ' · ' + fmtN(S.balance) + ' ' + T('syp');
-    payDd.querySelectorAll('button').forEach(b => {
-      const on = b.dataset.method === S.payMethod;
+    payDd.querySelectorAll('button').forEach(function (b) {
+      var on = b.dataset.method === S.payMethod;
       b.classList.toggle('cur', on);
       b.setAttribute('aria-checked', on ? 'true' : 'false');
     });
   };
-  const closePayDd = () => {
+  var closePayDd = function () {
     if (!payDd) return;
     payDd.classList.remove('on');
     if (payField) payField.setAttribute('aria-expanded', 'false');
   };
   if (payField) {
-    payField.onclick = () => {
-      const open = payDd.classList.toggle('on');
+    payField.onclick = function () {
+      var open = payDd.classList.toggle('on');
       payField.setAttribute('aria-expanded', open ? 'true' : 'false');
-      if (open) {
-        const cur = payDd.querySelector('button.cur');
-        if (cur) cur.focus({ preventScroll: true });
-        payDd.scrollIntoView({ block: 'nearest' });
-      }
+      if (open) { var cur = payDd.querySelector('button.cur'); if (cur) cur.focus({ preventScroll: true }); payDd.scrollIntoView({ block: 'nearest' }); }
     };
-    payDd.querySelectorAll('button').forEach(b => {
-      b.onclick = () => { S.payMethod = b.dataset.method; syncPayField(); closePayDd(); };
+    payDd.querySelectorAll('button').forEach(function (b) {
+      b.onclick = function () { S.payMethod = b.dataset.method; syncPayField(); closePayDd(); };
     });
-    payDd.addEventListener('keydown', e => {
-      const btns = [...payDd.querySelectorAll('button')];
-      const i = btns.indexOf(document.activeElement);
+    payDd.addEventListener('keydown', function (e) {
+      var btns = Array.prototype.slice.call(payDd.querySelectorAll('button'));
+      var i = btns.indexOf(document.activeElement);
       if (e.key === 'ArrowDown') { btns[(i + 1) % btns.length].focus(); e.preventDefault(); }
       if (e.key === 'ArrowUp') { btns[(i - 1 + btns.length) % btns.length].focus(); e.preventDefault(); }
     });
-    const sh = $('sh-bundle');
+    var sh = $('sh-bundle');
     if (sh && !sh._payOutside) {
       sh._payOutside = true;
-      sh.addEventListener('pointerdown', e => {
-        const dd = $('pay-dd');
+      sh.addEventListener('pointerdown', function (e) {
+        var dd = $('pay-dd');
         if (!dd || !dd.classList.contains('on')) return;
         if (dd.contains(e.target) || e.target.closest('#pay-field')) return;
         dd.classList.remove('on');
-        const f = $('pay-field');
+        var f = $('pay-field');
         if (f) f.setAttribute('aria-expanded', 'false');
       });
     }
   }
-  $('btn-sub').onclick = () => {
+  $('btn-sub').onclick = function () {
+    if (!cta.enabled) return;
     if (bd.activated) { closeOverlays(); return; }
     VIB(15);
-    const method = S.payMethod || 'balance';
-    if (method === 'balance' && S.balance < price) { S.pendingTopup = { n: bd.n, price }; toast(ar ? 'الرصيد غير كافٍ' : 'Insufficient balance'); closeOverlays().then(() => { goTab('pay'); syncPayPending(); }); return; } /* v58: Recognition — Pay banner remembers this bundle (see syncPayPending); v46 toast-to-Pay flow otherwise unchanged */
-    if (method === 'balance') S.balance -= price;
+    var method = S.payMethod || 'balance';
+    if (cta.pay === 'balance' && method === 'balance' && S.balance < price) {
+      S.pendingTopup = { n: bd.n, price: price };
+      toast(ar ? 'الرصيد غير كافٍ' : 'Insufficient balance');
+      closeOverlays().then(function () { goTab('pay'); syncPayPending(); });
+      return;
+    }
+    if (cta.pay === 'balance' && method === 'balance') S.balance -= price;
     bd.activated = true;
     bd.autoRenew = bd.renew === 'auto' ? !!pendingAuto : false;
-    delete bd._pendingAuto;
     hAppendPurchase(bd, price, pendingAuto, method);
     $('subok-d').textContent = B(bd.n) + ' ' + T('act_ok') + ' ' + (bd.autoRenew ? T('b_act_renews') : T('b_act_once'));
-    closeOverlays().then(() => {
+    closeOverlays().then(function () {
       renderBundles();
       if (typeof renderHistory === 'function') renderHistory();
       openSheet($('dlg-subok'));
     });
   };
 }
+
+/* --- service popup (x10-x12): same language, adapted for a service --- */
+function openService(svc) {
+  var ar = LANG === 'ar';
+  var lt = b4LineType();
+  var elig = (svc.elig || {})[lt] || 'No';
+  var price = b4PriceNum(svc);
+  var isLink = !!svc.link;
+  var ctaLabel, ctaEnabled = true, ctaReason = '';
+  if (elig !== 'Yes' && elig !== 'Yes*') {
+    ctaEnabled = false;
+    ctaReason = lt === 'ADSL'
+      ? (ar ? 'لا توجد خدمات في الكتالوج لخط ADSL' : 'ADSL has no services in the catalogue')
+      : (ar ? 'نوع الخط هذا غير مشمول بهذه الخدمة' : 'Line type not served by this service');
+    ctaLabel = ar ? 'تفعيل' : 'Activate';
+  } else if (isLink) {
+    ctaLabel = ar ? 'فتح إم تي إن تيفي' : 'Open MTN TV';
+  } else if (price === 0) {
+    ctaLabel = ar ? 'تفعيل' : 'Activate';
+  } else if (lt === 'Postpaid') {
+    ctaLabel = ar ? 'تفعيل' : 'Activate';
+  } else {
+    ctaLabel = ar ? 'تفعيل' : 'Activate';
+  }
+  var ussdRow = '';
+  if (svc.ussd) {
+    if (/link-out/i.test(svc.ussd)) {
+      ussdRow = '<div class="bpop-row"><span class="k">USSD</span><span class="v">' + (ar ? 'رابط خارجي' : 'Link-out') + '</span></div>';
+    } else if (/app/i.test(svc.ussd)) {
+      ussdRow = '<div class="bpop-row"><span class="k">USSD</span><span class="v">' + (ar ? 'عبر التطبيق' : 'In-app') + '</span></div>';
+    } else {
+      ussdRow = '<div class="bpop-row"><span class="k">USSD</span><span class="v"><span class="num" dir="ltr">' + svc.ussd + '</span> <button type="button" class="linklike" id="b-ussd-copy" style="min-height:30px">' + (ar ? 'نسخ' : 'Copy') + '</button></span></div>';
+    }
+  }
+  $('bundle-body').innerHTML = ''
+    + '<div class="bpop-head">'
+    + '<div style="display:flex;gap:14px;align-items:center">'
+    + '<span class="bi" style="width:60px;height:60px;border-radius:18px;background:var(--glass-deep);border:1px solid var(--glass-brd);display:flex;align-items:center;justify-content:center"><img decoding="async" src="' + ZI(svc.z) + '" alt="" width="32" height="32"></span>'
+    + '<div style="flex:1;min-width:0"><p class="st" id="sh-bundle-t">' + B(svc.n) + '</p><p class="sd" style="color:var(--ink-soft)">' + (ar ? 'خدمة' : 'Service') + '</p></div>'
+    + '</div>'
+    + '</div>'
+    + '<div class="bpop-mid">'
+    + (B(svc.d) ? '<p class="sd" style="color:var(--ink-soft);margin-bottom:4px">' + B(svc.d) + '</p>' : '')
+    + '<p class="micro">' + T('b_what') + '</p>'
+    + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bpop-row"><span class="k">' + B(svc.d) + '</span></div></div>'
+    + '<p class="micro">' + T('b_price_valid') + '</p>'
+    + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)">'
+    + '<div class="bpop-row"><span class="k">' + (ar ? 'السعر' : 'Price') + '</span><span class="v num">' + fmtN(price) + ' ' + T('syp') + '</span></div>'
+    + '<div class="bpop-row"><span class="k">' + T('valid_l') + '</span><span class="v">' + b4ValidityLabel(svc) + '</span></div>'
+    + ussdRow
+    + '</div>'
+    + (svc.notes ? '<p class="cap" style="color:var(--ink-soft)">' + svc.notes + '</p>' : '')
+    + '</div>'
+    + '<div class="bpop-foot">'
+    + '<div class="srow"><button class="btn" id="btn-sub"' + (ctaEnabled ? '' : ' disabled') + '>' + ctaLabel + '</button></div>'
+    + '<p class="cap" style="text-align:center;color:var(--ink-faint)">' + (ctaEnabled ? T('b_terms') : ctaReason) + '</p>'
+    + '</div>';
+  openSheet($('sh-bundle'));
+  var uc = $('b-ussd-copy');
+  if (uc) uc.onclick = function () { var code = svc.ussd; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(function () { toast(T('b_link_copied')); }, function () { toast(T('b_link_copied')); }); else toast(T('b_link_copied')); };
+  $('btn-sub').onclick = function () {
+    if (!ctaEnabled) return;
+    if (isLink && svc.link) { window.open(svc.link, '_blank'); closeOverlays(); return; }
+    VIB(15);
+    if (lt !== 'Postpaid' && S.balance < price) {
+      toast(ar ? 'الرصيد غير كافٍ' : 'Insufficient balance');
+      closeOverlays().then(function () { goTab('pay'); });
+      return;
+    }
+    if (lt !== 'Postpaid') S.balance -= price;
+    closeOverlays().then(function () { toast(ar ? 'تم التفعيل' : 'Activated'); });
+  };
+}
+/* ================= end v137 bundle popup ================= */
 
 
 /* ---- v44: Find your bundle ---- */
@@ -4477,7 +7863,7 @@ const PURCHASES = [
   {txn:'TXN-20260815-011',bid:'b903',price:45,date:'2026-08-15',time:'07:50',method:'balance',status:'expired',vf:'2026-08-15',vt:'2026-08-15',rem:null,autoRenew:false,refund:null,fail:null},
   {txn:'TXN-20260803-012',bid:'p1041',price:900,date:'2026-08-03',time:'09:00',method:'balance',status:'expired',vf:'2026-08-03',vt:'2026-09-02',rem:null,autoRenew:false,refund:null,fail:null},
 ];
-function hBundle(bid) { for (const w in BUNDLES) { const f = BUNDLES[w].find(b => b.id === bid); if (f) return f; } return null; }
+function hBundle(bid) { for (const w in BUNDLES) { const f = BUNDLES[w].find(b => b.id === bid || (b.covers && b.covers.split(',').map(s => s.trim()).includes(bid))); if (f) return f; } return null; }
 const H_MON_S = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const H_MON_L = ['January','February','March','April','May','June','July','August','September','October','November','December'];
 const H_MON_AR = ['يناير','فبراير','مارس','أبريل','مايو','يونيو','يوليو','أغسطس','سبتمبر','أكتوبر','نوفمبر','ديسمبر'];
@@ -6453,7 +9839,7 @@ function uClock() { const d = new Date(); if (uClockMin != null) d.setHours(Math
 function uWinState(bkt) { if (!bkt || !bkt.window) return 'none'; const c = uClock(); const cur = c.getHours() * 60 + c.getMinutes(); const a = uWinMin(bkt.window.start), b = uWinMin(bkt.window.end); return (a <= b ? (cur >= a && cur < b) : (cur >= a || cur < b)) ? 'active' : 'inactive'; }
 function uWinMin(hm) { const p = String(hm).split(':'); return (+p[0]) * 60 + (+p[1] || 0); }
 function uKindLabel(c) { const bkt = c.buckets ? c.buckets[0] : null; switch (c.kind) { case 'data': return T('u_data'); case 'minutes': return T('u_min'); case 'sms': return T('u_sms'); case 'social': return T('u_social'); case 'night': return T('u_night'); case 'bonus': return T('u_bonus'); case 'roaming': return (bkt && bkt.labelKey) ? T(bkt.labelKey) : T('u_roaming'); case 'tv': return T('ub_tv_label'); default: return (bkt && bkt.serverLabel) ? bkt.serverLabel : ((bkt && bkt.labelKey) ? T(bkt.labelKey) : T('u_social')); } }
-function uCatById(id) { for (const w in BUNDLES) { const f = BUNDLES[w].find(x => x.id === id); if (f) return f; } return null; }
+function uCatById(id) { for (const w in BUNDLES) { const f = BUNDLES[w].find(x => x.id === id || (x.covers && x.covers.split(',').map(s => s.trim()).includes(id))); if (f) return f; } return null; }
 function uBundleName(b) {
   if (b.src) { try {
     if (b.src.kind === 'plan') { const p = planById(b.src.id); if (p) return B(p.n); }
