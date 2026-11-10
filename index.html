@@ -394,6 +394,21 @@ input{caret-color:var(--btn-bg)}
 .bundle .bp .u{font-size:12px}
 .bundle.card{box-shadow:0 12px 32px rgba(0,0,0,.12);padding-inline-start:56px}
 .bundle .bu-corner{border-start-start-radius:var(--r-lg)}
+/* v138 (test): bundle card redesign — price above hero, hero big+bold,
+   corner fills top-left, validity first in details, card slightly smaller */
+.bundle.card{padding-top:12px;padding-bottom:12px;padding-inline-start:66px;margin-bottom:10px;gap:12px}
+.bundle .bu-corner{width:64px;height:64px;border-end-end-radius:64px}
+.bundle .bu-corner img{top:8px;inset-inline-start:8px;width:34px;height:34px}
+.bundle .bhero{width:132px}
+.bundle .bp .bprice{display:block;font-size:15px;font-weight:800;color:var(--ink);margin-bottom:1px;white-space:nowrap}
+.bundle .bp .p{font-size:26px;line-height:1.05;font-weight:900}
+.bundle .bp .u{font-size:12px}
+.bundle .bt .d .bvalid{font-weight:800;color:var(--ink)}
+/* v139 (test): wider gap between the two text columns, card a bit shorter */
+.bundle.card{padding-top:10px;padding-bottom:10px;padding-inline-end:12px;gap:20px}
+.bundle .bhero{width:128px}
+/* v140 (test): hero colour fills the card border at the top-left only */
+.bundle .bu-corner{top:-1px;inset-inline-start:-1px}
 .bprice{font-weight:800;color:var(--ink)}
 .bpill-auto{border:1px solid rgba(255,255,255,.45)}
 .bsec-note{font-size:var(--f-cap);color:var(--ink-soft);margin:-4px 0 0}
@@ -522,8 +537,8 @@ input{caret-color:var(--btn-bg)}
 /* ---- v60: payment method dropdown ---- */
 .payfield{width:100%;min-height:48px;padding:0 14px;border-radius:14px;background:var(--glass-deep);border:1px solid var(--glass-brd);color:var(--ink);font:inherit;font-weight:700;display:flex;align-items:center;gap:10px;text-align:start}
 .payfield .dt{flex:1}
-.paydd{left:0;right:0;top:calc(100% + 8px);min-width:0;transform:translateY(-4px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s}
-.paydd.on{opacity:1;visibility:visible;transform:none;transition:opacity .18s ease,transform .18s ease}
+.paydd{left:0;right:0;top:calc(100% + 8px);min-width:0;transform:translateY(-4px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s;display:none}
+.paydd.on{display:block;opacity:1;visibility:visible;transform:none;transition:opacity .18s ease,transform .18s ease}
 
 /* ============ rewards ============ */
 #pts-hero{border-radius:var(--r-xl);padding:22px;text-align:center;position:relative;overflow:hidden}
@@ -594,9 +609,18 @@ body:not(.perf-lite) #stage.focus #patlayer{filter:blur(5px) brightness(.97)}
 /* v116: the popup body scrolls with NO visible bar (like the sheet did before v115) — only the frames inside it keep one */
 /* v126: pinned header + scrollable middle + pinned CTA */
 .bpop-head{display:flex;flex-direction:column;gap:12px;flex:none}
-.bpop-mid{display:flex;flex-direction:column;gap:12px;flex:1;min-height:0;overflow-y:auto;scrollbar-width:none}
+.bpop-mid{display:flex;flex-direction:column;gap:12px;flex:1;min-height:0;overflow-y:auto;scrollbar-width:none;overscroll-behavior:contain}
 .bpop-mid::-webkit-scrollbar{display:none;width:0;height:0}
 .bpop-foot{display:flex;flex-direction:column;gap:12px;flex:none}
+/* v145: pinned head/foot hairlines go edge to edge, ends rounded in
+   the sheet's own 28px radius (.sheet border-radius). The line is a
+   pseudo-element spanning the full sheet width — the sheet's horizontal
+   padding is 22px, so it extends 22px past the head/foot each side.
+   Line is var(--hair); the soft shadow rides on the line. */
+.bpop-head{position:relative;padding-bottom:10px}
+.bpop-head::after{content:"";position:absolute;left:-22px;right:-22px;bottom:0;height:1px;background:var(--hair);border-radius:28px;box-shadow:0 10px 14px -10px rgba(10,25,30,.20)}
+.bpop-foot{position:relative;padding-top:10px}
+.bpop-foot::before{content:"";position:absolute;left:-22px;right:-22px;top:0;height:1px;background:var(--hair);border-radius:28px;box-shadow:0 -10px 14px -10px rgba(10,25,30,.20)}
 #sh-bundle .bpop-mid > .micro{margin-top:4px;margin-bottom:-4px}
 #sh-bundle .bpop-mid > div .micro{margin-bottom:8px}
 #sh-bundle .bpop-row{padding:8px 0}
@@ -6863,7 +6887,7 @@ function bHero(bd) {
 function bSubline(bd) {
   var ar = LANG === 'ar';
   var hk = bHeroKind(bd);
-  var parts = ['<span class="bprice">' + fmtN(bd.p) + ' ' + T('syp') + '</span>'];
+  var parts = ['<span class="bvalid">' + bValidLabel(bd) + '</span>']; /* v138: validity first, bold */
   if (bd.note) parts.push(B(bd.note));
   var kinds = bd.kinds || [];
   var seen = {};
@@ -6889,7 +6913,6 @@ function bSubline(bd) {
     } else {
       parts.push(fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom === 'min' ? (ar ? 'دقيقة' : 'min') : k.uom) + (k.kind === 'data' || k.kind === 'roaming' ? '' : ' ' + label));
       if (k.kind === 'data' || k.kind === 'roaming' || k.kind === 'social' || k.kind === 'night' || k.kind === 'bonus') {
-        // The unit already implies the kind; keep the label for clarity on non-data kinds.
         if (k.kind !== 'data' && k.kind !== 'roaming') parts[parts.length - 1] = fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom) + ' ' + label;
       }
     }
@@ -6900,7 +6923,6 @@ function bSubline(bd) {
     if (hk !== 'minutes' && bd.m) parts.push(fmtN(bd.m) + ' ' + (ar ? 'دقيقة' : 'min'));
     if (hk !== 'sms' && bd.s) parts.push(fmtN(bd.s) + ' ' + (ar ? 'رسالة' : 'SMS'));
   }
-  parts.push(bValidLabel(bd));
   return parts.join(' · ');
 }
 
@@ -6918,9 +6940,10 @@ function bCardElement(bd, best) {
     ? `<span class="bpill-act ${autoOn ? 'bpill-auto' : 'bpill-grey'}">${T('b_activated')}${autoOn ? ' <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' : ''}</span>`
     : (bd.offer ? `<span class="bpill-act bpill-offer">${T('b_offer')}</span>` : ''); /* v47: ONE tag, top-right like the old Activated tag; Activated replaces Special offer on activation */
   if (tagHtml) b.style.marginTop = '14px';
+  const priceLabel = b4PriceNum(bd) === 0 ? (LANG === 'ar' ? 'مجاني' : 'Free') : fmtN(bd.p) + ' ' + T('syp'); /* v138: price above the hero */
   b.innerHTML = `${tagHtml}
       <span class="bu-corner" aria-hidden="true" data-hero="${hk}" data-icon="${cornerIcon}" style="background:${cornerBg}"><img class="bu-corner-ic" alt="" src="${ZI(cornerIcon)}"></span>
-      <span class="bp bhero"><span class="p num">${hero.big}</span><span class="u" style="display:block">${hero.cap}</span></span>
+      <span class="bp bhero"><span class="bprice num">${priceLabel}</span><span class="p num">${hero.big}</span><span class="u" style="display:block">${hero.cap}</span></span>
       <span class="bt"><span class="t">${B(bd.n)}</span><span class="d" style="display:block">${bSubline(bd)}</span></span>`;
   b.onclick = () => openBundle(bd);
   return b;
@@ -7437,6 +7460,7 @@ function b4RoamingRows(bd) {
 function b4ScrollFrames(root) {
   (root || document).querySelectorAll('#bundle-body .bu-usage-wrap').forEach(function (wrap) {
     var frame = wrap.querySelector('.bu-usage-scroll'); if (!frame) return;
+    if (!wrap.hasAttribute('data-keep-scroll')) return;
     var rows = frame.querySelectorAll('.bpop-row');
     if (rows.length > 4) {
       var r5 = rows[4];
@@ -7498,10 +7522,6 @@ function openBundle(bd) {
   var showRenew = (elig === 'Yes' || elig === 'Yes*' || elig === 'GATED');
   var pendingAuto = bd.activated ? !!bd.autoRenew : true;
   if (bd.renew === 'once') pendingAuto = false;
-  var renewNote = '';
-  if (elig === 'GATED') renewNote = ar ? 'متاح بعد إثبات الفئة' : 'Available after segment proof';
-  else if (bd.renew === 'once') renewNote = T('b_renew_once');
-  else renewNote = T('b_renew_on_s');
   S.payMethod = 'balance';
   $('bundle-body').innerHTML = ''
     + '<div class="bpop-head">'
@@ -7518,7 +7538,7 @@ function openBundle(bd) {
     + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + whatRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>'
     + (condRows ? '<p class="micro">' + (ar ? 'شروط الاستخدام' : 'Usage conditions') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + condRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
     + (fairRows ? '<p class="micro">' + (ar ? 'سياسة الاستخدام العادل' : 'Fair usage policy') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + fairRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
-    + (roamRows ? '<p class="micro">' + (ar ? 'التجوال متاح في' : 'Roaming available in') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + roamRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
+    + (roamRows ? '<p class="micro">' + (ar ? 'التجوال متاح في' : 'Roaming available in') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap" data-keep-scroll=\"1\"><div class="bu-usage-scroll">' + roamRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
     + '<p class="micro">' + T('b_price_valid') + '</p>'
     + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)">'
     + '<div class="bpop-row"><span class="k">' + (ar ? 'السعر' : 'Price') + '</span><span class="v num">' + (bd.offer ? '<s class="bpop-old">' + fmtN(bd.offer.old) + ' ' + T('syp') + '</s> ' : '') + fmtN(price) + ' ' + T('syp') + '</span></div>'
@@ -7529,10 +7549,9 @@ function openBundle(bd) {
     + (showBill ? '<p class="cap" style="color:var(--ink-soft)">' + (ar ? 'يُضاف إلى فاتورة دورة الفوترة' : 'Added to your postpaid bill') + '</p>' : '')
     + (showPay ? '<div style="position:relative"><p class="micro">' + T('b_pay_method') + '</p><button class="payfield" id="pay-field" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="' + T('b_pay_method') + '"><span class="pay-ic-w"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="22" height="22"></span><span class="pay-ic-c" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span><span class="dt">' + T('h_bal') + ' · ' + fmtN(S.balance) + ' ' + T('syp') + '</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd paydd" id="pay-dd" role="menu" aria-label="' + T('b_pay_method') + '"><button type="button" role="menuitemradio" aria-checked="true" data-method="balance" class="cur"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="26" height="26"><span class="dt">' + T('h_bal') + '<span class="ds2" style="display:block">' + fmtN(S.balance) + ' ' + T('syp') + '</span></span></button><button type="button" role="menuitemradio" aria-checked="false" data-method="card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span class="dt">' + T('h_card') + '</span></button></div></div>' : '')
     + (svcRows ? '<p class="micro">' + (ar ? 'الخدمات المشمولة' : 'Included services') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + svcRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
-    + (showRenew ? '<div style="display:flex;align-items:center;justify-content:space-between;gap:14px"><div><p style="font-weight:800">' + T('b_renew') + '</p><p class="cap" style="color:var(--ink-soft)">' + renewNote + '</p></div><button class="bswitch" id="btn-renew" type="button" role="switch" aria-checked="' + ((pendingAuto && bd.renew === 'auto') ? 'true' : 'false') + '" ' + (bd.renew === 'once' || elig === 'GATED' ? 'disabled' : '') + ' aria-label="' + T('b_renew') + '"><span class="knob"></span></button></div>' : '')
-    + (cta.enabled && !bd.activated ? '<p class="cap" style="color:var(--ink-soft)">' + (ar ? 'يمكنك شراء هذه الباقة مجدداً بينما هي مفعّلة.' : 'You can buy this bundle again while it is active.') + '</p>' : '')
     + '</div>'
     + '<div class="bpop-foot">'
+    + (showRenew ? '<div style="display:flex;align-items:center;justify-content:space-between;gap:14px"><p style="font-weight:800">' + T('b_renew') + '</p><button class="bswitch" id="btn-renew" type="button" role="switch" aria-checked="' + ((pendingAuto && bd.renew === 'auto') ? 'true' : 'false') + '" ' + (bd.renew === 'once' || elig === 'GATED' ? 'disabled' : '') + ' aria-label="' + T('b_renew') + '"><span class="knob"></span></button></div>' : '')
     + '<div class="srow"><button class="btn" id="btn-sub"' + (cta.enabled ? '' : ' disabled') + '>' + cta.label + '</button></div>'
     + '<p class="cap" style="text-align:center;color:var(--ink-faint)">' + (cta.enabled ? T('b_terms') : cta.reason) + '</p>'
     + '</div>';
@@ -10230,7 +10249,6 @@ function openHomeBundleDetail(b) {
   const countryRows = (b.countries && b.countries.length) ? b.countries.map(c => `<div class="bpop-row"><span style="display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink)"><span style="font-size:22px;line-height:1">${c.flag}</span>${ar ? c.nameAr : c.name}</span></div>`).join('') + `<div class="bpop-row" style="justify-content:center;border-bottom:0;padding:2px 0"><a class="linklike" style="min-height:30px" href="#" data-learn="roaming">${ar ? 'اعرف المزيد ←' : 'Learn more →'}</a></div>` : '';
   if (b.autoRenew === undefined) b.autoRenew = true;
   const showRenew = b.autoRenew !== 'unsupported';
-  const autoTxt = b.autoRenew === true ? (ar ? 'مفعّل · يتجدد تلقائياً عند الانتهاء' : 'Enabled · Renews automatically at expiry') : (ar ? 'معطّل' : 'Disabled');
   const warnStyle = (b.expiresAt != null && ((typeof ucUrgent === 'function') ? ucUrgent(b) : daysLeft <= 2)) ? 'border:1px solid ' + (S.theme === 'dark' ? '#E27FAF' : '#AB1368') + ';' : '';
   $('hist-body').innerHTML = `
     <div class="bpop-head">
@@ -10251,14 +10269,14 @@ function openHomeBundleDetail(b) {
     </div>
     ${(b.details && b.details.length) ? '<p class="micro">' + (ar ? 'التفاصيل' : 'Details') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + detailRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : ''}
     ${(b.includedServices && b.includedServices.length) ? '<p class="micro">' + (ar ? 'الخدمات المشمولة' : 'Included services') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + includedRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : ''}
-    ${(b.countries && b.countries.length) ? '<p class="micro">' + (b.countriesTitle ? B(b.countriesTitle) : (ar ? 'الدول' : 'Countries')) + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + countryRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : ''}
+    ${(b.countries && b.countries.length) ? '<p class="micro">' + (b.countriesTitle ? B(b.countriesTitle) : (ar ? 'الدول' : 'Countries')) + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap" data-keep-scroll="1"><div class="bu-usage-scroll">' + countryRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : ''}
     ${b.shared ? '<p class="cap" style="color:var(--ink-soft)">' + (b.sharedLines ? T('uc_shared').replace('{n}', uNum(b.sharedLines)) : T('uc_shared_any')) + '</p>' : ''}
-    <div id="h-renew-row" style="display:flex;align-items:center;justify-content:space-between;gap:14px">
-      <div><p style="font-weight:800">${T('b_renew')}</p><p class="cap" style="color:var(--ink-soft)">${autoTxt}</p></div>
-      ${ucRenewBtn(b)}
-    </div>
     </div>
     <div class="bpop-foot">
+    <div id="h-renew-row" style="display:flex;align-items:center;justify-content:space-between;gap:14px">
+      <p style="font-weight:800">${T('b_renew')}</p>
+      ${ucRenewBtn(b)}
+    </div>
     <div class="srow">
     ${ucActivateBtn(b, ar)}
     </div>
@@ -10274,6 +10292,7 @@ function openHomeBundleDetail(b) {
   (function () {
     document.querySelectorAll('#hist-body .bu-usage-wrap').forEach(wrap => {
       const frame = wrap.querySelector('.bu-usage-scroll'); if (!frame) return;
+      if (!wrap.hasAttribute('data-keep-scroll')) return;
       const rows = frame.querySelectorAll('.bpop-row');
       if (rows.length > 4) {
         const r5 = rows[4];
