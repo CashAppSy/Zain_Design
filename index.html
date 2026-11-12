@@ -397,8 +397,8 @@ input{caret-color:var(--btn-bg)}
 /* v138 (test): bundle card redesign — price above hero, hero big+bold,
    corner fills top-left, validity first in details, card slightly smaller */
 .bundle.card{padding-top:12px;padding-bottom:12px;padding-inline-start:66px;margin-bottom:10px;gap:12px}
-.bundle .bu-corner{width:64px;height:64px;border-end-end-radius:64px}
-.bundle .bu-corner img{top:8px;inset-inline-start:8px;width:34px;height:34px}
+.bundle .bu-corner{width:40px;height:40px;border-end-end-radius:40px}
+.bundle .bu-corner img{top:5px;inset-inline-start:5px;width:26px;height:26px}
 .bundle .bhero{width:132px}
 .bundle .bp .bprice{display:block;font-size:15px;font-weight:800;color:var(--ink);margin-bottom:1px;white-space:nowrap}
 .bundle .bp .p{font-size:26px;line-height:1.05;font-weight:900}
@@ -409,6 +409,28 @@ input{caret-color:var(--btn-bg)}
 .bundle .bhero{width:128px}
 /* v140 (test): hero colour fills the card border at the top-left only */
 .bundle .bu-corner{top:-1px;inset-inline-start:-1px}
+/* v147: bundle card redesign per Yaman's image — title top, description
+   (benefit names, '& More...' when it overflows 2 lines) below the title,
+   hero bottom-left, price + validity bottom-right separated by a line.
+   Grid: left column = hero, right column = title/desc (top) + price (bottom).
+   Row 1 min 64px so the hero never slides under the 64px corner disc. */
+.bundle.card{display:grid;grid-template-columns:144px minmax(0,1fr);grid-template-rows:minmax(64px,1fr) auto;column-gap:12px;row-gap:10px;padding:14px;align-items:start}
+.bundle.card .bt{grid-column:2;grid-row:1;min-width:0}
+.bundle.card .bt .t{font-size:18px;font-weight:800;line-height:1.2;min-height:calc(1.2em * 2);max-height:calc(1.2em * 2);display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.bundle.card .bt .d{font-size:14px;color:var(--ink-soft);line-height:1.35;min-height:calc(1.35em * 2);max-height:calc(1.35em * 2);overflow:hidden}
+.bundle.card .bt .d .emo{display:block}
+.bundle.card .bt .d .ben{display:block}
+.bundle.card .bhero{grid-column:1;grid-row:1 / 3;align-self:center;width:auto;text-align:start;transform:translateY(11px)}
+.bundle.card .bp .p{font-size:34px;line-height:1.05;font-weight:900;white-space:nowrap}
+.bundle.card .bp .p svg{display:inline-block;vertical-align:middle}
+.bundle.card .bp .u{font-size:13px;color:var(--ink-faint)}
+.bundle.card .bfoot{grid-column:2;grid-row:2;align-self:end;display:flex;align-items:baseline;justify-content:flex-end;gap:8px;min-width:0}
+.bundle.card .bfoot .bprice{font-size:17px;font-weight:800;color:var(--ink);white-space:nowrap}
+.bundle.card .bfoot .bprice .bp-c{font-size:12px;font-weight:700;color:var(--ink-soft)}
+.bundle.card .bfoot .bsep{width:1px;height:20px;background:var(--ink-faint);flex:none;align-self:center}
+.bundle.card .bfoot .bvalid{font-size:15px;font-weight:800;color:var(--ink);white-space:nowrap}
+.bundle.card .bfoot .bvalid .bv-u{font-weight:700;color:var(--ink-soft)}
+
 .bprice{font-weight:800;color:var(--ink)}
 .bpill-auto{border:1px solid rgba(255,255,255,.45)}
 .bsec-note{font-size:var(--f-cap);color:var(--ink-soft);margin:-4px 0 0}
@@ -539,6 +561,7 @@ input{caret-color:var(--btn-bg)}
 .payfield .dt{flex:1}
 .paydd{left:0;right:0;top:calc(100% + 8px);min-width:0;transform:translateY(-4px);transition:opacity .18s ease,transform .18s ease,visibility 0s linear .18s;display:none}
 .paydd.on{display:block;opacity:1;visibility:visible;transform:none;transition:opacity .18s ease,transform .18s ease}
+.bpop-foot .paydd{top:auto;bottom:calc(100% + 8px);transform:translateY(4px)}
 
 /* ============ rewards ============ */
 #pts-hero{border-radius:var(--r-xl);padding:22px;text-align:center;position:relative;overflow:hidden}
@@ -602,7 +625,7 @@ body:not(.perf-lite) #stage.focus #patlayer{filter:blur(5px) brightness(.97)}
   display:flex;flex-direction:column;gap:12px;opacity:0;visibility:hidden}
 .sheet.on{opacity:1;visibility:visible;will-change:transform}
 #sh-bundle, #sh-hist{max-height:calc(100% - 84px - env(safe-area-inset-bottom));max-height:calc(100% - 84px - max(env(safe-area-inset-bottom),18px));padding:18px 22px}
-#sh-bundle #bundle-body{display:flex;flex-direction:column;gap:12px}
+#sh-bundle #bundle-body{display:flex;flex-direction:column;gap:0}
 #sh-bundle{overflow:hidden}
 #sh-hist{overflow:hidden}
 #sh-bundle #bundle-body{flex:1;min-height:0;overflow:hidden}
@@ -626,7 +649,7 @@ body:not(.perf-lite) #stage.focus #patlayer{filter:blur(5px) brightness(.97)}
 #sh-bundle .bpop-row{padding:8px 0}
 #sh-bundle .srow{margin-top:0}
 /* v97: popup scrollbars are styled below (no longer hidden) */
-#sh-hist #hist-body{display:flex;flex-direction:column;gap:12px;flex:1;min-height:0;overflow:hidden}
+#sh-hist #hist-body{display:flex;flex-direction:column;gap:0;flex:1;min-height:0;overflow:hidden}
 #sh-hist .bpop-mid > .micro{margin-top:4px;margin-bottom:-4px}
 #sh-hist .bpop-row{padding:8px 0}
 .bu-usage-wrap{position:relative}
@@ -658,7 +681,7 @@ body:not(.perf-lite) #stage.focus #patlayer{filter:blur(5px) brightness(.97)}
 .bu-usage-wrap.bu-fading .bu-usage-fade{display:block}
 #sh-hist .srow{margin-top:0}
 #sh-bundle .sharebtn:disabled{opacity:.45}
-.sheet .grab{position:relative;width:100%;height:28px;margin:-10px 0 -8px;flex:none;touch-action:none;cursor:grab}
+.sheet .grab{position:relative;width:100%;height:28px;margin:-10px 0 -18px;flex:none;touch-action:none;cursor:grab}
 .sheet .grab::before{content:'';position:absolute;left:50%;top:50%;width:36px;height:5px;transform:translate(-50%,-50%);background:var(--ink-faint);border-radius:99px} /* v43: grab handle reverted from the down-chevron mask to a plain dash (-) — the classic sheet handle; same .grab container, so drag-down-to-close bindings are untouched */
 
 .sheet .grab:active{cursor:grabbing}
@@ -6845,42 +6868,44 @@ function bHeroKind(bd) {
   if (bd.unlim === 'sms' || bd.s) return 'sms';
   return null;
 }
+const INF_SVG = '<svg width="60" height="28" viewBox="8 72 240 112" fill="currentColor" aria-hidden="true"><path d="M244,128a52,52,0,0,1-88.76953,36.76953q-.0857-.0857-.166-.17676L95.02832,96.80371a44,44,0,1,0,0,62.39258l8.60449-9.71533a4,4,0,1,1,5.98926,5.30371l-8.68652,9.8081q-.08057.09083-.166.17676a52,52,0,1,1,0-73.53906q.0857.0857.166.17676l60.03613,67.78906a44,44,0,1,0,0-62.39258l-8.60449,9.71533a4,4,0,1,1-5.98926-5.30371l8.68652-9.8081q.08057-.09082.166-.17676A52,52,0,0,1,244,128Z"/></svg>'; /* v153: Yaman's infinity-thin SVG (SVG Repo) — replaces my hand-drawn lemniscate */ /* v152: clean SVG infinity (was a text glyph — too bold, ugly, small) */
 function bHero(bd) {
   var ar = LANG === 'ar';
   var hk = bHeroKind(bd);
   var k;
-  if (hk === 'all') return { big: T('f_unlimited'), cap: ar ? 'كل شيء' : 'everything' };
+  var infGB = INF_SVG + (ar ? ' غيغا' : ' GB'); /* v147: unlimited shows the infinity symbol + unit, like Yaman's card image */
+  if (hk === 'all') return { big: INF_SVG, cap: ar ? 'كل شيء' : 'Everything' };
   if (hk === 'social') {
     k = b4KindCap(bd, 'social');
     return k && k.cap != null
-      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'اجتماعي' : 'social' }
-      : { big: T('f_unlimited'), cap: ar ? 'اجتماعي' : 'social' };
+      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'اجتماعي' : 'Social' }
+      : { big: infGB, cap: ar ? 'اجتماعي' : 'Social' };
   }
   if (hk === 'night') {
     k = b4KindCap(bd, 'night');
     return k && k.cap != null
-      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات الليل' : 'night data' }
-      : { big: T('f_unlimited'), cap: ar ? 'بيانات الليل' : 'night data' };
+      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات الليل' : 'Night Data' }
+      : { big: infGB, cap: ar ? 'بيانات الليل' : 'Night Data' };
   }
   if (hk === 'tv') return { big: 'TV', cap: ar ? 'زين تيفي' : 'Zain TV' };
   if (hk === 'bonus') {
     k = b4KindCap(bd, 'bonus');
     return k && k.cap != null
-      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات إضافية' : 'bonus data' }
-      : { big: T('f_unlimited'), cap: ar ? 'بيانات إضافية' : 'bonus data' };
+      ? { big: fmtN(k.cap) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات إضافية' : 'Bonus Data' }
+      : { big: infGB, cap: ar ? 'بيانات إضافية' : 'Bonus Data' };
   }
   if (hk === 'roaming') {
     k = b4KindCap(bd, 'roaming');
     return k && k.cap != null
-      ? { big: fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom), cap: ar ? 'بيانات تجوال' : 'roaming data' }
-      : { big: T('f_unlimited'), cap: ar ? 'بيانات تجوال' : 'roaming data' };
+      ? { big: fmtN(k.cap) + ' ' + (k.uom === 'GB' ? (ar ? 'غيغا' : 'GB') : k.uom), cap: ar ? 'بيانات تجوال' : 'Roaming Data' }
+      : { big: infGB, cap: ar ? 'بيانات تجوال' : 'Roaming Data' };
   }
   if (hk === 'service') return { big: B(bd.n), cap: '' };
-  if (bd.unlim === 'data') return { big: T('f_unlimited'), cap: ar ? 'بيانات' : 'data' };
-  if (bd.unlim === 'minutes') return { big: T('f_unlimited'), cap: ar ? 'دقائق' : 'minutes' };
-  if (bd.unlim === 'sms') return { big: T('f_unlimited'), cap: ar ? 'رسائل' : 'SMS' };
-  if (bd.dataGB) return { big: fmtN(bd.dataGB) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات' : 'data' };
-  if (bd.m) return { big: fmtN(bd.m), cap: ar ? 'دقائق' : 'minutes' };
+  if (bd.unlim === 'data') return { big: infGB, cap: ar ? 'بيانات' : 'Data' };
+  if (bd.unlim === 'minutes') return { big: INF_SVG, cap: ar ? 'دقائق' : 'Minutes' };
+  if (bd.unlim === 'sms') return { big: INF_SVG, cap: ar ? 'رسائل' : 'SMS' };
+  if (bd.dataGB) return { big: fmtN(bd.dataGB) + ' ' + (ar ? 'غيغا' : 'GB'), cap: ar ? 'بيانات' : 'Data' };
+  if (bd.m) return { big: fmtN(bd.m), cap: ar ? 'دقائق' : 'Minutes' };
   if (bd.s) return { big: fmtN(bd.s), cap: ar ? 'رسائل' : 'SMS' };
   return { big: B(bd.d), cap: '' };
 }
@@ -6927,6 +6952,137 @@ function bSubline(bd) {
 }
 
 /* ================= end v137 card hero ================= */
+/* v147: card description = benefit names (hero excluded), 'With ' prefix.
+   When it overflows 2 lines, drop the last benefit and append '& More...'
+   (AR: 'و المزيد...') until it fits. Rebuilt from data-names each run, so
+   re-running after a language/font change is safe. */
+function bDescNames(bd) {
+  var ar = LANG === 'ar';
+  var hk = bHeroKind(bd);
+  var kinds = bd.kinds || [];
+  var names = [];
+  var seen = {};
+  var labelFor = function (k) {
+    if (k.kind === 'data') return ar ? 'بيانات' : 'Data';
+    if (k.kind === 'minutes') return ar ? 'دقائق' : 'minutes';
+    if (k.kind === 'sms') return ar ? 'رسائل' : 'SMS';
+    if (k.kind === 'social') return ar ? 'اجتماعي' : 'Social';
+    if (k.kind === 'night') return ar ? 'بيانات الليل' : 'Night Data';
+    if (k.kind === 'tv') return ar ? 'زين تيفي' : 'Zain TV';
+    if (k.kind === 'bonus') return ar ? 'بيانات إضافية' : 'Bonus Data';
+    if (k.kind === 'roaming') return ar ? 'بيانات تجوال' : 'Roaming Data';
+    if (k.kind === 'intl') return ar ? 'دولية' : 'Intl';
+    return '';
+  };
+  kinds.forEach(function (k) {
+    if (k.kind === hk) return;
+    if (k.kind === 'all') return;
+    if (seen[k.kind]) return;
+    seen[k.kind] = true;
+    var l = labelFor(k);
+    if (l) names.push(l);
+  });
+  if (!kinds.length) {
+    if (hk !== 'data' && bd.dataGB) names.push(ar ? 'بيانات' : 'Data');
+    if (hk !== 'minutes' && bd.m) names.push(ar ? 'دقائق' : 'minutes');
+    if (hk !== 'sms' && bd.s) names.push(ar ? 'رسائل' : 'SMS');
+  }
+  return names;
+}
+/* v150: emotional benefit sentence per bundle (line 1 of the card description).
+   Keyed by the bundle's English name (bd.n.en). Sentences are short so each
+   fits on one line; line 2 is the existing benefits / note. */
+const EMO = {
+  'Night Owl': {en: 'Embrace the night', ar: 'احتضن الليل'},
+  'Voice 1000': {en: 'Talk all you want', ar: 'تحدث كما تشاء'},
+  'Team Talk': {en: 'One team, endless talk', ar: 'حديث بلا حدود'},
+  'VIP Infinite': {en: 'Live without limits', ar: 'عش بلا حدود'},
+  'Chat All Day': {en: 'Chat all day, every day', ar: 'دردش طوال اليوم'},
+  'Welcome Trial (Free)': {en: 'Start here, go anywhere', ar: 'ابدأ هنا'},
+  'Everything Max': {en: 'Everything, all in one', ar: 'كل شيء في واحد'},
+  'All-in-One 12': {en: 'One bundle, does it all', ar: 'باقة واحدة تكفي'},
+  'Social Plus': {en: 'Stay social, stay close', ar: 'ابقَ اجتماعياً'},
+  'Quick 3H': {en: 'Fast data, right now', ar: 'بيانات سريعة الآن'},
+  'Exec Roam': {en: 'Travel far, stay near', ar: 'سافر وابقَ قريباً'},
+  'Global Roam': {en: 'The world, in your pocket', ar: 'العالم في جيبك'},
+  'Five-Way Combo': {en: 'Five ways, one bundle', ar: 'خمس طرق في واحدة'},
+  'Complete + Services': {en: 'Complete, and then some', ar: 'كامل وأكثر'},
+  'Data Max 20': {en: 'Data that goes further', ar: 'بيانات تذهب أبعد'},
+  'Talk More 500': {en: 'Talk more, worry less', ar: 'تحدث أكثر'},
+  'Weekend 14': {en: 'Weekends, unlocked', ar: 'نهاية أسبوعك'},
+  'Daily Data 2': {en: 'A fresh day, fresh data', ar: 'يوم جديد، بيانات جديدة'},
+  'Data Pool 200': {en: 'One pool, everyone in', ar: 'شارك البيانات'},
+  'VIP Day Pass': {en: 'A day of VIP', ar: 'يوم VIP'},
+  'Her Voice 400': {en: 'Her voice, everywhere', ar: 'صوتها في كل مكان'},
+  'Platinum Everything': {en: 'The best, no compromises', ar: 'الأفضل بلا تنازلات'},
+  'Data + Zain TV': {en: 'Watch, stream, enjoy', ar: 'شاهد واستمتع'},
+  'Data + International Minutes': {en: 'Home is one call away', ar: 'الوطن مكالمة واحدة'},
+  'Prepaid Roaming Combo': {en: 'Roam without worry', ar: 'تجول بلا قلق'},
+  'Complete Pack + Services': {en: 'All covered, all in one', ar: 'كل ما تحتاجه'},
+  'Quad Combo': {en: 'Four in one, all yours', ar: 'أربعة في واحد'},
+  'Home + Roam 15': {en: 'Home and away, covered', ar: 'في البيت وخارجه'},
+  'Data + Caller ID': {en: "Know who's calling", ar: 'اعرف من يتصل'},
+  'Talk + Data': {en: 'A little of everything', ar: 'قليل من كل شيء'},
+  'Prepaid Monthly Plan 7': {en: 'A month, made easy', ar: 'شهر بلا عناء'},
+  'Prepaid Plan 3': {en: 'Your everyday plan', ar: 'باقتك اليومية'},
+  'Postpaid monthly bundle 3 / 950 SYP': {en: 'Monthly, hassle-free', ar: 'شهرياً بلا عناء'},
+  'Postpaid Plan Students 1': {en: 'Made for student life', ar: 'صُنعت لحياة الطالب'},
+  'Daily WhatsApp & Min Bundle': {en: 'WhatsApp all day', ar: 'واتساب طوال اليوم'},
+  'Daily Social Media bundle': {en: 'Social, all day long', ar: 'تواصل اجتماعي يومي'},
+  'Hourly bundle 5 GB': {en: 'An hour, full speed', ar: 'ساعة بسرعة كاملة'},
+  'Deaf and dumb for Postpaid lines': {en: 'Made for you, always on', ar: 'مصممة لك، دائماً'},
+  'Data Roaming Bundles Prepaid 1000 MB': {en: 'Roam light, stay close', ar: 'تجول بخفة'},
+  'Postpaid Social Add-on': {en: 'Social, supercharged', ar: 'تواصل اجتماعي أكثر'},
+  'Postpaid Night Add-on': {en: 'Nights, unlimited', ar: 'ليالٍ بلا حدود'},
+  'SMS 5000': {en: 'Text all you want', ar: 'راسل كما تشاء'},
+  'TV Unlimited': {en: 'TV, without limits', ar: 'تلفاز بلا حدود'},
+  'Bonus 10 GB': {en: 'Extra data, extra joy', ar: 'مكافأة منا'}
+};
+function bEmo(bd) {
+  var key = (bd.n && bd.n.en) ? bd.n.en : bd.n;
+  var e = EMO[key];
+  if (!e) return '';
+  return LANG === 'ar' ? e.ar : e.en;
+}
+function bDescText(names, maxN) {
+  if (!names || !names.length) return '';
+  var ar = LANG === 'ar';
+  var sep = ar ? '، ' : ', ';
+  var pre = ar ? 'مع ' : 'With ';
+  var more = ar ? ' و المزيد...' : ' & More...';
+  var shown = names.slice(0, maxN);
+  var txt = pre + shown.join(sep);
+  if (names.length > maxN) txt += more;
+  return txt;
+}
+function bValidSplit(bd) {
+  var v = bValidLabel(bd);
+  var m = v.match(/^([0-9٠-٩,]+)\s+(.+)$/);
+  if (m) return '<span class="bv-n num">' + m[1] + '</span> <span class="bv-u">' + m[2] + '</span>';
+  return '<span class="bv-n">' + v + '</span>';
+}
+function syncCardDescs() {
+  var cards = document.querySelectorAll('#b-list .bundle.card');
+  if (!cards.length) return;
+  if (!cards[0].offsetParent) return; /* hidden tab — measurements would read 0 */
+  cards.forEach(function (c) {
+    var ben = c.querySelector('.bt .d .ben');
+    if (!ben) return;
+    if (ben.dataset.note === '1') return; /* a single note, not a list — nothing to truncate */
+    var names = [];
+    try { names = JSON.parse(ben.dataset.names || '[]'); } catch (e) { names = []; }
+    if (!names.length) { ben.textContent = ''; return; }
+    var cs = getComputedStyle(ben);
+    var lh = parseFloat(cs.lineHeight) || 17.5;
+    var maxH = lh * 1 + 2; /* v150: benefits are line 2 only — 1 line (+2px for scrollHeight rounding) */
+    for (var n = names.length; n >= 1; n--) {
+      ben.textContent = bDescText(names, n);
+      if (ben.scrollHeight <= maxH) return;
+    }
+    ben.textContent = bDescText(names, 1);
+  });
+}
+
 function bCardElement(bd, best) {
   const b = document.createElement('button');
   b.className = 'bundle card' + (best ? ' best' : '');
@@ -6940,16 +7096,27 @@ function bCardElement(bd, best) {
     ? `<span class="bpill-act ${autoOn ? 'bpill-auto' : 'bpill-grey'}">${T('b_activated')}${autoOn ? ' <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' : ''}</span>`
     : (bd.offer ? `<span class="bpill-act bpill-offer">${T('b_offer')}</span>` : ''); /* v47: ONE tag, top-right like the old Activated tag; Activated replaces Special offer on activation */
   if (tagHtml) b.style.marginTop = '14px';
-  const priceLabel = b4PriceNum(bd) === 0 ? (LANG === 'ar' ? 'مجاني' : 'Free') : fmtN(bd.p) + ' ' + T('syp'); /* v138: price above the hero */
+  const priceHtml = b4PriceNum(bd) === 0
+    ? '<span class="bprice num">' + (LANG === 'ar' ? 'مجاني' : 'Free') + '</span>'
+    : '<span class="bprice num"><span class="bp-n">' + fmtN(bd.p) + '</span> <span class="bp-c">' + T('syp') + '</span></span>'; /* v147: price moves to the bottom-right foot */
+  const descNames = bDescNames(bd);
+  /* v147: description = other benefit names; a single-benefit bundle with a
+     note shows the note instead; otherwise the description stays empty. */
+  const descIsNote = descNames.length === 0 && !!bd.note;
+  const descText0 = descIsNote ? B(bd.note) : bDescText(descNames, descNames.length);
+  const descAttr = descIsNote ? ' data-note="1" data-names="[]"' : ` data-names='${JSON.stringify(descNames).replace(/'/g, "&#39;")}'`;
+  const emoText = bEmo(bd); /* v150: emotional benefit sentence, line 1 of the description */
   b.innerHTML = `${tagHtml}
       <span class="bu-corner" aria-hidden="true" data-hero="${hk}" data-icon="${cornerIcon}" style="background:${cornerBg}"><img class="bu-corner-ic" alt="" src="${ZI(cornerIcon)}"></span>
-      <span class="bp bhero"><span class="bprice num">${priceLabel}</span><span class="p num">${hero.big}</span><span class="u" style="display:block">${hero.cap}</span></span>
-      <span class="bt"><span class="t">${B(bd.n)}</span><span class="d" style="display:block">${bSubline(bd)}</span></span>`;
+      <span class="bt"><span class="t">${B(bd.n)}</span><span class="d" style="display:block"><span class="emo">${emoText}</span><span class="ben" style="display:block"${descAttr}>${descText0}</span></span></span>
+      <span class="bp bhero"><span class="p num">${hero.big}</span><span class="u" style="display:block">${hero.cap}</span></span>
+      <span class="bfoot">${priceHtml}<span class="bsep" aria-hidden="true"></span><span class="bvalid">${bValidSplit(bd)}</span></span>`;
   b.onclick = () => openBundle(bd);
   return b;
 }
 let bundleCardH = 0; /* v52-branch: last measured bundle-card height, reused as the history target */
 function syncBundleCardSize() { /* v48: uniform card size — biggest card sets the height for all */
+  syncCardDescs(); /* v147: truncate long descriptions first — they set the card height */
   const cards = [...document.querySelectorAll('#b-list .bundle.card')];
   if (!cards.length) return;
   cards.forEach((c, i) => c.style.setProperty('--mo-i', Math.min(i, 7))); /* v50: entrance stagger, capped */
@@ -7484,8 +7651,8 @@ function openBundle(bd) {
   var popTag = bd.activated
     ? '<span class="bpill-sm ' + (popAutoOn ? 'bpill-auto' : 'bpill-grey') + '" style="flex:none;min-height:24px;padding:0 11px;box-shadow:0 6px 14px rgba(10,25,30,.28)">' + T('b_activated') + (popAutoOn ? ' <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>' : '') + '</span>'
     : (bd.offer ? '<span class="bpill-sm bpill-offer" style="flex:none;min-height:24px;padding:0 11px">' + T('b_offer') + '</span>' : '');
-  var segNote = bd.section || (bd.segment === 'btl' ? T('b_just') : bd.segment === 'foryou' ? T('b_recommended') : bd.segment === 'plan' ? T('b_sec_plan') : bd.segment === 'addon' ? T('b_sec_addon') : T('b_general'));
   var shareable = bd.segment !== 'btl' || !!bd.offer;
+  var isPinned = !!(S.bPinned && S.bPinned.includes(bd.id));
   var shareLink = 'https://zain.sy/bundles/' + bd.id;
   var actPur = bd.activated ? PURCHASES.find(function (x) { return x.bid === bd.id && x.status === 'active' && x.vt; }) : null;
   var validRow = actPur
@@ -7527,13 +7694,13 @@ function openBundle(bd) {
     + '<div class="bpop-head">'
     + '<div style="display:flex;gap:14px;align-items:center">'
     + '<span class="bi" style="width:60px;height:60px;border-radius:18px;background:var(--glass-deep);border:1px solid var(--glass-brd);display:flex;align-items:center;justify-content:center"><img decoding="async" src="' + ZI(bd.z) + '" alt="" width="32" height="32"></span>'
-    + '<div style="flex:1;min-width:0"><p class="st" id="sh-bundle-t">' + B(bd.n) + '</p><p class="sd" style="color:var(--ink-soft)">' + segNote + '</p></div>'
+    + '<div style="flex:1;min-width:0"><p class="st" id="sh-bundle-t">' + B(bd.n) + '</p></div>'
+    + '<button class="icobtn pinbtn' + (isPinned ? ' pinned' : '') + '" id="b-pin" type="button" aria-label="' + (isPinned ? T('b_pinned') : T('b_pin')) + '" aria-pressed="' + (isPinned ? 'true' : 'false') + '" style="flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 4h10l-1.5 6h-7L7 4z"/><path d="M12 10v11"/></svg></button>'
     + '<button class="icobtn sharebtn" id="b-share" type="button" aria-label="' + T('b_share') + '"' + (shareable ? '' : ' disabled') + ' style="flex:none"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.49" x2="8.59" y2="10.49"/></svg></button>'
     + '</div>'
-    + (popTag ? '<div style="padding-inline-start:74px">' + popTag + '</div>' : '')
+    + (popTag ? '<div style="padding-inline-start:74px;margin-top:-15px">' + popTag + '</div>' : '')
     + '</div>'
     + '<div class="bpop-mid">'
-    + (B(bd.d) ? '<p class="sd" style="color:var(--ink-soft);margin-bottom:4px">' + B(bd.d) + '</p>' : '')
     + '<p class="micro">' + T('b_what') + '</p>'
     + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + whatRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>'
     + (condRows ? '<p class="micro">' + (ar ? 'شروط الاستخدام' : 'Usage conditions') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + condRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
@@ -7547,10 +7714,10 @@ function openBundle(bd) {
     + ussdRow
     + '</div>'
     + (showBill ? '<p class="cap" style="color:var(--ink-soft)">' + (ar ? 'يُضاف إلى فاتورة دورة الفوترة' : 'Added to your postpaid bill') + '</p>' : '')
-    + (showPay ? '<div style="position:relative"><p class="micro">' + T('b_pay_method') + '</p><button class="payfield" id="pay-field" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="' + T('b_pay_method') + '"><span class="pay-ic-w"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="22" height="22"></span><span class="pay-ic-c" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span><span class="dt">' + T('h_bal') + ' · ' + fmtN(S.balance) + ' ' + T('syp') + '</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd paydd" id="pay-dd" role="menu" aria-label="' + T('b_pay_method') + '"><button type="button" role="menuitemradio" aria-checked="true" data-method="balance" class="cur"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="26" height="26"><span class="dt">' + T('h_bal') + '<span class="ds2" style="display:block">' + fmtN(S.balance) + ' ' + T('syp') + '</span></span></button><button type="button" role="menuitemradio" aria-checked="false" data-method="card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span class="dt">' + T('h_card') + '</span></button></div></div>' : '')
     + (svcRows ? '<p class="micro">' + (ar ? 'الخدمات المشمولة' : 'Included services') + '</p><div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bu-usage-wrap"><div class="bu-usage-scroll">' + svcRows + '</div><div class="bu-usage-fade" aria-hidden="true"></div></div></div>' : '')
     + '</div>'
     + '<div class="bpop-foot">'
+    + (showPay ? '<div style="position:relative"><p class="micro">' + T('b_pay_method') + '</p><button class="payfield" id="pay-field" type="button" aria-haspopup="menu" aria-expanded="false" aria-label="' + T('b_pay_method') + '"><span class="pay-ic-w"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="22" height="22"></span><span class="pay-ic-c" style="display:none"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg></span><span class="dt">' + T('h_bal') + ' · ' + fmtN(S.balance) + ' ' + T('syp') + '</span><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button><div class="dd paydd" id="pay-dd" role="menu" aria-label="' + T('b_pay_method') + '"><button type="button" role="menuitemradio" aria-checked="true" data-method="balance" class="cur"><img decoding="async" src="' + ZI('wallet') + '" alt="" width="26" height="26"><span class="dt">' + T('h_bal') + '<span class="ds2" style="display:block">' + fmtN(S.balance) + ' ' + T('syp') + '</span></span></button><button type="button" role="menuitemradio" aria-checked="false" data-method="card"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg><span class="dt">' + T('h_card') + '</span></button></div></div>' : '')
     + (showRenew ? '<div style="display:flex;align-items:center;justify-content:space-between;gap:14px"><p style="font-weight:800">' + T('b_renew') + '</p><button class="bswitch" id="btn-renew" type="button" role="switch" aria-checked="' + ((pendingAuto && bd.renew === 'auto') ? 'true' : 'false') + '" ' + (bd.renew === 'once' || elig === 'GATED' ? 'disabled' : '') + ' aria-label="' + T('b_renew') + '"><span class="knob"></span></button></div>' : '')
     + '<div class="srow"><button class="btn" id="btn-sub"' + (cta.enabled ? '' : ' disabled') + '>' + cta.label + '</button></div>'
     + '<p class="cap" style="text-align:center;color:var(--ink-faint)">' + (cta.enabled ? T('b_terms') : cta.reason) + '</p>'
@@ -7559,6 +7726,8 @@ function openBundle(bd) {
   b4ScrollFrames();
   var shb = $('b-share');
   if (shb) shb.onclick = function () { if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(shareLink).then(function () { toast(T('b_link_copied')); }, function () { toast(T('b_link_copied')); }); else toast(T('b_link_copied')); };
+  var pnb = $('b-pin');
+  if (pnb) pnb.onclick = function () { var pinned = !(S.bPinned && S.bPinned.includes(bd.id)); S.bPinned = S.bPinned || []; if (pinned) S.bPinned.unshift(bd.id); else S.bPinned = S.bPinned.filter(function (x) { return x !== bd.id; }); pnb.classList.toggle('pinned', pinned); pnb.setAttribute('aria-pressed', pinned ? 'true' : 'false'); pnb.setAttribute('aria-label', pinned ? T('b_pinned') : T('b_pin')); toast(pinned ? T('b_pinned') : T('b_unpinned')); renderBundles(); };
   var uc = $('b-ussd-copy');
   if (uc) uc.onclick = function () { var code = bd.ussd; if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(code).then(function () { toast(T('b_link_copied')); }, function () { toast(T('b_link_copied')); }); else toast(T('b_link_copied')); };
   document.querySelectorAll('#bundle-body [data-b4-service]').forEach(function (el) {
@@ -7682,11 +7851,10 @@ function openService(svc) {
     + '<div class="bpop-head">'
     + '<div style="display:flex;gap:14px;align-items:center">'
     + '<span class="bi" style="width:60px;height:60px;border-radius:18px;background:var(--glass-deep);border:1px solid var(--glass-brd);display:flex;align-items:center;justify-content:center"><img decoding="async" src="' + ZI(svc.z) + '" alt="" width="32" height="32"></span>'
-    + '<div style="flex:1;min-width:0"><p class="st" id="sh-bundle-t">' + B(svc.n) + '</p><p class="sd" style="color:var(--ink-soft)">' + (ar ? 'خدمة' : 'Service') + '</p></div>'
+    + '<div style="flex:1;min-width:0"><p class="st" id="sh-bundle-t">' + B(svc.n) + '</p></div>'
     + '</div>'
     + '</div>'
     + '<div class="bpop-mid">'
-    + (B(svc.d) ? '<p class="sd" style="color:var(--ink-soft);margin-bottom:4px">' + B(svc.d) + '</p>' : '')
     + '<p class="micro">' + T('b_what') + '</p>'
     + '<div class="card" style="padding:6px 16px;background:var(--glass-deep)"><div class="bpop-row"><span class="k">' + B(svc.d) + '</span></div></div>'
     + '<p class="micro">' + T('b_price_valid') + '</p>'
