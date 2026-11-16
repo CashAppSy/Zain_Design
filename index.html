@@ -1976,7 +1976,7 @@ body.standalone #stage{width:402px!important;height:874px!important;border-radiu
     <div class="fld"><label for="a-cn-num" data-k="a_number">Subscriber number</label>
       <div class="phone-row"><span class="cc num" dir="ltr">+963</span><input id="a-cn-num" class="num" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="9" pattern="[0-9]{9}" placeholder="944 000 000" data-k-ph="mvp_phone_hint" aria-label="Subscriber number" dir="ltr"></div>
     </div>
-    <p class="aerr" id="a-cn-err" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg><span data-k="a_err_number">Enter a valid 10-digit number.</span></p>
+    <p class="aerr" id="a-cn-err" role="alert"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/><path d="M12 9v4M12 17h.01"/></svg><span data-k="mvp_phone_error">Enter exactly 9 digits after +963.</span></p>
     <button class="btn block" type="submit" data-k="a_update">Update number</button>
   </form>
   <div class="auth-links"><button class="linklike" data-back-to="scr-auth-otp" data-k="a_cancel">Cancel</button></div>
@@ -2383,15 +2383,14 @@ body.standalone #stage{width:402px!important;height:874px!important;border-radiu
   <div class="grab" aria-hidden="true"></div>
   <p class="st" id="sh-authhelp-t" data-k="a_help_t">Sign-in help</p>
   <div class="help-sec">
-    <p class="micro" data-k="a_forgot_q">Forgot password?</p>
-    <p data-k="a_help_body">Your subscriber number is the 10-digit Zain number on your SIM. Your password is the one you chose when you created your account — use “Forgot password?” if you lost it.</p>
+    <p class="micro" data-k="mvp_help_heading">Sign in with your Zain number</p>
+    <p data-k="mvp_help_text">Enter exactly 9 digits after +963, without the leading zero. A verification code is required for manual sign-in. No password or separate account creation is needed.</p>
   </div>
   <div class="demo-guide">
-    <p class="micro" data-k="a_guide_t">Demo guide</p>
-    <p data-k="a_g1">Sign in: any password works — except “Wrong123!”, which shows the wrong-password state. Three wrong tries lock sign-in for 15 minutes.</p>
-    <p data-k="a_g2">Sign up: the number 0944 000 000 is already registered. Numbers starting 093, 098 or 099 trigger the carrier dialog. On Set up your number, a number ending in 999 shows the setup-failed state.</p>
-    <p data-k="a_g3">Verification code: any 6 digits work; 000000 is always wrong. Three wrong codes invalidate the code; codes also expire after 2 minutes.</p>
-    <p data-k="a_g4">Biometric sign-in: the first sensor touch fails on purpose, the second succeeds.</p>
+    <p class="micro" data-k="mvp_guide_heading">Prototype testing</p>
+    <p data-k="mvp_guide_1">Use the number 944000000 and the demonstration code 123456. No SMS or voice call is actually placed.</p>
+    <p data-k="mvp_guide_2">The code expires after 3 minutes. You can request another after 30 seconds; 5 incorrect attempts lock sign-in for 15 minutes.</p>
+    <p data-k="mvp_guide_3">After a correct code, choose whether to remember this device. Sign out removes that choice and requires a new code.</p>
     <p><button class="linklike" id="a-g-offline" data-k="a_g_offline">Preview: You're offline</button> · <button class="linklike" id="a-g-session" data-k="a_g_session">Preview: Session expired</button></p>
   </div>
   <div class="srow"><button class="btn ghost" data-close data-k="close">Close</button></div>
@@ -6241,13 +6240,14 @@ function toast(msg) {
 }
 
 /* ---- screens ---- */
-const order = ['scr-splash', 'scr-onboard', 'scr-login', 'scr-auth-email', 'scr-auth-locked', 'scr-auth-setup', 'scr-auth-setup-failed', 'scr-auth-signup1', 'scr-auth-exists', 'scr-auth-signup2', 'scr-auth-signup-email1', 'scr-auth-signup-email2', 'scr-auth-otp', 'scr-auth-changenum', 'scr-auth-pin-setup', 'scr-auth-pin-confirm', 'scr-auth-pin-enter', 'scr-auth-bio-failed', 'scr-auth-signup-ok', 'scr-auth-signup-failed', 'scr-auth-forgot', 'scr-auth-stepup', 'scr-auth-newpass', 'scr-auth-pass-ok', 'scr-auth-pass-fail', 'scr-auth-offline', 'scr-auth-session', 'app'];
+const order = ['scr-splash', 'scr-onboard', 'scr-login', 'scr-auth-email', 'scr-auth-locked', 'scr-auth-setup', 'scr-auth-setup-failed', 'scr-auth-signup1', 'scr-auth-exists', 'scr-auth-signup2', 'scr-auth-signup-email1', 'scr-auth-signup-email2', 'scr-auth-otp', 'scr-auth-remember', 'scr-auth-changenum', 'scr-auth-pin-setup', 'scr-auth-pin-confirm', 'scr-auth-pin-enter', 'scr-auth-bio-failed', 'scr-auth-signup-ok', 'scr-auth-signup-failed', 'scr-auth-forgot', 'scr-auth-stepup', 'scr-auth-newpass', 'scr-auth-pass-ok', 'scr-auth-pass-fail', 'scr-auth-offline', 'scr-auth-session', 'app'];
 function showScreen(id) {
   order.forEach(sid => {
     const el = $(sid), on = sid === id;
     if (on && !el.classList.contains('on')) {
       el.classList.add('on');
-      const s = _st(el); s.o = 0; s.vo = 0; s.y = 18; s.vy = 0; _apply(el, s);
+      // Cancel a pending exit completion before re-entering the same screen.
+      const s = _st(el); s.done = null; s.o = 0; s.vo = 0; s.y = 18; s.vy = 0; _apply(el, s);
       springTo(el, { o: 1, y: 0 }, { damping: 1, response: 0.34 });
     } else if (!on && el.classList.contains('on')) {
       cardOutScreen(el);
@@ -6306,7 +6306,10 @@ function armSplash() {
   const logo = $('splash-logo');
   logo.style.transform = 'scale(.6)'; logo.style.opacity = '0';
   requestAnimationFrame(() => springTo(logo, { sc: 1, o: 1 }, { damping: 0.85, response: 0.5 }));
-  const go = () => { if ($('scr-splash').classList.contains('on')) showScreen('scr-onboard'); };
+const go = () => {
+     if (!$('scr-splash').classList.contains('on')) return;
+     showScreen(mvpRemembered() && !lockedNow() ? 'scr-login' : 'scr-onboard');
+   };
   setTimeout(go, 2400);
   $('scr-splash').addEventListener('pointerdown', function h() { $('scr-splash').removeEventListener('pointerdown', h); go(); });
 }
@@ -6376,7 +6379,15 @@ Object.assign(I18N.en, {
   mvp_remember_t:"Remember Me",
   mvp_remember_s:"Remember this phone to open your dashboard without entering a new code next time. You can sign out at any time.",
   mvp_remember_yes:"Remember this phone", mvp_remember_no:"Not now",
-  mvp_remember_demo:"Prototype only: remembered-phone recognition is simulated in this browser."
+mvp_remember_demo:"Prototype only: remembered-phone recognition is simulated in this browser.",
+   mvp_otp_incomplete:"Enter all 6 digits of the verification code.",
+   mvp_voice_demo:"Voice verification requires the Zain IVR service. For this demo, use code 123456.",
+   mvp_help_heading:"Sign in with your Zain number",
+   mvp_help_text:"Enter exactly 9 digits after +963, without the leading zero. Manual sign-in requires a verification code. No password or separate account creation is needed.",
+   mvp_guide_heading:"Prototype testing",
+   mvp_guide_1:"Use the number 944000000 and the demonstration code 123456. No real SMS or voice call is placed.",
+   mvp_guide_2:"The code expires after 3 minutes. Request another after 30 seconds. Five incorrect attempts lock sign-in for 15 minutes.",
+   mvp_guide_3:"After verification, choose Remember Me or Not now. Signing out removes the remembered device and requires a new code."
 });
 Object.assign(I18N.ar, {
   mvp_signin_sub:"أدخل رقم زين الخاص بك للمتابعة. سنرسل رمز تحقق إلى رقمك.",
@@ -6387,7 +6398,15 @@ Object.assign(I18N.ar, {
   mvp_remember_t:"تذكرني",
   mvp_remember_s:"تذكّر هذا الهاتف لفتح حسابك دون إدخال رمز جديد في كل مرة. يمكنك تسجيل الخروج في أي وقت.",
   mvp_remember_yes:"تذكّر هذا الهاتف", mvp_remember_no:"ليس الآن",
-  mvp_remember_demo:"للتجربة فقط: يتم محاكاة التعرف على الهاتف المتذكّر في هذا المتصفح."
+mvp_remember_demo:"للتجربة فقط: يتم محاكاة التعرف على الهاتف المتذكّر في هذا المتصفح.",
+   mvp_otp_incomplete:"أدخل جميع الأرقام الستة لرمز التحقق.",
+   mvp_voice_demo:"التحقق الصوتي يحتاج إلى نظام IVR الخاص بزين. للتجربة استخدم الرمز 123456.",
+   mvp_help_heading:"تسجيل الدخول برقم زين",
+   mvp_help_text:"أدخل 9 أرقام بعد ‎+963 دون الصفر الأول. يتطلب تسجيل الدخول اليدوي رمز تحقق، ولا توجد حاجة لكلمة مرور أو إنشاء حساب منفصل.",
+   mvp_guide_heading:"اختبار النموذج",
+   mvp_guide_1:"استخدم الرقم 944000000 ورمز التجربة 123456. لن يتم إرسال SMS أو إجراء مكالمة حقيقية.",
+   mvp_guide_2:"تنتهي صلاحية الرمز بعد 3 دقائق. يمكن طلب رمز آخر بعد 30 ثانية. يتم قفل تسجيل الدخول 15 دقيقة بعد 5 محاولات خاطئة.",
+   mvp_guide_3:"بعد التحقق اختر تذكرني أو ليس الآن. تسجيل الخروج يلغي تذكر الجهاز ويتطلب رمزاً جديداً."
 });
 
 /* ============ onboarding auth — journey v8 demo logic (2026-10-20) ============
@@ -6401,8 +6420,8 @@ Object.assign(I18N.ar, {
    - Biometric sign-in: first sensor touch fails, second succeeds. */
 const AUTH = {
   flow: null, setupPurpose: null, number: '', email: '', name: '',
-  wrongPass: 0, lockUntil: 0,
-  otpAttempts: 3, otpDeadline: 0, resendAt: 0, otpAfter: null, otpReturn: 'scr-login', otpLive: false,
+wrongPass: 0, lockUntil: 0, otpWrongTotal: 0,
+   otpAttempts: 3, otpDeadline: 0, resendAt: 0, otpAfter: null, otpReturn: 'scr-login', otpLive: false,
   pin: '', pinPurpose: 'setup', pinBack: 'scr-login',
   bioEnrolled: false, bioPromptArmed: false, bioTouchSeen: false, gmailKnown: false,
   carrierField: null, carrierOk: null, failReturn: 'scr-auth-signup1', offlineReturn: 'scr-login'
@@ -6477,8 +6496,9 @@ $('mvp-remember-no').onclick = function () {
 /* ---------- sign-in hub (04 / 04a / 04b) ---------- */
 function lockedNow() { return Date.now() < AUTH.lockUntil; }
 function signInSuccess() {
-  AUTH.wrongPass = 0; closeOverlays(true); enterApp();
-}
+   AUTH.wrongPass = 0; AUTH.otpWrongTotal = 0;
+   closeOverlays(true); enterApp();
+ }
 function wrongPassword(errId) {
   AUTH.wrongPass++;
   if (AUTH.wrongPass >= 3) { AUTH.lockUntil = Date.now() + 15 * 60 * 1000; AUTH.wrongPass = 0; showScreen('scr-auth-locked'); return; }
@@ -6578,38 +6598,46 @@ $('a-se2-form').addEventListener('submit', e => {
 const otpBoxes = [...document.querySelectorAll('.a-otp-box')];
 function wireBoxes(boxes, onFull) {
   boxes.forEach((b, i) => {
-    b.addEventListener('input', () => {
-      b.value = b.value.replace(/\D/g, '').slice(-1);
+b.addEventListener('input', () => {
+       b.value = arToLatin(b.value).replace(/\D/g, '').slice(-1);
+       if (boxes === otpBoxes) clearErr('a-otp-err');
       if (b.value && i < boxes.length - 1) boxes[i + 1].focus();
       if (onFull && boxes.every(x => x.value)) onFull(boxes.map(x => x.value).join(''));
     });
     b.addEventListener('keydown', e => { if (e.key === 'Backspace' && !b.value && i > 0) boxes[i - 1].focus(); });
     b.addEventListener('paste', e => {
-      const d = (e.clipboardData.getData('text') || '').replace(/\D/g, '');
+const d = arToLatin(e.clipboardData.getData('text') || '').replace(/\D/g, '');
       if (d) { e.preventDefault(); d.split('').forEach((c, j) => { if (boxes[j]) boxes[j].value = c; }); const nx = boxes[Math.min(d.length, boxes.length - 1)]; nx.focus(); if (onFull && boxes.every(x => x.value)) onFull(boxes.map(x => x.value).join('')); }
     });
   });
 }
 function clearBoxes(boxes) { boxes.forEach(b => { b.value = ''; b.classList.remove('err'); }); }
 function startOtp(num, after, ret) {
-  AUTH.otpAfter = after; AUTH.otpReturn = ret || 'scr-login'; AUTH.otpAttempts = 5; AUTH.otpLive = true;
+  if (AUTH.lockUntil && Date.now() >= AUTH.lockUntil) {
+    AUTH.lockUntil = 0; AUTH.otpWrongTotal = 0;
+  }
+  if (lockedNow()) { showScreen('scr-auth-locked'); return; }
+  AUTH.otpAfter = after; AUTH.otpReturn = ret || 'scr-login'; AUTH.otpAttempts = Math.max(0, 5 - AUTH.otpWrongTotal); AUTH.otpLive = true;
   AUTH.otpDeadline = Date.now() + 3 * 60 * 1000; AUTH.resendAt = Date.now() + 30 * 1000;
   $('a-otp-num').textContent = maskedNum(num);
   $('a-otp-live').hidden = false; $('a-otp-dead').hidden = true;
   clearErr('a-otp-err'); clearBoxes(otpBoxes);
-  showScreen('scr-auth-otp'); setTimeout(() => otpBoxes[0].focus(), 350);
+showScreen('scr-auth-otp'); authTick();
+   setTimeout(() => { if ($('scr-auth-otp').classList.contains('on')) otpBoxes[0].focus(); }, 350);
 }
 function otpDead(key) {
   AUTH.otpLive = false;
   $('a-otp-dead-txt').textContent = T(key);
-  $('a-otp-live').hidden = true; $('a-otp-dead').hidden = false;
-}
+$('a-otp-live').hidden = true; $('a-otp-dead').hidden = false;
+   $('a-otp-resend').disabled = true;
+ }
 function verifyOtp(code) {
   if (!AUTH.otpLive) return;
   if (Date.now() > AUTH.otpDeadline) { otpDead('a_expired_msg'); return; }
   // Only a prototype: accept the published test code, not real SMS verification.
-  if (AUTH.otpReturn === 'scr-login' && code !== '123456') {
-    AUTH.otpAttempts--;
+if (AUTH.otpReturn === 'scr-login' && code !== '123456') {
+     AUTH.otpWrongTotal++;
+     AUTH.otpAttempts = Math.max(0, 5 - AUTH.otpWrongTotal);
     VIB(30);
     if (AUTH.otpAttempts <= 0) {
       AUTH.otpLive = false; AUTH.lockUntil = Date.now() + 15 * 60 * 1000;
@@ -6633,14 +6661,23 @@ function verifyOtp(code) {
   const f = AUTH.otpAfter; AUTH.otpAfter = null; if (f) f();
 }
 wireBoxes(otpBoxes, code => verifyOtp(code));
-$('a-otp-verify').onclick = () => { const c = otpBoxes.map(x => x.value).join(''); if (c.length === 6) verifyOtp(c); };
-$('a-otp-sendnew').onclick = () => startOtp(AUTH.number, AUTH.otpAfter || (() => {}), AUTH.otpReturn);
+$('a-otp-verify').onclick = () => {
+  const c = otpBoxes.map(x => x.value).join('');
+  if (c.length !== 6) { $('a-otp-err-txt').textContent = T('mvp_otp_incomplete'); $('a-otp-err').classList.add('on'); return; }
+  verifyOtp(c);
+};
+$('a-otp-sendnew').onclick = () => {
+  if (lockedNow()) { showScreen('scr-auth-locked'); return; }
+  startOtp(AUTH.number, AUTH.otpAfter || (() => {}), AUTH.otpReturn);
+};
 $('a-otp-resend').onclick = () => {
+  if (lockedNow()) { showScreen('scr-auth-locked'); return; }
   if (Date.now() < AUTH.resendAt) return;
-  AUTH.otpAttempts = 5; AUTH.otpLive = true; AUTH.otpDeadline = Date.now() + 3 * 60 * 1000; AUTH.resendAt = Date.now() + 30 * 1000;
+  AUTH.otpAttempts = Math.max(0, 5 - AUTH.otpWrongTotal); AUTH.otpLive = true;
+  AUTH.otpDeadline = Date.now() + 3 * 60 * 1000; AUTH.resendAt = Date.now() + 30 * 1000;
   $('a-otp-live').hidden = false; $('a-otp-dead').hidden = true; clearErr('a-otp-err'); clearBoxes(otpBoxes); otpBoxes[0].focus();
 };
-$('a-otp-call').onclick = () => toast(T('a_call_toast'));
+$('a-otp-call').onclick = () => toast(T('mvp_voice_demo'));
 $('a-otp-wrongnum').onclick = () => { $('a-cn-num').value = (AUTH.number || '').replace(/^0/, ''); showScreen('scr-auth-changenum'); };
 $('a-otp-back').onclick = () => showScreen(AUTH.otpReturn);
 $('a-otp-back2').onclick = () => showScreen(AUTH.otpReturn);
@@ -6650,9 +6687,10 @@ $('a-cn-form').addEventListener('submit', e => {
   if (!/^9\d{8}$/.test(suffix)) { setErr('a-cn-err', 'mvp_phone_error'); return; }
   clearErr('a-cn-err');
   const num = '0' + suffix;
-  AUTH.number = num;
-  startOtp(num, mvpAfterOtp, 'scr-login');
-});
+AUTH.number = num;
+   $('a-num').value = suffix; // Keep Back / Wrong number coherent with the verified number.
+   startOtp(num, mvpAfterOtp, 'scr-login');
+ });
 
 /* ---------- PIN (13a / 13b / enter) ---------- */
 const pin1Boxes = [...document.querySelectorAll('.a-pin1-box')];
@@ -6731,7 +6769,7 @@ window.addEventListener('offline', () => {
 });
 $('a-offline-retry').onclick = () => { if (navigator.onLine) showScreen(AUTH.offlineReturn); else VIB(30); };
 $('a-offline-back').onclick = () => showScreen(AUTH.offlineReturn);
-$('a-session-signin').onclick = () => showScreen('scr-login');
+$('a-session-signin').onclick = () => { S.authed = false; showScreen('scr-login'); };
 $('a-session-back').onclick = () => showScreen(AUTH.offlineReturn);
 $('a-g-offline').onclick = () => { closeOverlays(true); AUTH.offlineReturn = 'scr-login'; showScreen('scr-auth-offline'); };
 $('a-g-session').onclick = () => { closeOverlays(true); AUTH.offlineReturn = 'scr-login'; showScreen('scr-auth-session'); };
@@ -6741,8 +6779,9 @@ function authTick() {
   if (lockedNow() && $('scr-auth-locked').classList.contains('on')) $('a-lock-time').textContent = mmss(AUTH.lockUntil - Date.now());
   if ($('scr-auth-otp').classList.contains('on') && AUTH.otpLive) {
     const left = AUTH.resendAt - Date.now();
-    $('a-otp-resend').textContent = left > 0 ? T('a_resend_in').replace('{t}', mmss(left)) : T('a_resend');
-    if (Date.now() > AUTH.otpDeadline) otpDead('a_expired_msg');
+$('a-otp-resend').textContent = left > 0 ? T('a_resend_in').replace('{t}', mmss(left)) : T('a_resend');
+     $('a-otp-resend').disabled = left > 0;
+     if (Date.now() > AUTH.otpDeadline) otpDead('a_expired_msg');
   }
 }
 setInterval(authTick, 500);
@@ -6750,13 +6789,15 @@ setInterval(authTick, 500);
 /* ---------- screen-arrival hooks + language sync ---------- */
 const _showScreenAuth = showScreen;
 showScreen = function (id) {
+  // Redirect before animating: login -> locked -> login in 60ms caused both
+  // screens to disappear when the older exit spring finished later.
+  if (id === 'scr-login' && lockedNow()) id = 'scr-auth-locked';
   _showScreenAuth(id);
   if (id === 'scr-login') {
     var remembered = mvpRemembered();
-    if (remembered && !lockedNow()) { AUTH.number = remembered.number; enterApp(); return; }
+    if (remembered) { AUTH.number = remembered.number; enterApp(); return; }
     syncLangPills();
     /* No PIN or biometric sign-in in MVP. */
-    if (lockedNow()) setTimeout(() => { if ($('scr-login').classList.contains('on')) showScreen('scr-auth-locked'); }, 60);
   }
   if (id === 'scr-auth-remember') { var src = $('login-logo').getAttribute('src'); if (src) $('mvp-remember-logo').setAttribute('src', src); syncLangPills(); }
   if (id === 'scr-auth-locked') $('a-lock-time').textContent = mmss(AUTH.lockUntil - Date.now());
@@ -6765,7 +6806,19 @@ const _applyLangAuth = applyLang;
 applyLang = function () { _applyLangAuth(); syncLangPills(); authTick(); };
 syncLangPills();
 
-function enterApp() { S.authed = true; showScreen('app'); goTab('home', true); setTimeout(animBars, 400); }
+function enterApp() {
+  // Keep the prototype's first displayed line consistent with the verified sign-in number.
+  // Other seeded lines remain available as demonstration data, not real linked accounts.
+  if (AUTH.number && /^09\d{8}$/.test(AUTH.number) && Array.isArray(S.lines)) {
+    const current = AUTH.number.replace(/^(\d{4})(\d{3})(\d{3})$/, '$1 $2 $3');
+    S.lines[0] = current; S.curLine = 0;
+    renderNum();
+    const profileNumber = document.querySelector('#scr-profile .cap.num');
+    if (profileNumber) profileNumber.textContent = current;
+    if (typeof window.__ucOnLineChange === 'function') window.__ucOnLineChange();
+  }
+  S.authed = true; showScreen('app'); goTab('home', true); setTimeout(animBars, 400);
+}
 function openAbout() {
   $('sh-usage-t').textContent = T('about_t');
   $('usage-body').innerHTML = `<div style="text-align:center;padding:8px 0">
@@ -8409,7 +8462,7 @@ function moreGo(id) {
   else if (id === 'help') openSupport();
   else if (id === 'about') openAbout();
   else if (id === 'notif') toast(T('notif_r') + ': ' + T('notif_v'));
-  else if (id === 'out') { S.authed = false; AUTH.bioPromptArmed = false; try { localStorage.removeItem(MVP_AUTH_KEY); } catch (e) {} closeOverlays(true); showScreen('scr-login'); toast(T('signed_out')); }
+  else if (id === 'out') { S.authed = false; AUTH.bioPromptArmed = false; AUTH.otpLive = false; AUTH.otpAfter = null; AUTH.otpWrongTotal = 0; try { localStorage.removeItem(MVP_AUTH_KEY); } catch (e) {} closeOverlays(true); $('a-num').value = (AUTH.number || '').replace(/^0/, ''); showScreen('scr-login'); toast(T('signed_out')); }
 }
 function setTheme(t) {
   S.theme = t; stage().dataset.theme = t;
